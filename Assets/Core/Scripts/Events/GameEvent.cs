@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace Core
 {
-
     [CreateAssetMenu(menuName = "Events/GameEvent", order = 1)]
     public class GameEvent : ScriptableObject
     {
