@@ -5,23 +5,20 @@
 // Aahed Diyab, Olav Pete
 // ----------------------------------------------------------------------------
 
+using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DEFAULT_REPLACE
+namespace Networking
 {
-    [CreateAssetMenu(filename = "#SCRIPTNAME#")]
-    public class #SCRIPTNAME# : ScriptableObject
+    [Serializable]
+    public class NetworkEvents : MonoBehaviour
     {
-        #region Fields
-
-        #endregion
-
         #region Properties
-
+        [field: SerializeField]
+        public NetworkEvent ServerStarted { get; set; }
         #endregion
-        #NOTRIM#
-    }    
+    } 
 }

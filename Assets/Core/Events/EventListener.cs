@@ -1,3 +1,10 @@
+// ----------------------------------------------------------------------------
+// Simulering av Dykkerpost
+// Bachelor Oppgave våren 2022
+// 
+// Aahed Diyab, Olav Pete
+// ----------------------------------------------------------------------------
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +12,10 @@ using UnityEngine.Events;
 
 namespace Core
 {
-    public class GameEventListener : MonoBehaviour
+    public class EventListener : MonoBehaviour
     {
         [field: SerializeField]
-        public GameEvent Event { get; set; }
+        public BaseEvent Event { get; set; }
         [field: SerializeField]
         public UnityEvent Response { get; set; }
 

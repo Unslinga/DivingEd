@@ -12,7 +12,9 @@ using UnityEngine;
 
 namespace DEFAULT_REPLACE
 {
-    public class #SCRIPTNAME# : MonoBehaviour
+    [Serializable]
+    [CreateAssetMenu(menuName = "DEFAULT_REPLACE/#SCRIPTNAME#", order = 0)]
+    public class #SCRIPTNAME# : ScriptableObject
     {
         #region Fields
 
@@ -21,26 +23,10 @@ namespace DEFAULT_REPLACE
         #region Properties
 
         #endregion
-
+        
         #region Public Methods
 
         #endregion
-
-        #region Private Methods
-
-        #endregion
-
-        #region Unity Methods
-        private void Start()
-        {
-            #NOTRIM#
-        }
-
-        private void Update()
-        {
-            #NOTRIM#
-        }
-        #endregion
         #NOTRIM#
-    } 
+    }    
 }
