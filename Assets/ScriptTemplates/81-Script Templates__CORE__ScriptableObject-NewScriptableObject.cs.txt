@@ -9,9 +9,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Core;
 
-namespace DEFAULT_REPLACE
+namespace Core
 {
     [Serializable]
     [CreateAssetMenu(menuName = "DEFAULT_REPLACE/#SCRIPTNAME#", order = 0)]
