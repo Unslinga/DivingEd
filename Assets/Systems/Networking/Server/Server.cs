@@ -16,7 +16,6 @@ using UnityEngine;
 
 namespace Networking
 {
-    [RequireComponent(typeof(NetworkEvents))]
     public class Server : MonoBehaviour
     {
         #region Fields
@@ -25,7 +24,7 @@ namespace Networking
         #endregion
 
         #region Properties
-        public NetworkEvents Events { get; set; }
+        //public NetworkEvents Events { get; set; }
 
         [field: SerializeField]
         public int ServerPort { get; set; } = 55676;
@@ -50,7 +49,7 @@ namespace Networking
 
             Debug.Log($"Server started on [{ServerPort}]");
 
-            Events.ServerStarted.Raise();
+            //Events.ServerStarted.Raise();
         }
 
         private void TCPConnectionCallback(IAsyncResult result)
@@ -69,11 +68,11 @@ namespace Networking
         {
             this.Instance<Server>();
 
-            if (NetworkClients == null)
-            {
-                Debug.LogError($"NetworkClients RuntimeSet not set in inspector in [{gameObject.name}]");
-                this.Quit();
-            }
+            //if (NetworkClients == null)
+            //{
+            //    Debug.LogError($"NetworkClients RuntimeSet not set in inspector in [{gameObject.name}]");
+            //    this.Quit();
+            //}
         }
 
         private void Update()
