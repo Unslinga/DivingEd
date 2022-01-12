@@ -5,20 +5,22 @@
 // Aahed Diyab, Olav Pete
 // ----------------------------------------------------------------------------
 
-using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-namespace Networking
+namespace Core
 {
     [Serializable]
-    public class NetworkEvents : MonoBehaviour
+    public class NamedSet<T> : RuntimeSet<T> where T : UnityEngine.Object
     {
-        #region Properties
-        [field: SerializeField]
-        public NetworkEvent ServerStarted { get; set; }
+        #region Public Methods
+        public T this[string name]
+        {
+            get { return Items?.SingleOrDefault(i => i.name == name); }
+        }
         #endregion
-    } 
+    }    
 }
