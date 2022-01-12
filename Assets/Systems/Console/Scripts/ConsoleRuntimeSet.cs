@@ -5,17 +5,17 @@
 // Aahed Diyab, Olav Pete
 // ----------------------------------------------------------------------------
 
-using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Core;
 
-namespace Core
+namespace Console
 {
     [Serializable]
-    [CreateAssetMenu(menuName = "Networking/NetworkEvent", order = 0)]
-    public class NetworkEvent : BaseEvent
+    [CreateAssetMenu(menuName = "Console/ConsoleRuntimeSet", order = 1)]
+    public class ConsoleRuntimeSet : RuntimeSet<string>
     {
         #region Fields
 

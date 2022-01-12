@@ -9,19 +9,24 @@ using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 namespace Console
 {
-    public class Logging : MonoBehaviour
+    public class Console : MonoBehaviour
     {
         #region Fields
-
         #endregion
 
         #region Properties
         [field: SerializeField]
-        public ConsoleEvent LogToConsole { get; set; }
+        public TMP_Text Log { get; set; }
+
+        [field: SerializeField]
+        public ConsoleRuntimeSet RuntimeSet { get; set; }
         #endregion
 
         #region Public Methods
@@ -29,22 +34,22 @@ namespace Console
         #endregion
 
         #region Private Methods
-
-        private void Application_logMessageReceived(string condition, string stackTrace, LogType type)
+        private string FetchText()
         {
-            LogToConsole?.Raise((condition, stackTrace, type));
+            return RuntimeSet?.Items.Aggregate(
+                (cur, item) => cur + "\n" + item);
         }
         #endregion
 
         #region Unity Methods
-        private void OnEnable()
+        private void Start()
         {
-            Application.logMessageReceived += Application_logMessageReceived;
+            
         }
 
-        private void OnDestroy()
+        private void Update()
         {
-            Application.logMessageReceived -= Application_logMessageReceived;
+            Log.text = FetchText();
         }
         #endregion
         

@@ -13,8 +13,7 @@ using UnityEngine.Events;
 
 namespace Core
 {
-    [CreateAssetMenu(menuName = "Events/BaseEvent", order = 1)]
-    public class BaseEvent : ScriptableObject
+    public abstract class BaseEvent : ScriptableObject
     {
         #region Fields
         private List<EventListener> Listeners = new List<EventListener>();
@@ -30,6 +29,14 @@ namespace Core
             for (int i = Listeners.Count - 1; i >= 0; i--)
             {
                 Listeners[i].OnEventRaised();
+            }
+        }
+
+        public void Raise<T>(T value)
+        {
+            for (int i = Listeners.Count -1; i >= 0; i--)
+            {
+                Listeners[i].OnEventRaised(value);
             }
         }
 
