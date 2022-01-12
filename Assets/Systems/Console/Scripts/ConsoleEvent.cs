@@ -14,8 +14,8 @@ using UnityEngine;
 namespace Core
 {
     [Serializable]
-    [CreateAssetMenu(menuName = "Networking/NetworkEvent", order = 0)]
-    public class NetworkEvent : BaseEvent
+    [CreateAssetMenu(menuName = "Console/ConsoleEvent", order = 4)]
+    public class ConsoleEvent : BaseEvent
     {
         #region Fields
 
@@ -28,6 +28,5 @@ namespace Core
         #region Public Methods
 
         #endregion
-        
     }    
 }
