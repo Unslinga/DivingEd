@@ -13,6 +13,6 @@ using UnityEngine;
 namespace Core
 {
     [Serializable]
-    [CreateAssetMenu(menuName = "Networking/NetworkEvents", order = 0)]
-    public class NetworkEvents : NamedSet<NetworkEvent> { }
+    [CreateAssetMenu(menuName = "Networking/NetworkEventsNamedSet", order = 0)]
+    public class NetworkEventsNamedSet : NamedSet<NetworkEvent> { }
 }

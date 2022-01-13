@@ -29,10 +29,10 @@ namespace Networking
         public IntReference ServerPort { get; set; }
 
         [field: SerializeField]
-        public NetworkEvents Events { get; set; }
+        public NetworkEventsNamedSet NetworkEventsSet { get; set; }
 
         [field: SerializeField]
-        public NetworkClientsRuntimeSet NetworkClients { get; set; }
+        public NetworkClientsRuntimeSet NetworkClientsSet { get; set; }
 
         #endregion
 
@@ -53,7 +53,7 @@ namespace Networking
 
             Debug.Log($"Server started on [{ServerPort}]");
 
-            Events["ServerStarted"]?.Raise();
+            NetworkEventsSet["ServerStarted"]?.Raise();
         }
 
         private void TCPConnectionCallback(IAsyncResult result)
@@ -73,18 +73,10 @@ namespace Networking
         private void Awake()
         {
             this.Instance<Server>();
-            this.CheckNull(Events, true);
-            this.CheckNull(NetworkClients, true);
+            this.CheckNull(NetworkEventsSet, true);
+            this.CheckNull(NetworkClientsSet, true);
 
-
-            //if (NetworkClients == null)
-            //{
-            //    Debug.LogError($"NetworkClients RuntimeSet not set in inspector in [{gameObject.name}]");
-            //    this.Quit();
-            //}
-
-            //StartServer();
-
+            StartServer();
         }
 
         private void Update()

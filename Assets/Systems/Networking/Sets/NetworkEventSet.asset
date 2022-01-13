@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43eabb8618f4fd848a1d3557d0196c57, type: 3}
-  m_Name: NetworkEvents
+  m_Script: {fileID: 11500000, guid: c33d8410f5105564e9b5925a92036d66, type: 3}
+  m_Name: NetworkEventSet
   m_EditorClassIdentifier: 
   <Items>k__BackingField: []
