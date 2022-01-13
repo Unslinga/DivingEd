@@ -66,7 +66,7 @@ namespace Networking
                 TcpClient client = tcpListener.EndAcceptTcpClient(result);
                 tcpListener.BeginAcceptTcpClient(new AsyncCallback(TCPConnectionCallback), null);
 
-                Debug.Log("Incoming Connection");
+                Debug.Log("Server: Incoming Connection");
 
                 var clientObject = Instantiate(NetworkClientPrefab, transform);
                 var networkClient = clientObject.GetComponent<NetworkClient>();

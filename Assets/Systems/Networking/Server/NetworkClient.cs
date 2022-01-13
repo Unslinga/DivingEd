@@ -23,25 +23,49 @@ namespace Networking
         private NetworkStream stream;
         private byte[] receiveBuffer;
         private Packet receivedPacket;
-        
+
         #endregion
 
         #region Properties
 
+        [field: SerializeField]
+        public NetworkEventsNamedSet NetworkEvents { get; set; }
+
+        [field: SerializeField]
         public string Name { get; set; }
-        
+
+        public TcpClient Client { get; private set; } = null;
+
         #endregion
 
         #region Public Methods
 
         public void Connect(TcpClient client)
         {
+            Client = client;
+
+            Client.ReceiveBufferSize = BUFFER_SIZE;
+            Client.SendBufferSize = BUFFER_SIZE;
+
+            stream = Client.GetStream();
+
+            receivedPacket = new Packet();
+            receiveBuffer = new byte[BUFFER_SIZE];
+
+            stream.BeginRead(receiveBuffer, 0, receiveBuffer.Length, receiveCallback, null);
+
+            Debug.Log("NetworkClient: Sending Welcome Packet");
 
         }
 
         #endregion
 
         #region Private Methods
+
+        private void receiveCallback(IAsyncResult ar)
+        {
+            throw new NotImplementedException();
+        }
 
         #endregion
 
