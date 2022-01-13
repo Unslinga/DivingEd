@@ -14,12 +14,22 @@ using UnityEngine;
 namespace Core
 {
     [Serializable]
-    public class NamedSet<T> : RuntimeSet<T> where T : UnityEngine.Object
+    public abstract class NamedSet<T> : RuntimeSet<T> where T : UnityEngine.Object
     {
         #region Public Methods
         public T this[string name]
         {
-            get { return Items?.SingleOrDefault(i => i.name == name); }
+            get
+            {
+                var item = Items?.SingleOrDefault(i => i.name == name);
+
+                if (item == null || item == default)
+                {
+                    Debug.Log($"[{name}] not found in {this.name}");
+                }
+
+                return item;
+            }
         }
         #endregion
     }    

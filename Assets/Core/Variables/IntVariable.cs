@@ -5,18 +5,21 @@
 // Aahed Diyab, Olav Pete
 // ----------------------------------------------------------------------------
 
-using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Networking;
 
 namespace Core
 {
-    [CreateAssetMenu(menuName = "Networking/NetworkClientRuntimeSet", order = 2)]
-    public class NetworkClientsRuntimeSet : RuntimeSet<NetworkClient>
+    [CreateAssetMenu(menuName = "Variables/int", order = 0)]
+    public class IntVariable : ScriptableObject
     {
-        
-    } 
+        public int Value;
+
+        public static implicit operator int(IntVariable variable)
+        {
+            return variable.Value;
+        }
+    }
 }

@@ -5,18 +5,14 @@
 // Aahed Diyab, Olav Pete
 // ----------------------------------------------------------------------------
 
-using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Networking;
 
 namespace Core
 {
-    [CreateAssetMenu(menuName = "Networking/NetworkClientRuntimeSet", order = 2)]
-    public class NetworkClientsRuntimeSet : RuntimeSet<NetworkClient>
-    {
-        
-    } 
+    [Serializable]
+    [CreateAssetMenu(menuName = "Networking/NetworkEvents", order = 0)]
+    public class NetworkEvents : NamedSet<NetworkEvent> { }
 }

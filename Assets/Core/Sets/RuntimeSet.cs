@@ -12,6 +12,7 @@ using UnityEngine;
 
 namespace Core
 {
+    [Serializable]
     public abstract class RuntimeSet<T> : ScriptableObject
     {
         #region Properties

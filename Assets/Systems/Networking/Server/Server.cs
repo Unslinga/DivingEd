@@ -24,13 +24,16 @@ namespace Networking
         #endregion
 
         #region Properties
-        //public NetworkEvents Events { get; set; }
 
         [field: SerializeField]
-        public int ServerPort { get; set; } = 55676;
+        public IntReference ServerPort { get; set; }
+
+        [field: SerializeField]
+        public NetworkEvents Events { get; set; }
 
         [field: SerializeField]
         public NetworkClientsRuntimeSet NetworkClients { get; set; }
+
         #endregion
 
         #region Public Methods
@@ -38,6 +41,7 @@ namespace Networking
         #endregion
 
         #region Private Methods
+
         private void StartServer()
         {
             tcpListener = new TcpListener(IPAddress.Any, ServerPort);
@@ -49,7 +53,7 @@ namespace Networking
 
             Debug.Log($"Server started on [{ServerPort}]");
 
-            //Events.ServerStarted.Raise();
+            Events["ServerStarted"]?.Raise();
         }
 
         private void TCPConnectionCallback(IAsyncResult result)
@@ -59,26 +63,35 @@ namespace Networking
 
         private void UDPReceibeCallback(IAsyncResult ar)
         {
-            throw new NotImplementedException();
+
         }
+
         #endregion
 
         #region Unity Methods
+
         private void Awake()
         {
             this.Instance<Server>();
+            this.CheckNull(Events, true);
+            this.CheckNull(NetworkClients, true);
+
 
             //if (NetworkClients == null)
             //{
             //    Debug.LogError($"NetworkClients RuntimeSet not set in inspector in [{gameObject.name}]");
             //    this.Quit();
             //}
+
+            //StartServer();
+
         }
 
         private void Update()
         {
             
         }
+
         #endregion
         
     } 
