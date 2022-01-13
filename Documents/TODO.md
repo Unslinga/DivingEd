@@ -1,5 +1,15 @@
-#### TODO:
+# TODO:
 
+### 11.01
 - [ ] Møte med oppdragsgiver, veileder TTB og veileder HVL.
-- [X] arbeidsplass? utsty?
+- [x] arbeidsplass? utsty?
 - [ ] Løsning til prosjekthåndboken og bachelorrapport?
+### 13.01
+- [ ] Risikovurdering
+- [ ] Itirasjondeling (prototype definering)
+- [ ] Prioritet organisering
+- [ ] Hvorfor trenges dykk. sim.
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
