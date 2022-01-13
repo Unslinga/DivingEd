@@ -29,6 +29,9 @@ namespace Networking
         public IntReference ServerPort { get; set; }
 
         [field: SerializeField]
+        public GameObject NetworkClientPrefab { get; set; }
+
+        [field: SerializeField]
         public NetworkEventsNamedSet NetworkEventsSet { get; set; }
 
         [field: SerializeField]
@@ -42,7 +45,7 @@ namespace Networking
 
         #region Private Methods
 
-        private void StartServer()
+        private void ServerStart()
         {
             tcpListener = new TcpListener(IPAddress.Any, ServerPort);
             tcpListener.Start();
@@ -58,7 +61,22 @@ namespace Networking
 
         private void TCPConnectionCallback(IAsyncResult result)
         {
+            try
+            {
+                TcpClient client = tcpListener.EndAcceptTcpClient(result);
+                tcpListener.BeginAcceptTcpClient(new AsyncCallback(TCPConnectionCallback), null);
 
+                Debug.Log("Incoming Connection");
+
+                var clientObject = Instantiate(NetworkClientPrefab, transform);
+                var networkClient = clientObject.GetComponent<NetworkClient>();
+
+                this.CheckNull(networkClient, true);
+
+                networkClient.Connect(client);
+            }
+            catch (NullReferenceException) { }
+            catch (ObjectDisposedException) { }
         }
 
         private void UDPReceibeCallback(IAsyncResult ar)
@@ -73,10 +91,12 @@ namespace Networking
         private void Awake()
         {
             this.Instance<Server>();
+            
+            this.CheckNull(NetworkClientPrefab, true);
             this.CheckNull(NetworkEventsSet, true);
             this.CheckNull(NetworkClientsSet, true);
 
-            StartServer();
+            ServerStart();
         }
 
         private void Update()
