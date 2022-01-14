@@ -10,24 +10,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Core
 {
-    [Serializable]
-    [CreateAssetMenu(menuName = "Networking/NetworkEvent", order = 0)]
-    public class NetworkEvent : BaseEvent
+    public interface INetworkEvent
     {
-        #region Fields
-
-        #endregion
-
         #region Properties
 
-        #endregion
-        
-        #region Public Methods
+        int ID { get; set; }
+
+        UnityEvent<object[]> SendMethod { get; set; }
 
         #endregion
-        
-    }    
+
+        #region Public Methods
+
+
+        #endregion
+    } 
 }

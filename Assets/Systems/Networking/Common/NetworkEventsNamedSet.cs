@@ -8,29 +8,36 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using UnityEditor;
 
 namespace Core
 {
     [Serializable]
-    public abstract class NamedSet<T> : RuntimeSet<T> where T : UnityEngine.Object
+    [CreateAssetMenu(menuName = "Networking/NetworkEventsNamedSet", order = 0)]
+    public class NetworkEventsNamedSet : NamedSet<NetworkEvent>
     {
         #region Public Methods
-        public T this[string name]
+
+        public NetworkEvent this[int index]
         {
             get
             {
-                var item = Items?.SingleOrDefault(i => i.name == name);
+                if (index >= Items.Count)
+                    return null;
 
-                if (item == null || item == default)
-                {
-                    Debug.Log($"[{name}] not found in {this.name}");
-                }
-
-                return item;
+                return Items[index];
             }
         }
+
+        public void Initialize()
+        {
+            for (int i = 0; i < Items.Count; i++)
+            {
+                Items[i].ID = i;
+            }
+        }
+
         #endregion
-    }    
+    }
 }

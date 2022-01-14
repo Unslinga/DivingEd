@@ -13,6 +13,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Networking
 {
@@ -24,21 +25,33 @@ namespace Networking
         #endregion
 
         #region Properties
-        //public NetworkEvents Events { get; set; }
 
         [field: SerializeField]
-        public int ServerPort { get; set; } = 55676;
+        public IntReference ServerPort { get; set; }
 
         [field: SerializeField]
-        public NetworkClientsRuntimeSet NetworkClients { get; set; }
+        public GameObject NetworkClientPrefab { get; set; }
+
+        [field: SerializeField]
+        public NetworkEventsNamedSet NetworkEventsSet { get; set; }
+
+        [field: SerializeField]
+        public NetworkClientsRuntimeSet NetworkClientsSet { get; set; }
+
         #endregion
 
         #region Public Methods
 
+        public void OnTest(object[] data)
+        {
+
+        }
+
         #endregion
 
         #region Private Methods
-        private void StartServer()
+
+        private void ServerStart()
         {
             tcpListener = new TcpListener(IPAddress.Any, ServerPort);
             tcpListener.Start();
@@ -47,39 +60,59 @@ namespace Networking
             udpListener = new UdpClient(ServerPort);
             udpListener.BeginReceive(UDPReceibeCallback, null);
 
-            Debug.Log($"Server started on [{ServerPort}]");
+            Debug.Log($"Server started on [{ServerPort.Value}]");
 
-            //Events.ServerStarted.Raise();
+            //NetworkEventsSet["Server.Started"]?.Raise();
+            NetworkEventsSet["Server.Welcome"].Send(("Test", 2));
         }
 
         private void TCPConnectionCallback(IAsyncResult result)
         {
+            try
+            {
+                TcpClient client = tcpListener.EndAcceptTcpClient(result);
+                tcpListener.BeginAcceptTcpClient(new AsyncCallback(TCPConnectionCallback), null);
 
+                Debug.Log("Server: Incoming Connection");
+
+                var clientObject = Instantiate(NetworkClientPrefab, transform);
+                var networkClient = clientObject.GetComponent<NetworkClient>();
+
+                this.CheckNull(networkClient, true);
+
+                networkClient.Connect(client);
+            }
+            catch (NullReferenceException) { }
+            catch (ObjectDisposedException) { }
         }
 
         private void UDPReceibeCallback(IAsyncResult ar)
         {
-            throw new NotImplementedException();
+
         }
+
         #endregion
 
         #region Unity Methods
+
         private void Awake()
         {
             this.Instance<Server>();
 
-            //if (NetworkClients == null)
-            //{
-            //    Debug.LogError($"NetworkClients RuntimeSet not set in inspector in [{gameObject.name}]");
-            //    this.Quit();
-            //}
+            this.CheckNull(NetworkClientPrefab, true);
+            this.CheckNull(NetworkClientsSet, true);
+
+            this.CheckNull(NetworkEventsSet, true);
+            NetworkEventsSet.Initialize();
+
+            ServerStart();
         }
 
         private void Update()
         {
-            
+
         }
+
         #endregion
-        
-    } 
+    }
 }

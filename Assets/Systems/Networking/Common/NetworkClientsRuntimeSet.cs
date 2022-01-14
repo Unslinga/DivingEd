@@ -5,17 +5,17 @@
 // Aahed Diyab, Olav Pete
 // ----------------------------------------------------------------------------
 
+using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Core;
+using Networking;
 
-namespace Console
+namespace Core
 {
-    [Serializable]
-    [CreateAssetMenu(menuName = "Console/ConsoleRuntimeSet", order = 1)]
-    public class ConsoleRuntimeSet : RuntimeSet<string>
+    [CreateAssetMenu(menuName = "Networking/NetworkClientRuntimeSet", order = 2)]
+    public class NetworkClientsRuntimeSet : RuntimeSet<NetworkClient>
     {
         #region Fields
 

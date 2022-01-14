@@ -5,27 +5,27 @@
 // Aahed Diyab, Olav Pete
 // ----------------------------------------------------------------------------
 
+using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Core;
+using UnityEngine.Events;
 
-namespace Console
+namespace Core
 {
     [Serializable]
-    [CreateAssetMenu(menuName = "Console/ConsoleRuntimeSet", order = 1)]
-    public class ConsoleRuntimeSet : RuntimeSet<string>
+    [CreateAssetMenu(menuName = "Networking/NetworkEvent", order = 0)]
+    public class NetworkEvent : BaseEvent, INetworkEvent
     {
-        #region Fields
-
-        #endregion
-
         #region Properties
 
-        #endregion
+        [field: ReadOnlyField]
+        [field: SerializeField]
+        public int ID { get; set; }
 
-        #region Public Methods
+        [field: SerializeField]
+        public UnityEvent<object[]> SendMethod { get; set; }
 
         #endregion
     }

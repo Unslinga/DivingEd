@@ -9,24 +9,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Core;
 
-namespace Console
+namespace Core
 {
-    [Serializable]
-    [CreateAssetMenu(menuName = "Console/ConsoleRuntimeSet", order = 1)]
-    public class ConsoleRuntimeSet : RuntimeSet<string>
+    [CreateAssetMenu(menuName = "Variables/int", order = 0)]
+    public class IntVariable : ScriptableObject
     {
-        #region Fields
+        public int Value;
 
-        #endregion
-
-        #region Properties
-
-        #endregion
-
-        #region Public Methods
-
-        #endregion
+        public static implicit operator int(IntVariable variable)
+        {
+            return variable.Value;
+        }
     }
 }
