@@ -10,23 +10,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Networking;
+using UnityEngine.Events;
 
 namespace Core
 {
-    [CreateAssetMenu(menuName = "Networking/NetworkClientRuntimeSet", order = 2)]
-    public class NetworkClientsRuntimeSet : RuntimeSet<NetworkClient>
+    public interface INetworkEvent
     {
-        #region Fields
-
-        #endregion
-
         #region Properties
+
+        int ID { get; set; }
+
+        UnityEvent<object[]> SendMethod { get; set; }
 
         #endregion
 
         #region Public Methods
 
+
         #endregion
-    }
+    } 
 }

@@ -10,12 +10,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Networking;
 
-namespace Core
+namespace Networking
 {
-    [CreateAssetMenu(menuName = "Networking/NetworkClientRuntimeSet", order = 2)]
-    public class NetworkClientsRuntimeSet : RuntimeSet<NetworkClient>
+    public static class NetworkExtensions
     {
         #region Fields
 
@@ -27,6 +25,15 @@ namespace Core
 
         #region Public Methods
 
+        public static void Send(this INetworkEvent networkEvent, params object[] data)
+        {
+            //int packetId = 
+        }
+
         #endregion
-    }
+
+        #region Private Methods
+
+        #endregion        
+    } 
 }

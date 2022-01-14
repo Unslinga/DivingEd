@@ -29,7 +29,19 @@ namespace Networking
             Initialize();
         }
 
+        public Packet(byte[] data)
+        {
+            Initialize();
 
+            SetData(data);
+        }
+
+        public Packet(int id)
+        {
+            Initialize();
+
+            Write(id);
+        }
 
         #endregion
 
@@ -59,6 +71,11 @@ namespace Networking
             }
 
             readPos -= 4;
+        }
+
+        public void SetData(byte[] data)
+        {
+            Write(data);
         }
 
         #endregion

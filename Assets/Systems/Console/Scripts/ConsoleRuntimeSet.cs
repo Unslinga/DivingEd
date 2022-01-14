@@ -24,10 +24,9 @@ namespace Console
         #region Properties
 
         #endregion
-        
+
         #region Public Methods
 
         #endregion
-        
-    }    
+    }
 }

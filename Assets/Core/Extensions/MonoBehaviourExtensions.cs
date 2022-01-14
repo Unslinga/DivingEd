@@ -23,9 +23,9 @@ namespace Core
             string info = Environment.StackTrace.
                 Split('\\').Reverse().First().Trim();
 
-            if (critical)
+            if (entity == null)
             {
-                if (entity == null)
+                if (critical)
                 {
                     Debug.LogError($"Entity [{info}] cannot be null!");
                     Quit(monoBehaviour);

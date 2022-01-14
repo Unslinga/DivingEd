@@ -5,28 +5,21 @@
 // Aahed Diyab, Olav Pete
 // ----------------------------------------------------------------------------
 
-using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Networking;
 
 namespace Core
 {
-    [CreateAssetMenu(menuName = "Networking/NetworkClientRuntimeSet", order = 2)]
-    public class NetworkClientsRuntimeSet : RuntimeSet<NetworkClient>
+    [CreateAssetMenu(menuName = "Variables/string", order = 0)]
+    public class StringVariable : ScriptableObject
     {
-        #region Fields
+        public string Value;
 
-        #endregion
-
-        #region Properties
-
-        #endregion
-
-        #region Public Methods
-
-        #endregion
+        public static implicit operator string(StringVariable variable)
+        {
+            return variable.Value;
+        }
     }
 }

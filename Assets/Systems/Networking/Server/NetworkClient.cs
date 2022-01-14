@@ -32,6 +32,9 @@ namespace Networking
         public NetworkEventsNamedSet NetworkEvents { get; set; }
 
         [field: SerializeField]
+        public StringReference ServerName { get; set; }
+
+        [field: SerializeField]
         public string Name { get; set; }
 
         public TcpClient Client { get; private set; } = null;
@@ -54,8 +57,8 @@ namespace Networking
 
             stream.BeginRead(receiveBuffer, 0, receiveBuffer.Length, receiveCallback, null);
 
-            Debug.Log("NetworkClient: Sending Welcome Packet");
-
+            Debug.Log("Server: Sending Welcome Packet");
+            NetworkEvents["Server.Welcome"]?.Send(ServerName.Value);
         }
 
         #endregion

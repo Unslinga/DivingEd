@@ -13,6 +13,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Networking
 {
@@ -41,6 +42,11 @@ namespace Networking
 
         #region Public Methods
 
+        public void OnTest(object[] data)
+        {
+
+        }
+
         #endregion
 
         #region Private Methods
@@ -54,9 +60,10 @@ namespace Networking
             udpListener = new UdpClient(ServerPort);
             udpListener.BeginReceive(UDPReceibeCallback, null);
 
-            Debug.Log($"Server started on [{ServerPort}]");
+            Debug.Log($"Server started on [{ServerPort.Value}]");
 
-            NetworkEventsSet["ServerStarted"]?.Raise();
+            //NetworkEventsSet["Server.Started"]?.Raise();
+            NetworkEventsSet["Server.Welcome"].Send(("Test", 2));
         }
 
         private void TCPConnectionCallback(IAsyncResult result)
@@ -91,20 +98,21 @@ namespace Networking
         private void Awake()
         {
             this.Instance<Server>();
-            
+
             this.CheckNull(NetworkClientPrefab, true);
-            this.CheckNull(NetworkEventsSet, true);
             this.CheckNull(NetworkClientsSet, true);
+
+            this.CheckNull(NetworkEventsSet, true);
+            NetworkEventsSet.Initialize();
 
             ServerStart();
         }
 
         private void Update()
         {
-            
+
         }
 
         #endregion
-        
-    } 
+    }
 }
