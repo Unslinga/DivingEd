@@ -13,74 +13,92 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Networking
 {
-    [RequireComponent(typeof(NetworkEvents))]
     public class Server : MonoBehaviour
     {
         #region Fields
         private TcpListener tcpListener = null;
-        private UdpClient udpListener = null;
         #endregion
 
         #region Properties
-        public NetworkEvents Events { get; set; }
 
         [field: SerializeField]
-        public int ServerPort { get; set; } = 55676;
+        public IntReference ServerPort { get; set; }
 
         [field: SerializeField]
-        public NetworkClientsRuntimeSet NetworkClients { get; set; }
+        public NetworkEventsNamedSet NetworkEventSet { get; set; }
+
+        [field: SerializeField]
+        public NetworkClientsRuntimeSet NetworkClientSet { get; set; }
+
+        [field: Header("Server Info")]
+        [field: SerializeField]
+        public StringReference SessionName { get; set; }
+
         #endregion
 
-        #region Public Methods
+        #region Network Methods
+
+        public void OnInfo(Packet payload, object[] data)
+        {
+            payload.Write(SessionName.Value);
+        }
 
         #endregion
 
         #region Private Methods
-        private void StartServer()
+
+        private void ServerStart()
         {
             tcpListener = new TcpListener(IPAddress.Any, ServerPort);
             tcpListener.Start();
             tcpListener.BeginAcceptTcpClient(new AsyncCallback(TCPConnectionCallback), null);
 
-            udpListener = new UdpClient(ServerPort);
-            udpListener.BeginReceive(UDPReceibeCallback, null);
-
-            Debug.Log($"Server started on [{ServerPort}]");
-
-            Events.ServerStarted.Raise();
+            Debug.Log($"Server started on [{ServerPort.Value}]");
         }
 
         private void TCPConnectionCallback(IAsyncResult result)
         {
+            try
+            {
+                TcpClient client = tcpListener.EndAcceptTcpClient(result);
+                tcpListener.BeginAcceptTcpClient(new AsyncCallback(TCPConnectionCallback), null);
 
+                Debug.Log("Server: Incoming Connection");
+
+                using (NetworkClient networkClient = new NetworkClient(this, client))
+                {
+                    NetworkClientSet.GenerateUniqueID(networkClient);
+
+                    NetworkClientSet.Add(networkClient);
+
+
+                    networkClient.CreatePacket(NetworkEventSet["Server.Info"]);
+                }
+            }
+            catch (NullReferenceException) { }
+            catch (ObjectDisposedException) { }
         }
 
-        private void UDPReceibeCallback(IAsyncResult ar)
-        {
-            throw new NotImplementedException();
-        }
         #endregion
 
         #region Unity Methods
+
         private void Awake()
         {
             this.Instance<Server>();
 
-            if (NetworkClients == null)
-            {
-                Debug.LogError($"NetworkClients RuntimeSet not set in inspector in [{gameObject.name}]");
-                this.Quit();
-            }
+            this.CheckNull(NetworkEventSet, true);
+            NetworkEventSet.ValidateList();
+
+            this.CheckNull(NetworkClientSet, true);
+
+            ServerStart();
         }
 
-        private void Update()
-        {
-            
-        }
         #endregion
-        
-    } 
+    }
 }
