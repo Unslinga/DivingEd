@@ -18,6 +18,8 @@ namespace Core
         public BaseEvent Event { get; set; }
         [field: SerializeField]
         public UnityEvent Response { get; set; }
+        [field: SerializeField]
+        public UnityEvent<object> ParameterResponse { get; set; }
 
         private void OnEnable()
         {
@@ -32,6 +34,11 @@ namespace Core
         public void OnEventRaised()
         {
             Response?.Invoke();
+        }
+
+        public void OnEventRaised<T>(T value)
+        {
+            ParameterResponse?.Invoke(value);
         }
     } 
 }
