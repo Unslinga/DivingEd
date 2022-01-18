@@ -9,7 +9,7 @@
 - [ ] Itirasjondeling (prototype definering)
 - [ ] Prioritet organisering
 - [ ] Hvorfor trenges dykk. sim.
-- [ ] 
+- [ ] Statusdiagram (progressvisiualisering)
 - [ ] 
 - [ ] 
 - [ ] 
