@@ -6,6 +6,7 @@
 // ----------------------------------------------------------------------------
 
 using Core;
+using Networking;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace Core
 {
     [Serializable]
     [CreateAssetMenu(menuName = "Networking/NetworkEvent", order = 0)]
-    public class NetworkEvent : BaseEvent, INetworkEvent
+    public class NetworkEvent : BaseEvent
     {
         #region Properties
 
@@ -25,7 +26,7 @@ namespace Core
         public int ID { get; set; }
 
         [field: SerializeField]
-        public UnityEvent<object[]> SendMethod { get; set; }
+        public UnityAction<Packet, object[]> SendMethod { get; set; }
 
         #endregion
     }

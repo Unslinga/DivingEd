@@ -9,12 +9,14 @@ using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Sockets;
 using UnityEngine;
 
 namespace Networking
 {
-    public class NetworkClient : MonoBehaviour
+    [Serializable]
+    public class NetworkClient : IDisposable
     {
         public const int BUFFER_SIZE = 4096;
 
@@ -22,20 +24,54 @@ namespace Networking
         
         private NetworkStream stream;
         private byte[] receiveBuffer;
-        private Packet receivedPacket;
+
+        #endregion
+
+        #region Constructor
+
+        public NetworkClient(Server server, TcpClient client)
+        {
+            Server = server;
+            Client = client;
+
+            Client.ReceiveBufferSize = BUFFER_SIZE;
+            Client.SendBufferSize = BUFFER_SIZE;
+
+            receiveBuffer = new byte[BUFFER_SIZE];
+
+            stream = client.GetStream();
+
+            stream.BeginRead(receiveBuffer, 0, BUFFER_SIZE, TCPReceiveCallback, null);
+        }
+
+        ~NetworkClient()
+        {
+            if (Client != null)
+            {
+                Client.Close();
+            }
+
+            stream = null;
+            receiveBuffer = null;
+            Client = null;
+
+            Dispose();
+        }
 
         #endregion
 
         #region Properties
-
-        [field: SerializeField]
-        public NetworkEventsNamedSet NetworkEvents { get; set; }
-
-        [field: SerializeField]
-        public StringReference ServerName { get; set; }
-
+        
+        [field: Header("Client Info")]
+        [field: ReadOnlyField]
         [field: SerializeField]
         public string Name { get; set; }
+
+        [field: ReadOnlyField]
+        [field: SerializeField]
+        public string ID { get; set; }
+
+        public Server Server { get; set; }
 
         public TcpClient Client { get; private set; } = null;
 
@@ -43,48 +79,58 @@ namespace Networking
 
         #region Public Methods
 
-        public void Connect(TcpClient client)
+        public void Dispose()
         {
-            Client = client;
+            Server.NetworkClientSet.Remove(this);
+        }
 
-            Client.ReceiveBufferSize = BUFFER_SIZE;
-            Client.SendBufferSize = BUFFER_SIZE;
-
-            stream = Client.GetStream();
-
-            receivedPacket = new Packet();
-            receiveBuffer = new byte[BUFFER_SIZE];
-
-            stream.BeginRead(receiveBuffer, 0, receiveBuffer.Length, receiveCallback, null);
-
-            Debug.Log("Server: Sending Welcome Packet");
-            NetworkEvents["Server.Welcome"]?.Send(ServerName.Value);
+        public void SendData(Packet packet)
+        {
+            try
+            {
+                stream.BeginWrite(packet.Buffer, 0, packet.Length, null, null);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Network Client [{ID}, {Name}]: {e}");
+                Dispose();
+            }
         }
 
         #endregion
 
         #region Private Methods
 
-        private void receiveCallback(IAsyncResult ar)
+        private void TCPReceiveCallback(IAsyncResult result)
         {
-            throw new NotImplementedException();
+            try
+            {
+                int length = stream.EndRead(result);
+
+                if (length <= 0)
+                {
+                    Dispose();
+                    return;
+                }
+
+                stream.BeginRead(receiveBuffer, 0, BUFFER_SIZE, TCPReceiveCallback, null);
+
+                byte[] data = new byte[length];
+
+                Array.Copy(receiveBuffer, data, length);
+
+                using (Packet packet = new Packet(data))
+                {
+                    Server.NetworkEventSet[packet.ReadInt()].Raise((ID, packet));
+                }
+
+            }
+            catch (Exception)
+            {
+                Dispose();
+            }
         }
 
         #endregion
-
-        #region Unity Methods
-
-        private void Start()
-        {
-            
-        }
-
-        private void Update()
-        {
-            
-        }
-
-        #endregion
-
-    } 
+    }
 }

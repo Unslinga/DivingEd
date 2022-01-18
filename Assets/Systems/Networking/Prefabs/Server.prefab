@@ -47,6 +47,9 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: d5bc6ebd612e5e74e9942341ad774696, type: 2}
-  <NetworkClientPrefab>k__BackingField: {fileID: 5030938227670685564, guid: 8104ef62e9c715648872a75f6b32e227, type: 3}
-  <NetworkEventsSet>k__BackingField: {fileID: 11400000, guid: 59e1abb7042ee08429c68f92acb29b19, type: 2}
-  <NetworkClientsSet>k__BackingField: {fileID: 11400000, guid: 4796d00b041eeb14981c717bcd6a0272, type: 2}
+  <NetworkEventSet>k__BackingField: {fileID: 11400000, guid: 59e1abb7042ee08429c68f92acb29b19, type: 2}
+  <NetworkClientSet>k__BackingField: {fileID: 11400000, guid: 4796d00b041eeb14981c717bcd6a0272, type: 2}
+  <SessionName>k__BackingField:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: d73b002756a0ea14f9cf1dab70717544, type: 2}

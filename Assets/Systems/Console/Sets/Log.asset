@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Log
   m_EditorClassIdentifier: 
   <Items>k__BackingField:
-  - Hello
-  - World
+  - Test

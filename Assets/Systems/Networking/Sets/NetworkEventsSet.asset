@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: NetworkEventsSet
   m_EditorClassIdentifier: 
   <Items>k__BackingField:
+  - {fileID: 11400000, guid: 2b58eb1457e8b0647b9f39f4c1902ad5, type: 2}
   - {fileID: 11400000, guid: 7cfcd67267a07f746a3333da4942a511, type: 2}
-  - {fileID: 11400000, guid: 3c8584a2daad02841ae91f2f6b6f68fd, type: 2}
