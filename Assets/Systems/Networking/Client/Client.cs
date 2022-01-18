@@ -22,7 +22,6 @@ namespace Networking
 
         private NetworkStream stream;
         private byte[] receiveBuffer;
-        private Packet receivedPacket;
 
         #endregion
 
@@ -45,6 +44,10 @@ namespace Networking
         [field: ReadOnlyField]
         [field: SerializeField]
         public bool Connected { get; private set; }
+
+        [field: ReadOnlyField]
+        [field: SerializeField]
+        public string ID { get; private set; }
 
         public TcpClient NetworkClient { get; set; }
 
@@ -103,50 +106,8 @@ namespace Networking
             }
 
             stream = NetworkClient.GetStream();
-            receivedPacket = new Packet();
 
             stream.BeginRead(receiveBuffer, 0, BUFFER_SIZE, ReceiveCallback, null);
-        }
-
-        private bool HandlePacket(byte[] data)
-        {
-            int length = 0;
-
-            receivedPacket.SetData(data);
-
-            if (receivedPacket.UnreadLength >= 4)
-            {
-                length = receivedPacket.ReadInt();
-
-                if (length <= 0)
-                    return true;
-            }
-
-            while (length > 0 && length <= receivedPacket.UnreadLength)
-            {
-                byte[] packetData = receivedPacket.ReadBytes(length);
-                
-                using (Packet packet = new Packet(packetData))
-                {
-                    int packetId = packet.ReadInt();
-                    NetworkEvents[packetId]?.Raise(packet);
-                }
-
-                length = 0;
-
-                if (receivedPacket.UnreadLength >= 4)
-                {
-                    length = receivedPacket.ReadInt();
-
-                    if (length <= 0)
-                        return true;
-                }
-            }
-
-            if (length <= 1)
-                return true;
-
-            return false;
         }
 
         private void ReceiveCallback(IAsyncResult result)
@@ -164,7 +125,10 @@ namespace Networking
                 byte[] data = new byte[length];
                 Array.Copy(receiveBuffer, data, length);
 
-                receivedPacket.Reset(HandlePacket(data));
+                using (Packet packet = new Packet(data))
+                {
+                    NetworkEvents[packet.ReadInt()].Raise((ID, packet));
+                }
             }
             catch (Exception)
             {
@@ -191,7 +155,7 @@ namespace Networking
             this.CheckNull(ConnectIP.Variable, false);
             this.CheckNull(PlayerName.Variable, false);
 
-            NetworkEvents["Server.Welcome"].CreateListener(gameObject, OnWelcome);
+            NetworkEvents["Server.Info"].CreateListener(gameObject, OnWelcome);
         }
 
         private void Update()

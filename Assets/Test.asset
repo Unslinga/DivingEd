@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83fa006951c07c04985b792c67541215, type: 3}
-  m_Name: Server.Test
+  m_Script: {fileID: 11500000, guid: f9d596c41fed1c04ca8c2b661e302be8, type: 3}
+  m_Name: Test
   m_EditorClassIdentifier: 
-  <ID>k__BackingField: 0
-  <SendMethod>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
+  Value: Test

@@ -11,6 +11,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Networking;
+using System.Linq;
 
 namespace Core
 {
@@ -22,7 +23,20 @@ namespace Core
         #endregion
 
         #region Properties
+        public NetworkClient this[string id]
+        {
+            get
+            {
+                var client = Items?.SingleOrDefault(c => c.ID == id);
 
+                if (client == null || client == default)
+                {
+                    Debug.Log($"[{id}] not found in {this.name}");
+                }
+
+                return client;
+            }
+        }
         #endregion
 
         #region Public Methods

@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc5f3c7747fcbd546910c08efa699c1e, type: 3}
   m_Name: NetworkClientsSet
   m_EditorClassIdentifier: 
-  <Items>k__BackingField: []
+  <Items>k__BackingField:
+  - <Name>k__BackingField: 
+    <ID>k__BackingField: 

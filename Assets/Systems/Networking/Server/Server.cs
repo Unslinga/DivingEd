@@ -21,7 +21,6 @@ namespace Networking
     {
         #region Fields
         private TcpListener tcpListener = null;
-        private UdpClient udpListener = null;
         #endregion
 
         #region Properties
@@ -30,21 +29,22 @@ namespace Networking
         public IntReference ServerPort { get; set; }
 
         [field: SerializeField]
-        public GameObject NetworkClientPrefab { get; set; }
+        public NetworkEventsNamedSet NetworkEventSet { get; set; }
 
         [field: SerializeField]
-        public NetworkEventsNamedSet NetworkEventsSet { get; set; }
+        public NetworkClientsRuntimeSet NetworkClientSet { get; set; }
 
+        [field: Header("Server Info")]
         [field: SerializeField]
-        public NetworkClientsRuntimeSet NetworkClientsSet { get; set; }
+        public StringReference SessionName { get; set; }
 
         #endregion
 
-        #region Public Methods
+        #region Network Methods
 
-        public void OnTest(object[] data)
+        public void OnInfo(Packet payload, object[] data)
         {
-
+            payload.Write(SessionName.Value);
         }
 
         #endregion
@@ -57,13 +57,7 @@ namespace Networking
             tcpListener.Start();
             tcpListener.BeginAcceptTcpClient(new AsyncCallback(TCPConnectionCallback), null);
 
-            udpListener = new UdpClient(ServerPort);
-            udpListener.BeginReceive(UDPReceibeCallback, null);
-
             Debug.Log($"Server started on [{ServerPort.Value}]");
-
-            //NetworkEventsSet["Server.Started"]?.Raise();
-            NetworkEventsSet["Server.Welcome"].Send(("Test", 2));
         }
 
         private void TCPConnectionCallback(IAsyncResult result)
@@ -75,20 +69,18 @@ namespace Networking
 
                 Debug.Log("Server: Incoming Connection");
 
-                var clientObject = Instantiate(NetworkClientPrefab, transform);
-                var networkClient = clientObject.GetComponent<NetworkClient>();
+                using (NetworkClient networkClient = new NetworkClient(this, client))
+                {
+                    NetworkClientSet.GenerateUniqueID(networkClient);
 
-                this.CheckNull(networkClient, true);
+                    NetworkClientSet.Add(networkClient);
 
-                networkClient.Connect(client);
+
+                    networkClient.CreatePacket(NetworkEventSet["Server.Info"]);
+                }
             }
             catch (NullReferenceException) { }
             catch (ObjectDisposedException) { }
-        }
-
-        private void UDPReceibeCallback(IAsyncResult ar)
-        {
-
         }
 
         #endregion
@@ -99,18 +91,12 @@ namespace Networking
         {
             this.Instance<Server>();
 
-            this.CheckNull(NetworkClientPrefab, true);
-            this.CheckNull(NetworkClientsSet, true);
+            this.CheckNull(NetworkEventSet, true);
+            NetworkEventSet.ValidateList();
 
-            this.CheckNull(NetworkEventsSet, true);
-            NetworkEventsSet.Initialize();
+            this.CheckNull(NetworkClientSet, true);
 
             ServerStart();
-        }
-
-        private void Update()
-        {
-
         }
 
         #endregion

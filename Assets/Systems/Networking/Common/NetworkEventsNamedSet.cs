@@ -19,23 +19,25 @@ namespace Core
     {
         #region Public Methods
 
-        public NetworkEvent this[int index]
-        {
-            get
-            {
-                if (index >= Items.Count)
-                    return null;
+        #endregion
 
-                return Items[index];
-            }
-        }
+        #region Private Methods
 
-        public void Initialize()
+        public void ValidateList()
         {
-            for (int i = 0; i < Items.Count; i++)
+            for (int i = Items.Count - 1; i >= 0; i--)
             {
                 Items[i].ID = i;
             }
+        }
+
+        #endregion
+
+        #region Unity Methods
+
+        public void OnValidate()
+        {
+            ValidateList();
         }
 
         #endregion

@@ -14,6 +14,7 @@ using UnityEngine;
 
 namespace Networking
 {
+    [Serializable]
     public class Packet : IDisposable
     {
         #region Fields
@@ -33,7 +34,7 @@ namespace Networking
         {
             Initialize();
 
-            SetData(data);
+            Write(data);
         }
 
         public Packet(int id)
@@ -47,6 +48,8 @@ namespace Networking
 
         #region Properties
 
+        public byte[] Buffer { get { return buffer.ToArray(); } }
+
         public int Length { get { return buffer.Count; } }
 
         public int UnreadLength { get { return Length - readPos; } }
@@ -59,23 +62,6 @@ namespace Networking
         {
             Dispose(true);
             GC.SuppressFinalize(this);
-        }
-
-        public void Reset(bool shouldReset = true)
-        {
-            if (shouldReset)
-            {
-                buffer.Clear();
-                readPos = 0;
-                return;
-            }
-
-            readPos -= 4;
-        }
-
-        public void SetData(byte[] data)
-        {
-            Write(data);
         }
 
         #endregion

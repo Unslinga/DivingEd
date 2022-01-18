@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57e26504e53efdb46878e43c0783833d, type: 3}
-  m_Name: PacketTypesSet
+  m_Script: {fileID: 11500000, guid: f9d596c41fed1c04ca8c2b661e302be8, type: 3}
+  m_Name: SessionName
   m_EditorClassIdentifier: 
-  <Items>k__BackingField:
-  - {fileID: 11400000, guid: 2d156e8171d70a04ca3eec5511a28dd0, type: 2}
+  Value: Testing

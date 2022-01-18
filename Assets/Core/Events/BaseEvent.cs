@@ -20,6 +20,8 @@ namespace Core
         #endregion
 
         #region Properties
+        [field: ReadOnlyField]
+        [field: SerializeField]
         public string Name { get; private set; }
         #endregion
 
@@ -51,5 +53,13 @@ namespace Core
         }
         #endregion
 
-    }    
+        #region Unity Methods
+
+        private void OnValidate()
+        {
+            Name = name;
+        }
+
+        #endregion
+    }
 }
