@@ -49,7 +49,7 @@ namespace Console
 
         private void Update()
         {
-            Log.text = FetchText();
+            //Log.text = FetchText();
         }
         #endregion
         
