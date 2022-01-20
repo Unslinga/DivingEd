@@ -1,7 +1,7 @@
 # TODO:
 
 ### 11.01
-- [ ] Møte med oppdragsgiver, veileder TTB og veileder HVL.
+- [x] Møte med oppdragsgiver, veileder TTB og veileder HVL.
 - [x] arbeidsplass? utsty?
 - [ ] Løsning til prosjekthåndboken og bachelorrapport?
 ### 13.01
