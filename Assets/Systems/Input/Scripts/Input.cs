@@ -22,6 +22,9 @@ namespace Input
 
         #region Properties
 
+        public Gamepad Gamepad { get; set; }
+
+
         #endregion
 
         #region Public Methods
