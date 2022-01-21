@@ -10,7 +10,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Input
 {
@@ -21,10 +20,7 @@ namespace Input
         #endregion
 
         #region Properties
-
-        public Gamepad Gamepad { get; set; }
-
-
+                
         #endregion
 
         #region Public Methods
@@ -38,7 +34,7 @@ namespace Input
         #region Unity Methods
         private void Start()
         {
-            
+
         }
 
         private void Update()
