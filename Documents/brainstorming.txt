@@ -32,8 +32,9 @@ Systemer:
     Simulator
         Divers
         Panel
-        Airflow
-        Depth
+        Gauge
+            Airflow
+            Depth
         Video/Audio
         Voice Recognition
 
