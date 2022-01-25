@@ -8,3 +8,6 @@
 - Olav Pete
 
 ### Oversikt:
+- Snakket gjennom prosjektet, ideer, milestones osv.
+- Forklare rollen til Turbo Tape Games.
+- Diskutert en teknisk oppdeling av programmet i systemer.
