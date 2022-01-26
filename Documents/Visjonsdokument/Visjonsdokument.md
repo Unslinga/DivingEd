@@ -33,7 +33,7 @@
 ### REVISJONSHISTORIE
 
 | Dato | Versjon | Beskrivelse | Forfatter |
-| --- | ----------- | ----------- |  ----------- | 
+| --- | --- | --- |  --- | 
 | 25/01/2022 | 1.0 | Første utkast | Olav Pete |
 			
 <div style="page-break-after: always;"></div>
@@ -49,42 +49,44 @@
 ## 2	SAMMENDRAG PROBLEM OG PRODUKT
 ### 2.1	Problemsammendrag
 
-Problem med	beskriv problemet med dagens system
-berører	hvilke interessenter som e r berørt
-som resultatet av dette	de viktigste problemene, f.eks feil, mangler, ineffektivitet etc.
-en vellykket løsning vil	oversikt over fordelene med et nytt system
+I dagens utdanning av Dykkerledere er det kun fysisk trening på dykkerpostene som er tilgjengelig, dette medfører at for å få trening med dykkerposten så er man nødt til å ha dykkere i vannet som da utsetter seg selv for potensielle farer (Det er selvfølgelig en del av dykkerutdanningen å utdanne dykkere også, men man kan ikke se bort ifra at det medfører en viss risiko). Hovedsakelig vil dette være en løsning for dykkerledere  til å kunne øve seg på å bruke panelet risikoene som medfølger dykking. Dette åpner opp for at flere kan ta utdanningen som dykkerleder, og at man kan øve på scenarioer som man ellers ikke kunne grunnet risikoen til dykkerne. 
 
 ### 2.2	Produktsammendrag
 
-For	kunden
+<span style="color:red">For	kunden
 som	har behov for----
 produktet navngitt	er (navn på et datasystem som utvikles)
 som	de viktigste fordelene med produktet
 I motsetning til	dagens system eller konkurrenter
-Har vårt produkt	de viktigste forskjellene
+Har vårt produkt	de viktigste forskjellene</span>
+
+For Dykkerutdanningen ved HVL som har et behov for dette systemet i utdanningen av dykkerledere, vil DivingEd være et godt system for å skille utdanningen av dykkerlederne fra risikoen det er å ha fysiske dykkere i vannet. I motsetning til [Systemet som eksisterer i dag (Australia)] har vårt produkt en mye lavere kostnad, er utviklet for å kunne adapteres i VR og for å utvikles til å kunne simulere alle aspekter ved dykker og dykkerleder-utdanning.
 
 <div style="page-break-after: always;"></div>
 
 ## 3	BESKRIVELSE AV INTERESSENTER OG BRUKERE
 ### 3.1	Oppsummering interessenter
 
-Navn	Utdypende beskrivelse	Rolle under utviklingen
-	Hva og hvem representerer denne interessenten, hvorfor er han/hun en interessent.	hvilken rolle vil han/hun ha under utviklingen av systemet?
+| Navn | Utdypende beskrivelse | Rolle under utviklingen |
+| --- | --- | --- |
+| Dykkerutdanningen ved HVL |  |  |
 
 ### 3.2	Oppsummering brukere
 
-Navn	Utdypende beskrivelse	Rolle under utviklingen	Representert av
-	Forklar hvilken rolle denne brukeren spiller i dagens system eventuell annen viktig informasjon om denne brukeren.	hvilken rolle vil han ha under utviklingen av systemet?	seg selv eller en annen bruker eller interessent?
+| Navn | Utdypende beskrivelse | Rolle under utviklingen | Representert av |
+| --- | --- | --- | --- |
+| Dykkerutdanningen ved HVL |  |  |
 
 ### 3.3	Brukermiljøet
 
-Beskriv det som er vesentlig med hensyn på de omgivelsene systemet skal passe inn i. Det kan være arbeidsprosesser, andre systemer og dagens maskinvare. Ikke beskriv krav til ny maskinvare. Det beskrives andre steder.
+<span style="color:red">Beskriv det som er vesentlig med hensyn på de omgivelsene systemet skal passe inn i. Det kan være arbeidsprosesser, andre systemer og dagens maskinvare. Ikke beskriv krav til ny maskinvare. Det beskrives andre steder.</span>
+
+Systemet skal brukes i dagens utdanning av Dykkerledere og brukes i undervisningen av dykkerlederlærerne og dykkerlederstudentene. Systemet skal disponeres av lærerne og vil studentene vil få utdelt "brukernøkler" til å kunne bruke klientversjonen av applikasjonen (usikker på nødvendigheten). 
 
 ### 3.4	Sammendrag av brukernes behov
 
 | Behov | Prioritet | Påvirker | Dagens | løsning | Foreslått | løsning |		
-<behov 1>	1,2,3,…	<hvem>		
-<behov 2>	1,2,3,…	<hvem>		
+| --- | --- | --- | --- | --- | --- | --- |
 				
 
 ### 3.5	Alternativer til vårt produkt
@@ -94,21 +96,21 @@ Beskriv det som er vesentlig med hensyn på de omgivelsene systemet skal passe i
 ## 4	PRODUKTOVERSIKT
 ### 4.1	Produktets rolle i brukermiljøet
 
-Skisse av produktet med hensyn til omgivelsene, ta utgangspunkt i brukermiljøet (3.3)
+<span style="color:red">Skisse av produktet med hensyn til omgivelsene, ta utgangspunkt i brukermiljøet (3.3)</span>
 
 ### 4.2	Forutsetninger og avhengigheter
 
-Alle viktige forutsetninger og avhengigheter, som hvis de endres, vil endre noe som er skrevet i dette dokumentet.
+<span style="color:red">Alle viktige forutsetninger og avhengigheter, som hvis de endres, vil endre noe som er skrevet i dette dokumentet.</span>
 
 <div style="page-break-after: always;"></div>
 
 ## 5	PRODUKTETS FUNKSJONELLE EGENSKAPER
 
-En liste over funksjonelle egenskaper som produktet må ha for å løse problemene beskrevet i 3.4. NB! Det vil ikke nødvendigvis være et en-til-en forhold. Malen sier at mellom 25 og 99 funksjonelle egenskaper (funksjoner) er passe og at disse må være beskrevet såpass at de er et utgangspunkt for å utvikle dem. 
+<span style="color:red">En liste over funksjonelle egenskaper som produktet må ha for å løse problemene beskrevet i 3.4. NB! Det vil ikke nødvendigvis være et en-til-en forhold. Malen sier at mellom 25 og 99 funksjonelle egenskaper (funksjoner) er passe og at disse må være beskrevet såpass at de er et utgangspunkt for å utvikle dem. </span>
 
 ## 6	IKKE-FUNKSJONELLE EGENSKAPER OG ANDRE KRAV
 
-Ikke-funksjonelle produktegenskaper og andre krav til produktet, som krav til bruk av standarder, teknologi etc.
+<span style="color:red">Ikke-funksjonelle produktegenskaper og andre krav til produktet, som krav til bruk av standarder, teknologi etc.</span>
 
 ## 7	REFERANSER
 
