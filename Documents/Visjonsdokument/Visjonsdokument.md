@@ -1,16 +1,14 @@
-# Prosjektnavn
-## Visjonsdokument
+# DivingEd
 
-## Versjon 1.0
+<br><br><br><br><br><br>
 
+## <center>Visjonsdokument</center>
 
-### REVISJONSHISTORIE
+<br><br><br><br>
 
-| Dato | Versjon | Beskrivelse | Forfatter |
-| --- | ----------- | ----------- |  ----------- | 
-| 25/01/2022 | 1.0 | Første utkast | Olav Pete |
+### <center>Versjon 1.0</center>
 			
-
+<div style="page-break-after: always;"></div>
 
 ## INNHOLDSFORTEGNELSE 
 1.	INNLEDNING
@@ -30,10 +28,23 @@
 6.	IKKE-FUNKSJONELLE EGENSKAPER OG ANDRE KRAV
 7.	REFERANSER
 
+<br><br><br><br>
+
+### REVISJONSHISTORIE
+
+| Dato | Versjon | Beskrivelse | Forfatter |
+| --- | ----------- | ----------- |  ----------- | 
+| 25/01/2022 | 1.0 | Første utkast | Olav Pete |
+			
+<div style="page-break-after: always;"></div>
+
  
 ## 1	INNLEDNING
 
-Det du har behov for å si om hensikten med dokumentet og innledningsvis om. prosjektet
+<span style="color:red">Det du har behov for å si om hensikten med dokumentet og innledningsvis om. prosjektet</span>.
+
+
+<div style="page-break-after: always;"></div>
 
 ## 2	SAMMENDRAG PROBLEM OG PRODUKT
 ### 2.1	Problemsammendrag
@@ -52,6 +63,8 @@ som	de viktigste fordelene med produktet
 I motsetning til	dagens system eller konkurrenter
 Har vårt produkt	de viktigste forskjellene
 
+<div style="page-break-after: always;"></div>
+
 ## 3	BESKRIVELSE AV INTERESSENTER OG BRUKERE
 ### 3.1	Oppsummering interessenter
 
@@ -69,12 +82,14 @@ Beskriv det som er vesentlig med hensyn på de omgivelsene systemet skal passe i
 
 ### 3.4	Sammendrag av brukernes behov
 
-Behov	Prioritet	Påvirker	Dagens løsning	Foreslått løsning
+| Behov | Prioritet | Påvirker | Dagens | løsning | Foreslått | løsning |		
 <behov 1>	1,2,3,…	<hvem>		
 <behov 2>	1,2,3,…	<hvem>		
 				
 
 ### 3.5	Alternativer til vårt produkt
+
+<div style="page-break-after: always;"></div>
 
 ## 4	PRODUKTOVERSIKT
 ### 4.1	Produktets rolle i brukermiljøet
@@ -84,6 +99,8 @@ Skisse av produktet med hensyn til omgivelsene, ta utgangspunkt i brukermiljøet
 ### 4.2	Forutsetninger og avhengigheter
 
 Alle viktige forutsetninger og avhengigheter, som hvis de endres, vil endre noe som er skrevet i dette dokumentet.
+
+<div style="page-break-after: always;"></div>
 
 ## 5	PRODUKTETS FUNKSJONELLE EGENSKAPER
 
