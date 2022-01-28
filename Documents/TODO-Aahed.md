@@ -24,3 +24,6 @@
 ### 21.01
 - [ ] OA-5 : Venter på svar fra intern veileder
 - [ ] OA 6 : utsettet til neste uke
+### 25.01
+- [ ] Timeliste (Olav?)
+- [ ] 
