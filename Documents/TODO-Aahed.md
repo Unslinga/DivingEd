@@ -20,7 +20,10 @@
 - [ ] basic panel
 ### 20.01
 - [x] OA-4 (Aahed)
-- [x] OA-5
+- [ ] OA-5
 ### 21.01
 - [ ] OA-5 : Venter på svar fra intern veileder
 - [ ] OA 6 : utsettet til neste uke
+### 25.01
+- [ ] Timeliste (Olav?)
+- [ ] 
