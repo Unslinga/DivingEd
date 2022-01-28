@@ -17,6 +17,9 @@ namespace Input
     {
         #region Fields
 
+        [field: SerializeField]
+        public InputEvent InputEvent { get; set; }
+
         #endregion
 
         #region Properties
@@ -32,15 +35,22 @@ namespace Input
         #endregion
 
         #region Unity Methods
-        private void Start()
+        private void Awake()
         {
 
+        }
+        
+        private void Start()
+        {
+            InputEvent.Raise("Pressed");
         }
 
         private void Update()
         {
             
         }
+
+
         #endregion
         
     } 
