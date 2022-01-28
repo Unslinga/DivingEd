@@ -32,8 +32,8 @@ gantt
 
     section Systems
     Console                                             :active, co, 2022-01-10, 2022-02-15
-    Character Ctrl.                                     :active, ch, 2022-01-17, 10d
-    Input Ctrl.                                         :active, in, 2022-01-17, 10d
+    Character Ctrl.                                     :active, ch, 2022-01-17, 2022-02-15
+    Input Ctrl.                                         :active, in, 2022-01-17, 2022-02-15
     Simulation                                          : si, 2022-02-01, 2022-03-15
     
     MainPanel                                           :active, mp, 2022-01-28, 2022-02-10

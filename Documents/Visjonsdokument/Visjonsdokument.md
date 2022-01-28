@@ -41,10 +41,8 @@
  
 ## 1	INNLEDNING
 
-<span style="color:red">Det du har behov for å si om hensikten med dokumentet og innledningsvis om. prosjektet</span>.
-
-
-<div style="page-break-after: always;"></div>
+<span style="color:red">Det du har behov for å si om hensikten med dokumentet og innledningsvis om. prosjektet.</span>
+Prosjektet ble startet etter at vi ble invitert til Dykkerutdanningen på HVL for å diskutere mulighet 
 
 ## 2	SAMMENDRAG PROBLEM OG PRODUKT
 ### 2.1	Problemsammendrag
@@ -81,15 +79,18 @@ For Dykkerutdanningen ved HVL som har et behov for dette systemet i utdanningen 
 
 <span style="color:red">Beskriv det som er vesentlig med hensyn på de omgivelsene systemet skal passe inn i. Det kan være arbeidsprosesser, andre systemer og dagens maskinvare. Ikke beskriv krav til ny maskinvare. Det beskrives andre steder.</span>
 
-Systemet skal brukes i dagens utdanning av Dykkerledere og brukes i undervisningen av dykkerlederlærerne og dykkerlederstudentene. Systemet skal disponeres av lærerne og vil studentene vil få utdelt "brukernøkler" til å kunne bruke klientversjonen av applikasjonen (usikker på nødvendigheten). 
+Systemet skal brukes i dagens utdanning av Dykkerledere og brukes i undervisningen av dykkerlederlærerne og dykkerlederstudentene. 
+Studentene skal kunne monitorere en simulering av en eller flere dykkere slik at 
 
 ### 3.4	Sammendrag av brukernes behov
 
-| Behov | Prioritet | Påvirker | Dagens | løsning | Foreslått | løsning |		
-| --- | --- | --- | --- | --- | --- | --- |
+| Behov | Prioritet | Påvirker | Dagens løsning | Foreslått løsning |		
+| --- | --- | --- | --- | --- |
 				
 
 ### 3.5	Alternativer til vårt produkt
+
+Vi er blitt forklart at det eksisterer en fysisk simulator i Australia(? må ha mer informasjon om dette fra dykkerutdanningen.), dette systemet vet vi koster en god del penger.
 
 <div style="page-break-after: always;"></div>
 
@@ -98,15 +99,22 @@ Systemet skal brukes i dagens utdanning av Dykkerledere og brukes i undervisning
 
 <span style="color:red">Skisse av produktet med hensyn til omgivelsene, ta utgangspunkt i brukermiljøet (3.3)</span>
 
+DivingEd skal brukes som utdanningsverktøy og dekke behovet for trening av dykkerlederne
+
 ### 4.2	Forutsetninger og avhengigheter
 
 <span style="color:red">Alle viktige forutsetninger og avhengigheter, som hvis de endres, vil endre noe som er skrevet i dette dokumentet.</span>
+- Tidsklemme
+- ekstra tid
+- endring av prosjektplan eller forventninger om produktet
+
 
 <div style="page-break-after: always;"></div>
 
 ## 5	PRODUKTETS FUNKSJONELLE EGENSKAPER
 
 <span style="color:red">En liste over funksjonelle egenskaper som produktet må ha for å løse problemene beskrevet i 3.4. NB! Det vil ikke nødvendigvis være et en-til-en forhold. Malen sier at mellom 25 og 99 funksjonelle egenskaper (funksjoner) er passe og at disse må være beskrevet såpass at de er et utgangspunkt for å utvikle dem. </span>
+
 
 ## 6	IKKE-FUNKSJONELLE EGENSKAPER OG ANDRE KRAV
 
