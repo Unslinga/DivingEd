@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - UI-Modal
+  - UI-Modal-Content-Horizontal
+  - UI-Modal-Content-Vertical
+  - UI-Modal-Header
+  - UI-Modal-Footer
   layers:
   - Default
   - TransparentFX

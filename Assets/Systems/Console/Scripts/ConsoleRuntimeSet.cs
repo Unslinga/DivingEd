@@ -15,7 +15,7 @@ namespace Console
 {
     [Serializable]
     [CreateAssetMenu(menuName = "Console/ConsoleRuntimeSet", order = 1)]
-    public class ConsoleRuntimeSet : RuntimeSet<string>
+    public class ConsoleRuntimeSet : RuntimeSet<ConsoleMessage>
     {
         #region Fields
 
