@@ -364,7 +364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7408461613633246131, guid: 42a4c4a208793024c924e3fc91e67f15, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7408461613633246131, guid: 42a4c4a208793024c924e3fc91e67f15, type: 3}
       propertyPath: m_LocalPosition.x
@@ -470,6 +470,18 @@ PrefabInstance:
     - target: {fileID: 3503692968156230406, guid: 40b012f5e20ae5c40a4a1a69ba034062, type: 3}
       propertyPath: m_ChildAlignment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355259736953633732, guid: 40b012f5e20ae5c40a4a1a69ba034062, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355259736953633732, guid: 40b012f5e20ae5c40a4a1a69ba034062, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355259736953633732, guid: 40b012f5e20ae5c40a4a1a69ba034062, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 5202390389057449857, guid: 40b012f5e20ae5c40a4a1a69ba034062, type: 3}
       propertyPath: m_Name
