@@ -32,7 +32,16 @@ namespace InputController
         {
             //string msg = "The key: " + dataInput as InputData + " is pressed.";
             //Debug.Log(msg);
-            
+            InputData inputData =  (InputData) data ;
+            if (inputData.Holding)
+            {
+                Debug.Log($"Holding {inputData.KeyCode}");
+               
+            } else
+            {
+                Debug.Log($"pressed {inputData.KeyCode}");
+               
+            }
         }
         #endregion
 
