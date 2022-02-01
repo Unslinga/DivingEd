@@ -11,9 +11,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DEFAULT_REPLACE
-{
-    public class #SCRIPTNAME# : MonoBehaviour
+    #ROOTNAMESPACEBEGIN#
+public class #SCRIPTNAME# : MonoBehaviour
     {
         #region Fields
 
@@ -43,5 +42,5 @@ namespace DEFAULT_REPLACE
         }
         #endregion
         #NOTRIM#
-    } 
-}
+    }
+    #ROOTNAMESPACEEND#
