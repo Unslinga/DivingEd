@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7777480205198290340}
   - component: {fileID: 4865688600485097909}
+  - component: {fileID: 4205598759272974022}
   m_Layer: 0
   m_Name: Header
   m_TagString: UI-Modal-Header
@@ -56,6 +57,32 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &4205598759272974022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3123845659352764695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &3386464112442572731
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +173,7 @@ GameObject:
   - component: {fileID: 3941259203747302915}
   - component: {fileID: 2088070033545299566}
   m_Layer: 0
-  m_Name: ModalWindow
+  m_Name: UIModalWindow
   m_TagString: UI-Modal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -245,9 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9c73d683660694fb992f302636889f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <HeaderPrefab>k__BackingField: {fileID: 0}
-  <ContentPrefab>k__BackingField: {fileID: 0}
-  <FooterPrefab>k__BackingField: {fileID: 0}
+  <Vertical>k__BackingField: 0
 --- !u!1 &4250884806142464193
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,6 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 210688558112104}
   - component: {fileID: 828209621311391804}
+  - component: {fileID: 2832897605352738537}
   m_Layer: 0
   m_Name: Footer
   m_TagString: UI-Modal-Footer
@@ -304,6 +330,32 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &2832897605352738537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4250884806142464193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &5577807558394792241
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,10 +472,10 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 0
+  m_Spacing: 10
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
+  m_ChildControlWidth: 1
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0

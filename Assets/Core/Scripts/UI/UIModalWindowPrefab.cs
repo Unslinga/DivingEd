@@ -24,15 +24,8 @@ namespace Core
 
         #region Properties
 
-        [field: Header("Modal Content")]
-        [field: SerializeField]
-        public GameObject HeaderPrefab { get; set; }
-        [field: SerializeField]
-        public GameObject ContentPrefab { get; set; }
         [field: SerializeField]
         public bool Vertical { get; set; }
-        [field: SerializeField]
-        public GameObject FooterPrefab { get; set; }
 
         public GameObject Modal { get; set; }
         public GameObject Header { get; set; }
@@ -48,35 +41,6 @@ namespace Core
 
         #region Private Methods
 
-        public void ValidateHeader()
-        {
-            if (Header == HeaderPrefab)
-            {
-                Debug.LogError("Self referencing Header");
-            }
-
-            if (HeaderPrefab == null)
-            {
-                for (int i = 0; i < Header.transform.childCount; i++)
-                {
-                    Debug.Log("Removed Prefab in hierarchy.");
-                    Destroy(Header.transform.GetChild(i).gameObject);
-                }
-            }
-            else
-            {
-                for (int i = 0; i < Header.transform.childCount; i++)
-                {
-                    if (Header.transform.GetChild(i) == HeaderPrefab)
-                    {
-                        return;
-                    }
-                }
-                Debug.Log("Instantiated Prefab in hierarchy.");
-                Instantiate(HeaderPrefab, Header.transform);
-            }
-        }
-
         #endregion
 
         #region Unity Methods
@@ -88,8 +52,6 @@ namespace Core
             HorizontalConent = GameObject.FindGameObjectWithTag("UI-Modal-Content-Horizontal");
             VerticalConent = GameObject.FindGameObjectWithTag("UI-Modal-Content-Vertical");
             Footer = GameObject.FindGameObjectWithTag("UI-Modal-Footer");
-
-            ValidateHeader();
 
         }
 

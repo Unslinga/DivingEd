@@ -671,7 +671,7 @@ GameObject:
   - component: {fileID: 325884265829376516}
   - component: {fileID: 4124590345532923958}
   m_Layer: 0
-  m_Name: TextInputArea
+  m_Name: UITextInputArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

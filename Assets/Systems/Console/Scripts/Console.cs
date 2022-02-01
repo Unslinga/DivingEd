@@ -32,6 +32,7 @@ namespace Console
         [field: Header("Events")]
         [field: SerializeField]
         public ConsoleEvent LogToConsole { get; set; }
+
         #endregion
 
         #region Public Methods
