@@ -9,7 +9,9 @@ using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Core
 {
@@ -24,9 +26,17 @@ namespace Core
         #region Properties
 
         #endregion
-        
+
         #region Public Methods
 
         #endregion
-    }    
+
+    }
+
+    public struct ConsoleMessage
+    {
+        public LogType Type { get; set; }
+        public string Message { get; set; }
+        public string StackTrace { get; set; }
+    }
 }
