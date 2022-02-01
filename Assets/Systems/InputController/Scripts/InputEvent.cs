@@ -13,13 +13,10 @@ using UnityEngine;
 namespace Core
 {
     [Serializable]
-    [CreateAssetMenu(menuName = "Events/InputEvent", order = 0)]
+    [CreateAssetMenu(menuName = "InputController/InputEvent", order = 0)]
     public class InputEvent : BaseEvent
     {
 
-    }
-
-    
         #region Fields
 
         #endregion
@@ -32,5 +29,13 @@ namespace Core
 
         #endregion
         
-    }    
+    }   
+
+    public struct InputData
+    {
+        //properties
+        public KeyCode KeyCode  { get; set; }
+        public bool Holding { get; set; }
+
+    }
 }
