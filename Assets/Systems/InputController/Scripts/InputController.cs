@@ -28,21 +28,7 @@ namespace InputController
         #endregion
 
         #region Public Methods
-        public void OnKeyboardInput(object data)
-        {
-            //string msg = "The key: " + dataInput as InputData + " is pressed.";
-            //Debug.Log(msg);
-            InputData inputData =  (InputData) data ;
-            if (inputData.Holding)
-            {
-                Debug.Log($"Holding {inputData.KeyCode}");
-               
-            } else
-            {
-                Debug.Log($"pressed {inputData.KeyCode}");
-               
-            }
-        }
+        
         #endregion
 
         #region Private Methods
@@ -50,11 +36,7 @@ namespace InputController
         #endregion
 
         #region Unity Methods
-        private void Awake()
-        {
-            //IputEvent.CreateListener(gameObject, KeyDown);
-            KeyboardInputEvent.CreateListener(gameObject, OnKeyboardInput);
-        }
+        
         
         private void Start()
         {

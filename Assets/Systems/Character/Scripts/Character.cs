@@ -37,11 +37,27 @@ namespace Character
         public Vector3Reference HeadPosition { get; set; }
         [field: SerializeField]
         public Vector3Reference HeadRotation { get; set; }
-
+        
+        [field: SerializeField]
+        public InputEvent KeyboardInputEvent { get; set; }
         #endregion
 
         #region Public Methods
+        public void OnKeyboardInput(object data)
+        {
+            
+            InputData inputData = (InputData)data;
+            if (inputData.Holding)
+            {
+                Debug.Log($"Holding {inputData.KeyCode}");
 
+            }
+            else
+            {
+                Debug.Log($"pressed {inputData.KeyCode}");
+
+            }
+        }
         #endregion
 
         #region Private Methods
@@ -52,6 +68,12 @@ namespace Character
         private void Start()
         {
             
+        }
+
+        private void Awake()
+        {
+            //IputEvent.CreateListener(gameObject, KeyDown);
+            KeyboardInputEvent.CreateListener(gameObject, OnKeyboardInput);
         }
 
         private void Update()
