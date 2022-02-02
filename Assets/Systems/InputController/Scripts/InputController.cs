@@ -31,7 +31,7 @@ namespace InputController
 
 
         [field: SerializeField]
-        public InputEvent KeySpaceInputEvent { get; set; }
+        public InputEvent KeyInputEvent { get; set; }
 
 
 
@@ -49,32 +49,9 @@ namespace InputController
             unPressedKeys[i] = 0;
             pressedKeys[i] = keyCode;
             timer[i] = Time.time;
-            Debug.Log(keyCode);
+            Debug.Log(keyCode + "down");
         }
 
-        private void Timing(KeyCode keyCode, int i, float time)
-        {
-            //Determin if its hold or not
-            if (time - timer[i] < keyPressDuration)
-            {
-                KeySpaceInputEvent.Raise(new InputData { KeyCode = KeyCode.Space, Holding = false });
-            }
-            else
-            {
-                KeySpaceInputEvent.Raise(new InputData { KeyCode = KeyCode.Space, Holding = false });
-            }
-
-
-
-
-            //unlock the pressed key
-            //unPressedKeys[i] = keyCode;
-
-            //Raise the event
-
-        }
-
-        //private bool Measure(KeyCode kc) { }
         #endregion
 
         #region Unity Methods
@@ -85,63 +62,62 @@ namespace InputController
             //Initialize the array
             pressedKeys = new KeyCode[unPressedKeys.Length];
             timer = new float[unPressedKeys.Length];
-
-            //for (int i = 0; i < keys.Length; i) InputData a  = new InputData();
-
         }
 
         private void Update()
         {
+            //Checking if any key of the reserved keys is pressed
             for (int i = 0; i < unPressedKeys.Length; i++)
             {
                 if (Input.GetKeyDown(unPressedKeys[i]))
                 {
+                    //Removing the key from the reserved keys and start timing
                     ToRaise(unPressedKeys[i], i);
                 }
             }
 
+            //Checking if a pressed key is released
+            for (int i = 0; i < pressedKeys.Length; i++)
+            {
+                if (Input.GetKeyUp(pressedKeys[i]))
+                {
+                    //Determin if its a press, or hold
+                    if (timer[i] > -1)
+                    {
+                        Debug.Log("press");
+                        Debug.Log(pressedKeys[i] + "up");
+                        //KeyInputEvent.Raise(new InputData { KeyCode = pressedKeys[i], Holding = false });
+                        unPressedKeys[i] = pressedKeys[i];
+                        pressedKeys[i] = 0;
+                        timer[i] = 0;
+                        
+                    } else
+                    {
+                        Debug.Log(pressedKeys[i] + "up");
+                        unPressedKeys[i] = pressedKeys[i];
+                        pressedKeys[i] = 0;
+                        timer[i] = 0;
+                    }
+
+                    
+                }
+            }
+
+
             for (int i = 0; i < timer.Length; i++)
             {
-                if (timer[i] != 0)
-                {
-                    //check if held
-                    
-                    if (timer[i] == -1)
-                    {
-                        Debug.Log("Held");
-                        if (Input.GetKeyUp(pressedKeys[i]))
-                        {
-                            timer[i] = 0;
-                            unPressedKeys[i] = pressedKeys[i];
-                            pressedKeys[i] = 0;
-                        }
-                    }
-
-
+                if (timer[i] > 0)
+                {               
                     if (Time.time - timer[i] > keyPressDuration)
                     {
-
-
-                        //Press
-                        if (Input.GetKeyUp(pressedKeys[i]))
-                        {
-                            Debug.Log("press");
-                            timer[i] = 0;
-                            unPressedKeys[i] = pressedKeys[i];
-                            pressedKeys[i] = 0;
-                        }
-                        else
                         //Hold
                         {
-                            Debug.Log("hold");
+                            Debug.Log("holding");
+                            //KeyInputEvent.Raise(new InputData { KeyCode = pressedKeys[i], Holding = true });
                             timer[i] = -1;
                         }
-                            
+
                     }
-
-                        //   KeySpaceInputEvent.Raise(new InputData {KeyCode =KeyCode.Space, Holding = false });
-
-                    
                 }
                 #endregion
             }

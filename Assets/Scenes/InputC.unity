@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a3e3e24084f924498028c2d40ee2c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyPressDuration: 0
+  keyPressDuration: 0.5
   unPressedKeys: 200000001b000000
   <KeySpaceInputEvent>k__BackingField: {fileID: 0}
 --- !u!4 &731276168
