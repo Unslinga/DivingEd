@@ -17,21 +17,18 @@ using UnityEngine.UI;
 namespace Console
 {
     [RequireComponent(typeof(Logging))]
+    [RequireComponent(typeof(ConsoleUI))]
     public class Console : MonoBehaviour
     {
         #region Fields
         #endregion
 
         #region Properties
-        [field: SerializeField]
-        public TMP_Text Log { get; set; }
 
         [field: SerializeField]
-        public ConsoleRuntimeSet ConsoleSet { get; set; }
+        public CommandSet ConsoleCommands { get; set; }
 
-        [field: Header("Events")]
-        [field: SerializeField]
-        public ConsoleEvent LogToConsole { get; set; }
+
 
         #endregion
 
@@ -41,11 +38,12 @@ namespace Console
 
         #region Private Methods
 
-        private void OnLogToConsole(object message) => ConsoleSet?.Add((ConsoleMessage)message);
+        private void OnLogToConsole(object data)
+        {
+            var message = (LogMessageData)data;
 
-        private string ParseMessages() => ConsoleSet?.Items
-            .Select(i => i.Message)
-            .Aggregate((cur, item) => cur + "\n" + item);
+
+        }    
 
         #endregion
 
@@ -53,13 +51,13 @@ namespace Console
 
         void Awake()
         {
-            LogToConsole.CheckNull(true);
-            LogToConsole.CreateListener(gameObject, OnLogToConsole);
+            ConsoleCommands["LogToConsole"].CheckNull(true);
+            ConsoleCommands["LogToConsole"].CreateListener(gameObject, OnLogToConsole);
         }
 
         void Update()
         {
-            //Log.text = ParseMessages();
+            //
         }
 
         #endregion

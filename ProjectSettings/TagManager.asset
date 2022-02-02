@@ -4,10 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - UI-Modal
-  - UI-Modal-Header
-  - UI-Modal-Footer
-  - UI-Modal-Content
+  - UI-Console-Content
   layers:
   - Default
   - TransparentFX

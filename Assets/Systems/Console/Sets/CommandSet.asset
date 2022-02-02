@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2477c5d8d224d7b46aeda1b5f42c608d, type: 3}
-  m_Name: Log
+  m_Script: {fileID: 11500000, guid: 9ac02a55d8534674ca2726aa4e2c39a6, type: 3}
+  m_Name: CommandSet
   m_EditorClassIdentifier: 
   <Items>k__BackingField:
-  - Test
+  - {fileID: 11400000, guid: a47142ffdd9bb314882aa06957db6453, type: 2}

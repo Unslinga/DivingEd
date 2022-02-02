@@ -5,19 +5,16 @@
 // Aahed Diyab, Olav Pete
 // ----------------------------------------------------------------------------
 
-using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Core
 {
     [Serializable]
-    [CreateAssetMenu(menuName = "Console/ConsoleEvent", order = 4)]
-    public class ConsoleEvent : BaseEvent
+    [CreateAssetMenu(menuName = "Console/CommandSet", order = 0)]
+    public class CommandSet : NamedSet<CommandEvent>
     {
         #region Fields
 
@@ -26,17 +23,10 @@ namespace Core
         #region Properties
 
         #endregion
-
+        
         #region Public Methods
 
         #endregion
-
-    }
-
-    public struct ConsoleMessage
-    {
-        public LogType Type { get; set; }
-        public string Message { get; set; }
-        public string StackTrace { get; set; }
-    }
+        
+    }    
 }
