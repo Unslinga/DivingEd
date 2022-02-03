@@ -13,34 +13,35 @@ using UnityEngine;
 
     #ROOTNAMESPACEBEGIN#
 public class #SCRIPTNAME# : MonoBehaviour
+{
+    #region Fields
+
+    #endregion
+
+    #region Properties
+
+    #endregion
+
+    #region Public Methods
+
+    #endregion
+
+    #region Private Methods
+
+    #endregion
+
+    #region Unity Methods
+    
+    void Start()
     {
-        #region Fields
-
-        #endregion
-
-        #region Properties
-
-        #endregion
-
-        #region Public Methods
-
-        #endregion
-
-        #region Private Methods
-
-        #endregion
-
-        #region Unity Methods
-        private void Start()
-        {
-            #NOTRIM#
-        }
-
-        private void Update()
-        {
-            #NOTRIM#
-        }
-        #endregion
         #NOTRIM#
     }
-    #ROOTNAMESPACEEND#
+
+    void Update()
+    {
+        #NOTRIM#
+    }
+
+    #endregion
+}
+#ROOTNAMESPACEEND#

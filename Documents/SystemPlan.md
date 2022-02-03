@@ -47,6 +47,7 @@ gantt
     Finish Network-System 1.5.0                         :milestone, m3, 2022-04-26, 1d
     
     GUI                                                 : gu, 2022-03-01, 20d
+    VoiceCommands                                       : gu, 2022-03-01, 20d
     Scenario,audio video                                : av, 2022-03-01, 40d
     Finish System 2.0.0                                 :milestone, crit, m4, 2022-05-06, 1d
 

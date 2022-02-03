@@ -20,8 +20,10 @@ namespace Console
         #endregion
 
         #region Properties
+
         [field: SerializeField]
         public ConsoleEvent LogToConsole { get; set; }
+
         #endregion
 
         #region Public Methods
@@ -30,23 +32,30 @@ namespace Console
 
         #region Private Methods
 
-        private void Application_logMessageReceived(string condition, string stackTrace, LogType type)
+        private void Application_logMessageReceived(string logString, string stackTrace, LogType type)
         {
-            LogToConsole?.Raise((condition, stackTrace, type));
+            LogToConsole?.Raise(new ConsoleMessage { Type = type, Message = logString, StackTrace = stackTrace });
         }
+
         #endregion
 
         #region Unity Methods
-        private void OnEnable()
+
+        void Awake()
+        {
+            LogToConsole.CheckNull(true);
+        }
+
+        void OnEnable()
         {
             Application.logMessageReceived += Application_logMessageReceived;
         }
 
-        private void OnDestroy()
+        void OnDestroy()
         {
             Application.logMessageReceived -= Application_logMessageReceived;
         }
+
         #endregion
-        
     } 
 }
