@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6768d2663c371b54ba962420a3836a62, type: 3}
-  m_Name: LogToConsole
+  m_Script: {fileID: 11500000, guid: 058fb69b70647a74e9b8a00ac4217655, type: 3}
+  m_Name: LogSet
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: LogToConsole
-  <DisplayInSuggestions>k__BackingField: 0

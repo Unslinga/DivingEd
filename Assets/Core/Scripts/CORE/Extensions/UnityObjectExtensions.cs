@@ -12,7 +12,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Linq;
 using Object = UnityEngine.Object;
-
+using UnityEngine.UI;
 
 namespace Core
 {
@@ -58,6 +58,17 @@ namespace Core
             }
         }
 
+        public static Vector2 GetVerticalSnapPositionOfChild(this ScrollRect scrollRect, RectTransform child)
+        {
+            Canvas.ForceUpdateCanvases();
+
+            Vector2 viewportLocalPosition = scrollRect.viewport.localPosition;
+
+            return new Vector2(
+                0,
+                0 - (viewportLocalPosition.y + child.localPosition.y));
+        }
+
         /// <summary>
         /// This method ensures there is only one GameObject that has this script.
         /// Creates singleton without needing pattern.
@@ -85,6 +96,7 @@ namespace Core
             Application.Quit();
             #endif
         }
+
         #endregion        
     } 
 }

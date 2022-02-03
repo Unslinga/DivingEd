@@ -26,7 +26,7 @@ namespace Core
 
         [field: ReadOnlyField]
         [field: SerializeField]
-        public string Name { get; private set; }
+        public string Name { get; protected set; }
 
         #endregion
 
