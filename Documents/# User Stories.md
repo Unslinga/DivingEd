@@ -43,13 +43,16 @@
 | As a [Role] | I [want to] | [so that] |
 | --- | --- | --- |
 | user | easily change any of the hotkeys in the simulation | customization becomes easier |
-| developer | have all [InputEvents] register themselves in a master dictionary |  |
-| developer | have the input system listen for any [InputEvent] in the  |  |
+| developer | have all [InputEvents] register themselves in a master dictionary | I don't have to add them manually |
+| developer | have the input system go through all [InputEvents] in the dictionary and fire any event where the [KeyCode] is matching | the code needed for that to function is minimal |
 
 ### CharacterController
 
 | As a [Role] | I [want to] | [so that] |
 | --- | --- | --- |
+| user | be able to view the whole simulation | I have a good overview over everything |
+| user | zoom in to a part of the [Panel] | I can get more accurate details and readings |
+| |||
 
 ### Simulation
 
