@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: DisplayStackTrace
   m_EditorClassIdentifier: 
   <Name>k__BackingField: DisplayStackTrace
-  <DisplayInSuggestions>k__BackingField: 0
+  <CommandType>k__BackingField: 1
+  <CommandPattern>k__BackingField: DisplayStackTrace
+  <SupportedParameters>k__BackingField: 

@@ -23,10 +23,19 @@ namespace Core
         #region Properties
 
         #endregion
-        
+
         #region Public Methods
 
         #endregion
-        
-    }    
+
+        #region Unity Methods
+
+        void OnEnable()
+        {
+            //GlobalSetInstance.Register(this); // This needs a lot more work.
+        }
+
+        #endregion
+
+    }
 }

@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.Events;
+using UnityEditor;
 
 namespace Core
 {
@@ -130,13 +131,28 @@ namespace Core
             return listner;
         }
 
+        protected void Validate()
+        {
+            Name = name;
+        }
+
         #endregion
 
         #region Unity Methods
 
-        private void OnValidate()
+        void Awake()
         {
-            Name = name;
+            Validate();
+        }
+
+        void OnEnable()
+        {
+            Validate();
+        }
+
+        void OnValidate()
+        {
+            Validate();
         }
 
         #endregion

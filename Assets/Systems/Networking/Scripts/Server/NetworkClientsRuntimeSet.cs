@@ -6,11 +6,11 @@
 // ----------------------------------------------------------------------------
 
 using Core;
+using Networking;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Networking;
 using System.Linq;
 
 namespace Core

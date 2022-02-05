@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Console
@@ -47,8 +48,24 @@ namespace Console
         [field: SerializeField]
         public TMP_InputField CommandLine { get; set; }
 
-        [field: SerializeField]
-        public GameObject ConsoleWindow { get; set; }
+        [SerializeField]
+        private GameObject consoleWindow;
+        public bool ConsoleWindowActive
+        {
+            get
+            {
+                return consoleWindow.activeSelf;
+            }
+            set
+            {
+                consoleWindow.SetActive(value);
+
+                if (value)
+                {
+                    FocusCommandLine();
+                }
+            }
+        }
 
         [field: SerializeField]
         public GameObject Content { get; set; }
@@ -61,9 +78,7 @@ namespace Console
 
         [field: SerializeField]
         public GameObject StackTrace { get; set; }
-
-        [field: SerializeField]
-        public TMP_Text StackTraceText { get; set; }
+        public TMP_Text StackTraceText { get { return StackTrace.GetComponentInChildren<TMP_Text>(); } }
 
         [field: SerializeField]
         public Button Submit { get; set; }
@@ -72,9 +87,29 @@ namespace Console
 
         #region Public Methods
 
+        public void ToggleActive()
+        {
+            ConsoleWindowActive = !ConsoleWindowActive;
+        }
+
+        public void ToggleActive(bool active)
+        {
+            ConsoleWindowActive = active;
+        }
+
         #endregion
 
         #region Private Methods
+
+        private void FocusCommandLine()
+        {
+            CommandLine.ActivateInputField();
+        }
+
+        private void OnClick_Close()
+        {
+            ToggleActive(false);
+        }
 
         private void OnClick_Submit()
         {
@@ -110,12 +145,31 @@ namespace Console
 
         private void OnMessageToConsole(object data)
         {
-
+            Debug.Log(data.ParseCommand<string>());
         }
 
-        private void OnSubmit_CommandLine(string txt)
+        private void OnSubmit_CommandLine(string input)
         {
-            Debug.Log($"Temporary: {txt}");
+            CommandLine.text = "";
+            FocusCommandLine();
+
+            string[] inputs = input.Split(' ');
+
+            var command = ConsoleCommands[inputs[0]];
+
+            if (command == null)
+                return;
+
+            ConsoleCommands["LogToConsole"]?.
+                Raise(new LogMessageData 
+                { 
+                    Type = LogType.Log, 
+                    Message = input, 
+                    StackTrace = inputs.Aggregate("", (c, n) => c + n + "\n"),
+                    Command = true
+                });
+
+            command.Raise(inputs.Skip(1).ToArray());
         }
 
         private IEnumerator Scroll()
@@ -153,9 +207,13 @@ namespace Console
 
             LogSet.Clear();
 
-            ConsoleCommands["DisplayStackTrace"].CreateListener(gameObject, OnDisplayStackTrace);
-            ConsoleCommands["LogToConsole"].CreateListener(gameObject, OnLogToConsole);
-            ConsoleCommands["MessageToConsole"].CreateListener(gameObject, OnMessageToConsole);
+            ConsoleCommands["DisplayStackTrace"]?.CreateListener(gameObject, OnDisplayStackTrace);
+            ConsoleCommands["LogToConsole"]?.CreateListener(gameObject, OnLogToConsole);
+
+            ConsoleCommands["MessageToConsole"]?.CreateListener(gameObject, OnMessageToConsole);
+
+            Close.CheckNull(true);
+            Close.onClick.AddListener(OnClick_Close);
 
             CommandLine.CheckNull(true);
             CommandLine.onSubmit.AddListener(OnSubmit_CommandLine);
@@ -163,15 +221,8 @@ namespace Console
             Submit.CheckNull(true);
             Submit.onClick.AddListener(OnClick_Submit);
 
-
-        }
-
-        void Start()
-        {
-            for (int i = 0; i < 30; i++)
-            {
-                Debug.Log($"{i}_Filler");
-            }
+            ToggleActive(false);
+            StackTrace.SetActive(false);
         }
 
         #endregion

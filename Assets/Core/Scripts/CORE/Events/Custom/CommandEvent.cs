@@ -26,25 +26,55 @@ namespace Core
         #region Properties
 
         [field: SerializeField]
+        public bool CommandType { get; set; } = true;
+
+        [field: SerializeField]
         public string CommandPattern { get; set; }
 
         [field: SerializeField]
         public List<SupportedParameter> SupportedParameters { get; set; }
 
-        [field: SerializeField]
-        public bool DisplayInSuggestions { get; set; } = true;
-
         #endregion
 
         #region Public Methods
 
+        public void Raise(params string[] data)
+        {
+            if (!CommandType)
+            {
+                Debug.LogError("Command Type false, cast to [BaseEvent]");
+                return;
+            }
+
+            if (data.Length != SupportedParameters.Count)
+            {
+                Debug.LogError($"Command parameter count does not match pattern [{CommandPattern}]!");
+                return;
+            }
+
+            if (data.Length == 0)
+            {
+                base.Raise();
+            }
+
+            List<(SupportedParameter, string)> parameters = 
+                new List<(SupportedParameter, string)>();
+
+            foreach ((SupportedParameter type, string value) in SupportedParameters.Zip(data, (f, s) => (f, s)))
+            {
+                parameters.Add((type, value));
+            }
+
+            Raise(new CommandData { Parameters = parameters });
+        }
+
         #endregion
 
-        #region Unity Methods
-        
-        private void OnValidate()
+        #region Private Methods
+
+        private new void Validate()
         {
-            Name = name;
+            base.Validate();
 
             if (SupportedParameters != null)
             {
@@ -53,9 +83,28 @@ namespace Core
         }
 
         #endregion
+
+        #region Unity Methods
+
+        void Awake()
+        {
+            Validate();
+        }
+
+        void OnEnable()
+        {
+           Validate();
+        }
+
+        void OnValidate()
+        {
+            Validate();
+        }
+
+        #endregion
     }
 
-    [Flags]
+    
     public enum SupportedParameter
     {
         String  = 0x1,
@@ -67,13 +116,14 @@ namespace Core
 
     public struct CommandData
     {
-        public (SupportedParameter, object[])[] Parameters { get; set; }
+        public List<(SupportedParameter, string)> Parameters { get; set; }
     }
 
     public struct LogMessageData
     {
         public string Name { get; set; }
         public LogType Type { get; set; }
+        public bool Command { get; set; }
         public string Message { get; set; }
         public string StackTrace { get; set; }
     }

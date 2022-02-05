@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8126664353056028471}
   - component: {fileID: 2147905771704789562}
   m_Layer: 0
-  m_Name: Template
+  m_Name: LogTemplate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,8 +184,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stackTraceActive: 0
-  message: 
-  type: 
   <DisplayStackTrace>k__BackingField: {fileID: 11400000, guid: 00aa1fa8b1dcf71479f8570cd04079d7, type: 2}
   <MessageText>k__BackingField: {fileID: 8423121166763622076}
   <TypeText>k__BackingField: {fileID: 3864716083615408897}
@@ -445,7 +443,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0

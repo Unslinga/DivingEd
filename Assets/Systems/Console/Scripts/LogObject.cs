@@ -54,7 +54,8 @@ namespace Console
                 }
 
                 MessageText.text = data.Message;
-                TypeText.text = data.Type.ToString();
+
+                TypeText.text = data.Command ? "Command" : data.Type.ToString();
             }
         }
 

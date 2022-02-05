@@ -25,7 +25,7 @@ namespace Core
 
                 if (item == null || item == default)
                 {
-                    Debug.Log($"[{name}] not found in {this.name}");
+                    Debug.LogError($"[{name}] not found in {this.name}");
                 }
 
                 return item;

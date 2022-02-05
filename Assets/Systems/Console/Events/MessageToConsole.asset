@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6768d2663c371b54ba962420a3836a62, type: 3}
   m_Name: MessageToConsole
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: 
-  <CommandPattern>k__BackingField: 
-  <SupportedParameters>k__BackingField: 
-  <DisplayInSuggestions>k__BackingField: 1
+  <Name>k__BackingField: MessageToConsole
+  <CommandType>k__BackingField: 1
+  <CommandPattern>k__BackingField: MessageToConsole <String>
+  <SupportedParameters>k__BackingField: 01000000
