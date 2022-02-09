@@ -17,8 +17,8 @@ using UnityEngine.UI;
 
 namespace Console
 {
-    [RequireComponent(typeof(Logging))]
-    public class Console : MonoBehaviour
+    [RequireComponent(typeof(ConsoleLogging))]
+    public class Console_UGUI : MonoBehaviour
     {
         #region Fields
 

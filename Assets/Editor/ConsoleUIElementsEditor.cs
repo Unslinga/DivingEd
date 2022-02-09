@@ -14,8 +14,8 @@ using UnityEngine;
 
 namespace Console
 {
-    [CustomEditor(typeof(Console))]
-    public class ConsoleEditor : Editor
+    [CustomEditor(typeof(ConsoleUIElements))]
+    public class ConsoleUIElementsEditor : Editor
     {
         public override void OnInspectorGUI()
         {
@@ -23,9 +23,17 @@ namespace Console
 
             GUILayout.Space(20);
 
-            Console console = (Console)target;
+            ConsoleUIElements console = (ConsoleUIElements)target;
+
             if (GUILayout.Button("Toggle Console"))
-                console.ToggleActive();
+                console.ToggleConsoleWindowEnabled();
+
+            if (GUILayout.Button("CommandLineFocus"))
+            { }
+                //console.CommandLineFocus();
+
+            if (GUILayout.Button("CommandLineUnfocus"))
+                console.CommandLineUnfocus();
         }
-    }
+    } 
 }

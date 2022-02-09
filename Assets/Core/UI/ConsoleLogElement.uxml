@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="LogElement" class="log-element">
+        <ui:Label text="Message" display-tooltip-when-elided="true" name="Message" style="width: 75%;" />
+        <ui:Label text="Type" display-tooltip-when-elided="true" name="Type" style="width: 25%;" />
+    </ui:VisualElement>
+</ui:UXML>

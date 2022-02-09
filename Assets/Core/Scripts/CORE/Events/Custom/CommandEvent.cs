@@ -26,7 +26,7 @@ namespace Core
         #region Properties
 
         [field: SerializeField]
-        public bool CommandType { get; set; } = true;
+        public bool CommandOption { get; set; } = true;
 
         [field: SerializeField]
         public string CommandPattern { get; set; }
@@ -40,9 +40,9 @@ namespace Core
 
         public void Raise(params string[] data)
         {
-            if (!CommandType)
+            if (!CommandOption)
             {
-                Debug.LogError("Command Type false, cast to [BaseEvent]");
+                Debug.LogError("CommandOption false, cast to [BaseEvent]");
                 return;
             }
 

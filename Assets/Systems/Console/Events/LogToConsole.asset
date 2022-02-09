@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: LogToConsole
   m_EditorClassIdentifier: 
   <Name>k__BackingField: LogToConsole
-  <DisplayInSuggestions>k__BackingField: 0
+  <CommandOption>k__BackingField: 0
+  <CommandPattern>k__BackingField: LogToConsole
+  <SupportedParameters>k__BackingField: 

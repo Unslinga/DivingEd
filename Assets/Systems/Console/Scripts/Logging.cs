@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace Console
 {
-    public class Logging : MonoBehaviour
+    public class ConsoleLogging : MonoBehaviour
     {
         #region Fields
 
