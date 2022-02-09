@@ -2,8 +2,7 @@
     "name": "Networking",
     "rootNamespace": "Networking",
     "references": [
-        "GUID:da7f98070cca49f45873c277314f338d",
-        "GUID:11a2306c728a4b843a652ec6c2f142bc"
+        "GUID:da7f98070cca49f45873c277314f338d"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

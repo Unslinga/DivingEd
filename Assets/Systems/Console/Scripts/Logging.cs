@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace Console
 {
-    public class Logging : MonoBehaviour
+    public class ConsoleLogging : MonoBehaviour
     {
         #region Fields
 
@@ -22,7 +22,7 @@ namespace Console
         #region Properties
 
         [field: SerializeField]
-        public ConsoleEvent LogToConsole { get; set; }
+        public CommandSet ConsoleCommands { get; set; }
 
         #endregion
 
@@ -34,7 +34,7 @@ namespace Console
 
         private void Application_logMessageReceived(string logString, string stackTrace, LogType type)
         {
-            LogToConsole?.Raise(new ConsoleMessage { Type = type, Message = logString, StackTrace = stackTrace });
+            ConsoleCommands["LogToConsole"]?.Raise(new LogMessageData { Type = type, Message = logString, StackTrace = stackTrace });
         }
 
         #endregion
@@ -43,7 +43,7 @@ namespace Console
 
         void Awake()
         {
-            LogToConsole.CheckNull(true);
+            ConsoleCommands["LogToConsole"].CheckNull(true);
         }
 
         void OnEnable()

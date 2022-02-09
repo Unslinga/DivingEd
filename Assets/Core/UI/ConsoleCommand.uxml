@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="Command" class="command">
+        <ui:Label text="Command" display-tooltip-when-elided="true" name="CommandText" class="command command-text" />
+    </ui:VisualElement>
+</ui:UXML>

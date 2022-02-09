@@ -1,0 +1,33 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="ConsoleCommand" />
+    <Style src="Styles/MainStyle.uss" />
+    <ui:VisualElement name="Console" class="background-darken">
+        <ui:VisualElement name="ConsolePanel" class="console-panel">
+            <ui:VisualElement name="Header" class="header">
+                <ui:Label text="Console" display-tooltip-when-elided="true" name="Title" class="title" />
+                <ui:Button display-tooltip-when-elided="true" name="Close" class="close-button" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Content" class="content">
+                <ui:ScrollView name="Log" show-horizontal-scroller="false" horizontal-scroller-visibility="Hidden" class="log scroller" />
+                <ui:ScrollView name="StackTrace" show-horizontal-scroller="true" horizontal-scroller-visibility="Hidden" touch-scroll-type="Clamped" vertical-scroller-visibility="AlwaysVisible" class="stacktrace scroller" style="display: flex;">
+                    <ui:Label text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar mi nec turpis pellentesque elementum. Quisque sagittis tristique augue eu imperdiet. Sed fringilla sollicitudin augue. Pellentesque ante tellus, tempor quis metus vitae, lobortis tincidunt nibh. Phasellus consectetur, ipsum et dignissim porttitor, lorem tortor lacinia magna, et tempus quam dui eu nunc. Phasellus ut fermentum risus. Etiam luctus tellus sodales turpis fringilla, a rhoncus lectus dictum. Vivamus id tempus ante. Pellentesque ultrices tellus tellus, accumsan imperdiet felis pretium nec. Sed ornare rhoncus augue, vel sodales libero lobortis nec. Aliquam erat volutpat. Donec in fermentum eros, eget pharetra lectus. Curabitur faucibus neque at urna malesuada facilisis. Donec ut posuere tellus, id pulvinar nisl. Sed justo lacus, placerat at odio rutrum, maximus pretium leo. Integer neque nisl, ultrices sed elementum id, maximus sed velit. In et venenatis orci. Morbi ultrices dapibus luctus. Sed in magna eu sapien egestas egestas. Morbi efficitur leo ut mi cursus fermentum. Suspendisse eget mi molestie, suscipit enim id, rutrum ante. Proin erat augue, ultrices sit amet ligula et, mollis imperdiet elit. Ut ut lorem tempor, sodales est vel, volutpat lectus. Donec id ultrices urna. Sed efficitur magna lectus, non elementum mauris rhoncus quis. Sed auctor, lacus quis sagittis fringilla, nibh tortor dapibus orci, ut venenatis felis tellus vel sapien. Maecenas eu urna eleifend, accumsan diam eget, ornare nibh. Cras varius libero sed ex dictum, vel condimentum nisl tincidunt. Donec vel sollicitudin nisl. Nulla ut malesuada lorem, in egestas neque. Cras vel sagittis sem. Nunc eleifend convallis libero, ac elementum nibh dapibus ac. Proin velit eros, sagittis et nisi vitae, vestibulum gravida purus. Nunc eget malesuada ipsum. Aliquam facilisis sapien ut risus vestibulum, vitae cursus enim lobortis. Nunc vitae augue vitae justo venenatis rutrum. Vivamus tristique, tellus at rhoncus ultrices, nibh erat eleifend quam, eu consequat leo justo et erat. Vestibulum interdum sem sem, sed auctor lacus ultricies vel. Maecenas posuere volutpat blandit. Aenean id ex et libero tincidunt aliquet. Proin at metus nibh. Donec purus sem, lobortis a molestie a, tincidunt et magna. Suspendisse malesuada posuere nisl vel aliquet. Nunc convallis dui iaculis ornare varius. Vestibulum vel efficitur urna. Mauris egestas, ligula sit amet porta condimentum, quam ligula molestie neque, a elementum dolor tellus et felis. Vestibulum semper fermentum ultrices. Pellentesque nulla metus, varius eget risus sollicitudin, consequat facilisis est. Vestibulum mollis augue quis erat ornare, et finibus erat laoreet. Nunc in metus id ante vestibulum posuere id lacinia velit. Maecenas aliquam orci eu arcu convallis pharetra. Fusce elementum quam vel eros rhoncus efficitur. Phasellus sit amet lobortis lorem. Maecenas gravida quam dictum, luctus tortor eu, facilisis quam. Sed varius porttitor ante ut rutrum. Morbi quis orci commodo, efficitur massa sed, dapibus augue. Pellentesque pretium felis nisi, in facilisis ex dignissim ut. Aenean condimentum ipsum eros, nec laoreet neque ullamcorper ac. Quisque cursus faucibus ultrices. Sed lorem justo, sollicitudin vitae vestibulum sed, congue eget lorem. Nulla ut nunc vitae diam accumsan cursus. In ut nisi arcu." display-tooltip-when-elided="true" name="StackTraceText" class="stacktrace-text" />
+                </ui:ScrollView>
+            </ui:VisualElement>
+            <ui:VisualElement name="Footer" class="footer">
+                <ui:ScrollView name="CommandView" horizontal-scroller-visibility="Hidden" class="commands-view scroller">
+                    <ui:Instance template="ConsoleCommand" name="ConsoleCommand" />
+                    <ui:Instance template="ConsoleCommand" name="ConsoleCommand" />
+                    <ui:Instance template="ConsoleCommand" name="ConsoleCommand" />
+                    <ui:Instance template="ConsoleCommand" name="ConsoleCommand" />
+                    <ui:Instance template="ConsoleCommand" name="ConsoleCommand" />
+                    <ui:Instance template="ConsoleCommand" name="ConsoleCommand" />
+                    <ui:Instance template="ConsoleCommand" name="ConsoleCommand" />
+                    <ui:Instance template="ConsoleCommand" name="ConsoleCommand" />
+                    <ui:Instance template="ConsoleCommand" name="ConsoleCommand" />
+                    <ui:Instance template="ConsoleCommand" name="ConsoleCommand" />
+                </ui:ScrollView>
+                <ui:Button text="Submit" display-tooltip-when-elided="true" name="SubmitButton" class="submit-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
