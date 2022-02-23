@@ -1,4 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="Styles/TextInactive.uss" />
-    <ui:TextField text="Enter Command..." name="CommandLineInput" value="Enter Command..." class="commandline" />
-</ui:UXML>
