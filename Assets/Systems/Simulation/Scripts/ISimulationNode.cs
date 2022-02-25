@@ -5,13 +5,26 @@
 // Aahed Diyab, Olav Pete
 // ----------------------------------------------------------------------------
 
+using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Core
+namespace Simulation
 {
-    [Serializable]
-    public abstract class Element : ScriptableObject { }
+    public interface ISimulationNode
+    {
+        #region Fields & Properties
+
+        #endregion
+
+        #region Public Methods
+
+        #endregion
+
+        #region Private Methods
+
+        #endregion
+    }
 }
