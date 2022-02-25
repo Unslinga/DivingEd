@@ -13,5 +13,19 @@ using UnityEngine;
 namespace Core
 {
     [Serializable]
-    public abstract class Element : ScriptableObject { }
+    public abstract class NodeElement : Element
+    {
+        #region Fields
+
+        #endregion
+
+        #region Properties
+
+        #endregion
+        
+        #region Public Methods
+
+        #endregion
+        
+    }    
 }

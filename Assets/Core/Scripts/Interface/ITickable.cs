@@ -5,6 +5,7 @@
 // Aahed Diyab, Olav Pete
 // ----------------------------------------------------------------------------
 
+using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,6 +13,11 @@ using UnityEngine;
 
 namespace Core
 {
-    [Serializable]
-    public abstract class Element : ScriptableObject { }
+    public interface ITickable
+    {
+        IController Controller { get; }
+
+        void MainTick();
+        void SubTick();
+    }
 }
