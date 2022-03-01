@@ -13,23 +13,32 @@ using UnityEngine;
 
 namespace Simulation
 {
-    public interface ISimulationNode : ITickable
+    [Serializable]
+    public class Flow
     {
         #region Fields & Properties
-
-        string ID { get; set; }
-
-        List<ISimulationNode> Previous { get; set; }
-        
-        List<ISimulationNode> Next { get; set; }
-
-        Flow Flow { get; set; }
 
         #endregion
 
         #region Public Methods
 
+        #endregion
 
+        #region Private Methods
+
+        #endregion
+
+        #region Unity Methods
+    
+        void Start()
+        {
+        
+        }
+
+        void Update()
+        {
+        
+        }
 
         #endregion
     }
