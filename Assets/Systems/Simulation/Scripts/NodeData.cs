@@ -17,10 +17,17 @@ namespace Simulation
     public class NodeData
     {
         #region Fields & Properties
+        [field: SerializeField]
+        public DoubleReference Value { get; set; }
 
         #endregion
 
         #region Public Methods
+
+        public static implicit operator double(NodeData data)
+        {
+            return data.Value;
+        }
 
         #endregion
 

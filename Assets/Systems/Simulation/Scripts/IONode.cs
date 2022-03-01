@@ -14,8 +14,8 @@ using UnityEngine;
 namespace Simulation
 {
     [Serializable]
-    [CreateAssetMenu(menuName = "Simulation/SimulationNode", order = 0)]
-    public class IOSimulationNode : ScriptableObject, ITickable, ISimulationNode
+    [CreateAssetMenu(menuName = "Simulation/IONode", order = 0)]
+    public class IONode : ScriptableObject, ISimulationNode
     {
         #region Fields & Properties
 
@@ -30,31 +30,27 @@ namespace Simulation
             }
         }
 
-        [field: Header("Node")]
+        [field: Header("Info")]
 
         [field: SerializeField]
-        public IOSimulationNode Next { get; set; }
+        [field: ReadOnlyField]
+        public string ID { get; set; }
+
+        [field: Header("Nodes")]
 
         [field: SerializeField]
-        public NodeElement NodeElement { get; set; }
+        public List<ISimulationNode> Previous { get; set; }
+
+        [field: SerializeField]
+        public List<ISimulationNode> Next { get; set; }
 
         [field: Space(10)]
-        [field: Header("Flow")]
+        
+        [field: SerializeField]
+        public Flow Flow { get; set; }
 
         [field: SerializeField]
         public DoubleReference Control { get; set; }
-
-        [field: SerializeField]
-        public DoubleReference PressureIn { get; private set; }
-
-        [field: SerializeField]
-        public DoubleReference PressureOut { get; private set; }
-
-        [field: SerializeField]
-        public DoubleReference FeedbackIn { get; private set; }
-
-        [field: SerializeField]
-        public DoubleReference FeedbackOut { get; private set; }
 
         #endregion
 
@@ -87,6 +83,16 @@ namespace Simulation
         void OnDestroy()
         {
             controller.Unregister(this);
+        }
+
+        void ITickable.MainTick()
+        {
+            throw new NotImplementedException();
+        }
+
+        void ITickable.SubTick()
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

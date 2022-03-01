@@ -21,10 +21,6 @@ namespace Simulation
 
         private List<ITickable> tickables = new List<ITickable>();
 
-        public InputNode InputNode { get; private set; }
-
-        public OutputNode OutputNode { get; private set; }
-
         [field: SerializeField]
         public List<ISimulationNode> SimulationNodes { get; set; } = new List<ISimulationNode>();
 
@@ -98,9 +94,6 @@ namespace Simulation
 
         void Awake()
         {
-            InputNode = Instantiate(InputNode);
-            OutputNode = Instantiate(OutputNode);
-
             Load();
         }
 

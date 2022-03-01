@@ -14,11 +14,7 @@ using UnityEngine;
     #ROOTNAMESPACEBEGIN#
 public class #SCRIPTNAME# : MonoBehaviour
 {
-    #region Fields
-
-    #endregion
-
-    #region Properties
+    #region Fields & Properties
 
     #endregion
 
@@ -44,4 +40,4 @@ public class #SCRIPTNAME# : MonoBehaviour
 
     #endregion
 }
-#ROOTNAMESPACEEND#
+    #ROOTNAMESPACEEND#
