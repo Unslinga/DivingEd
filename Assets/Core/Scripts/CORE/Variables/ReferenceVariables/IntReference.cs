@@ -13,30 +13,5 @@ using UnityEngine;
 namespace Core
 {
     [Serializable]
-    public class IntReference
-    {
-        public bool UseConstant;
-        public int ConstantValue;
-
-        public IntVariable Variable;
-
-        public int Value
-        {
-            get
-            {
-                return UseConstant || Variable == null ? ConstantValue : Variable.Value;
-            }
-            set
-            {
-                if (Variable != null)
-                    Variable.Value = value;
-                ConstantValue = value;
-            }
-        }
-
-        public static implicit operator int(IntReference reference)
-        {
-            return reference.Value;
-        }
-    }
+    public class IntReference : BaseReference<int, IntVariable> { }
 }

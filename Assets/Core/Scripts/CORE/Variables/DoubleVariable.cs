@@ -13,13 +13,5 @@ using UnityEngine;
 namespace Core
 {
     [CreateAssetMenu(menuName = "Variables/double", order = 0)]
-    public class DoubleVariable : ScriptableObject
-    {
-        public double Value;
-
-        public static implicit operator double(DoubleVariable variable)
-        {
-            return variable.Value;
-        }
-    }
+    public class DoubleVariable : BaseVariable<double> { }
 }

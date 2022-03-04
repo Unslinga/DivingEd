@@ -1,0 +1,18 @@
+{
+    "status": "SUCCESS",
+    "execMode": "LOCAL",
+    "nodeName": "DepthMap_1",
+    "nodeType": "DepthMap",
+    "packageName": "aliceVision",
+    "packageVersion": null,
+    "graph": "",
+    "commandLine": "aliceVision_depthMapEstimation  --input \"C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/StructureFromMotion/947080f40fc9e5b52861f0fa8db9792273e09270/sfm.abc\" --imagesFolder \"C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/PrepareDenseScene/95a720dec1dfa1997445a9d52866190d9085b9b1\" --downscale 2 --minViewAngle 2.0 --maxViewAngle 70.0 --sgmMaxTCams 10 --sgmWSH 4 --sgmGammaC 5.5 --sgmGammaP 8.0 --refineMaxTCams 6 --refineNSamplesHalf 150 --refineNDepthsToRefine 31 --refineNiters 100 --refineWSH 3 --refineSigma 15 --refineGammaC 15.5 --refineGammaP 8.0 --refineUseTcOrRcPixSize False --exportIntermediateResults False --nbGPUs 0 --verboseLevel info --output \"C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/DepthMap/b123115ae622d867942d196b225c5fe923513307\" --rangeStart 9 --rangeSize 3",
+    "env": null,
+    "startDateTime": "2022-03-01 21:37:59.109395",
+    "endDateTime": "2022-03-01 21:37:59.415138",
+    "elapsedTime": 0.3057427406311035,
+    "hostname": "DESKTOP-0JGDKBK",
+    "sessionUid": "a93d9a08-999e-11ec-ad70-6045cb6e0292",
+    "returnCode": 0,
+    "elapsedTimeStr": "0:00:00.305743"
+}

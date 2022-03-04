@@ -23,11 +23,25 @@ namespace Core
         #region Properties
 
         #endregion
-        
+
         #region Public Methods
 
         #endregion
-        
+
+        #region Unity Methods
+
+        void Awake()
+        {
+            Validate();
+        }
+
+        void OnValidate()
+        {
+            Validate();
+        }
+
+        #endregion
+
     }
 
     public struct UIData
