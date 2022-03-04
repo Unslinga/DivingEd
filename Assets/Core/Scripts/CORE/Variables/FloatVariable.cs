@@ -14,13 +14,5 @@ namespace Core
 {
     [Serializable]
     [CreateAssetMenu(menuName = "Variables/float", order = 2)]
-    public class FloatVariable : ScriptableObject
-    {
-        public float Value;
-
-        public static implicit operator float(FloatVariable variable)
-        {
-            return variable.Value;
-        }
-    }
+    public class FloatVariable : BaseVariable<float> { }
 }

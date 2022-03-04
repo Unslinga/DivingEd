@@ -14,7 +14,7 @@ using UnityEditor;
 namespace Core
 {
     [Serializable]
-    public abstract class RuntimeSet<T> : ScriptableObject, ISet
+    public abstract class RuntimeSet<T> : ScriptableObject
     {
         #region Properties
 
@@ -30,8 +30,6 @@ namespace Core
         }
 
         public int Count { get { return Items.Count; } }
-
-        public string Name { get { return name; } }
 
         #endregion
 

@@ -1,0 +1,18 @@
+{
+    "status": "ERROR",
+    "execMode": "LOCAL",
+    "nodeName": "Meshing_1",
+    "nodeType": "Meshing",
+    "packageName": "aliceVision",
+    "packageVersion": null,
+    "graph": "",
+    "commandLine": "aliceVision_meshing  --input \"C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/StructureFromMotion/947080f40fc9e5b52861f0fa8db9792273e09270/sfm.abc\" --depthMapsFolder \"C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/DepthMapFilter/9be6f9b3e15f70dc1c0a56e0f389dcf77c494125\" --estimateSpaceFromSfM True --estimateSpaceMinObservations 3 --estimateSpaceMinObservationAngle 10 --maxInputPoints 50000000 --maxPoints 5000000 --maxPointsPerVoxel 1000000 --minStep 2 --partitioning singleBlock --repartition multiResolution --angleFactor 15.0 --simFactor 15.0 --pixSizeMarginInitCoef 2.0 --pixSizeMarginFinalCoef 4.0 --voteMarginFactor 4.0 --contributeMarginFactor 2.0 --simGaussianSizeInit 10.0 --simGaussianSize 10.0 --minAngleThreshold 1.0 --refineFuse True --helperPointsGridSize 10 --nPixelSizeBehind 4.0 --fullWeight 1.0 --voteFilteringForWeaklySupportedSurfaces True --addLandmarksToTheDensePointCloud False --invertTetrahedronBasedOnNeighborsNbIterations 10 --minSolidAngleRatio 0.2 --nbSolidAngleFilteringIterations 2 --colorizeOutput False --maxNbConnectedHelperPoints 50 --saveRawDensePointCloud False --exportDebugTetrahedralization False --seed 0 --verboseLevel info --outputMesh \"C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/Meshing/db861ca4e739f6cf60b3bf85f7ab5d874e251480/mesh.obj\" --output \"C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/Meshing/db861ca4e739f6cf60b3bf85f7ab5d874e251480/densePointCloud.abc\"",
+    "env": null,
+    "startDateTime": "2022-03-01 21:39:14.375265",
+    "endDateTime": "",
+    "elapsedTime": 0,
+    "hostname": "DESKTOP-0JGDKBK",
+    "sessionUid": "a93d9a08-999e-11ec-ad70-6045cb6e0292",
+    "returnCode": 1,
+    "elapsedTimeStr": "0:00:00"
+}

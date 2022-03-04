@@ -22,7 +22,7 @@ namespace Simulation
         private List<ITickable> tickables = new List<ITickable>();
 
         [field: SerializeField]
-        public List<ISimulationNode> SimulationNodes { get; set; } = new List<ISimulationNode>();
+        public List<ISimulation> SimulationNodes { get; set; } = new List<ISimulation>();
 
         #endregion
 

@@ -1,0 +1,191 @@
+Program called with the following parameters:
+ * crossMatching = 0
+ * describerTypes = "sift"
+ * distanceRatio = 0.8
+ * exportDebugFiles = 0
+ * featuresFolders =  = [C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/FeatureExtraction/29e2f771bb63cc3ae88e3205df21c2c9722e47de]
+ * geometricError = 0
+ * geometricEstimator =  Unknown Type "enum aliceVision::robustEstimation::ERobustEstimator"
+ * geometricFilterType = "fundamental_matrix"
+ * guidedMatching = 0
+ * imagePairsList =  = [C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt]
+ * input = "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/CameraInit/71cabc0050c6171ecfa2ffc6b79e80de8995f10e/cameraInit.sfm"
+ * knownPosesGeometricErrorMax = 5
+ * matchFilePerImage = 0 (default)
+ * matchFromKnownCameraPoses = 0
+ * maxIteration = 2048
+ * maxMatches = 0
+ * output = "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/FeatureMatching/3fa9f8868a7480315aeb73c5568d8eae69dc56a8"
+ * photometricMatchingMethod = "ANN_L2"
+ * randomSeed = 5489 (default)
+ * rangeSize = 20
+ * rangeStart = 0
+ * savePutativeMatches = 0
+ * useGridSort = 1 (default)
+ * verboseLevel = "info"
+
+[21:37:22.724142][info] Load pair list from file: C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt
+[21:37:22.725138][info] loadPairs: image pair (143339054, 289407340) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (143339054, 351323730) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (143339054, 678082309) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (143339054, 1286801923) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (143339054, 1350370487) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (143339054, 1612886025) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (143339054, 1615177411) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (143339054, 1888019723) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (143339054, 1915022538) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (143339054, 2086565607) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (289407340, 351323730) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (289407340, 678082309) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (289407340, 1286801923) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (289407340, 1350370487) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (289407340, 1612886025) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (289407340, 1615177411) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (289407340, 1888019723) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (289407340, 1915022538) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (289407340, 2086565607) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (351323730, 678082309) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (351323730, 1286801923) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (351323730, 1350370487) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (351323730, 1612886025) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (351323730, 1615177411) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (351323730, 1888019723) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (351323730, 1915022538) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (351323730, 2086565607) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (678082309, 1286801923) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (678082309, 1350370487) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (678082309, 1612886025) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (678082309, 1615177411) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (678082309, 1888019723) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (678082309, 1915022538) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (678082309, 2086565607) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1286801923, 1350370487) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1286801923, 1612886025) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1286801923, 1615177411) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1286801923, 1888019723) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1286801923, 1915022538) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1286801923, 2086565607) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1350370487, 1612886025) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1350370487, 1615177411) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1350370487, 1888019723) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1350370487, 1915022538) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1350370487, 2086565607) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1612886025, 1615177411) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1612886025, 1888019723) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1612886025, 1915022538) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1612886025, 2086565607) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1615177411, 1888019723) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1615177411, 1915022538) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1615177411, 2086565607) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1888019723, 1915022538) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1888019723, 2086565607) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] loadPairs: image pair (1915022538, 2086565607) added. File: "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/ImageMatching/fb39c79dd69ec32147300814b899c5511ee3b3ef/imageMatches.txt".
+[21:37:22.725138][info] Number of pairs: 55
+[21:37:22.726135][info] There are 11 views and 55 image pairs.
+[21:37:22.726135][info] Load features and descriptors
+Loading regions
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+[21:37:22.776999][info] Supported CUDA-Enabled GPU detected.
+***************************************************
+[21:37:23.270393][info] Putative matches (unknown poses): 55 image pairs.
+[21:37:23.270393][info] sift Regions Matching
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+[21:37:41.591695][info] 55 putative image pair matches
+[21:37:41.591695][info] 	- image pair (143339054, 289407340) contains 240 putative matches.
+[21:37:41.591695][info] 	- image pair (143339054, 351323730) contains 273 putative matches.
+[21:37:41.591695][info] 	- image pair (143339054, 678082309) contains 1248 putative matches.
+[21:37:41.591695][info] 	- image pair (143339054, 1286801923) contains 289 putative matches.
+[21:37:41.591695][info] 	- image pair (143339054, 1350370487) contains 270 putative matches.
+[21:37:41.591695][info] 	- image pair (143339054, 1612886025) contains 280 putative matches.
+[21:37:41.592705][info] 	- image pair (143339054, 1615177411) contains 220 putative matches.
+[21:37:41.592705][info] 	- image pair (143339054, 1888019723) contains 253 putative matches.
+[21:37:41.592705][info] 	- image pair (143339054, 1915022538) contains 1198 putative matches.
+[21:37:41.592705][info] 	- image pair (143339054, 2086565607) contains 306 putative matches.
+[21:37:41.592705][info] 	- image pair (289407340, 351323730) contains 329 putative matches.
+[21:37:41.592705][info] 	- image pair (289407340, 678082309) contains 279 putative matches.
+[21:37:41.592705][info] 	- image pair (289407340, 1286801923) contains 632 putative matches.
+[21:37:41.592705][info] 	- image pair (289407340, 1350370487) contains 358 putative matches.
+[21:37:41.592705][info] 	- image pair (289407340, 1612886025) contains 491 putative matches.
+[21:37:41.592705][info] 	- image pair (289407340, 1615177411) contains 239 putative matches.
+[21:37:41.592705][info] 	- image pair (289407340, 1888019723) contains 291 putative matches.
+[21:37:41.592705][info] 	- image pair (289407340, 1915022538) contains 267 putative matches.
+[21:37:41.592705][info] 	- image pair (289407340, 2086565607) contains 302 putative matches.
+[21:37:41.592705][info] 	- image pair (351323730, 678082309) contains 295 putative matches.
+[21:37:41.592705][info] 	- image pair (351323730, 1286801923) contains 598 putative matches.
+[21:37:41.592705][info] 	- image pair (351323730, 1350370487) contains 1440 putative matches.
+[21:37:41.592705][info] 	- image pair (351323730, 1612886025) contains 298 putative matches.
+[21:37:41.592705][info] 	- image pair (351323730, 1615177411) contains 124 putative matches.
+[21:37:41.592705][info] 	- image pair (351323730, 1888019723) contains 270 putative matches.
+[21:37:41.592705][info] 	- image pair (351323730, 1915022538) contains 241 putative matches.
+[21:37:41.592705][info] 	- image pair (351323730, 2086565607) contains 334 putative matches.
+[21:37:41.592705][info] 	- image pair (678082309, 1286801923) contains 306 putative matches.
+[21:37:41.592705][info] 	- image pair (678082309, 1350370487) contains 273 putative matches.
+[21:37:41.592705][info] 	- image pair (678082309, 1612886025) contains 510 putative matches.
+[21:37:41.592705][info] 	- image pair (678082309, 1615177411) contains 224 putative matches.
+[21:37:41.592705][info] 	- image pair (678082309, 1888019723) contains 342 putative matches.
+[21:37:41.592705][info] 	- image pair (678082309, 1915022538) contains 316 putative matches.
+[21:37:41.592705][info] 	- image pair (678082309, 2086565607) contains 323 putative matches.
+[21:37:41.592705][info] 	- image pair (1286801923, 1350370487) contains 983 putative matches.
+[21:37:41.592705][info] 	- image pair (1286801923, 1612886025) contains 879 putative matches.
+[21:37:41.592705][info] 	- image pair (1286801923, 1615177411) contains 186 putative matches.
+[21:37:41.592705][info] 	- image pair (1286801923, 1888019723) contains 278 putative matches.
+[21:37:41.592705][info] 	- image pair (1286801923, 1915022538) contains 271 putative matches.
+[21:37:41.592705][info] 	- image pair (1286801923, 2086565607) contains 461 putative matches.
+[21:37:41.592705][info] 	- image pair (1350370487, 1612886025) contains 320 putative matches.
+[21:37:41.592705][info] 	- image pair (1350370487, 1615177411) contains 156 putative matches.
+[21:37:41.592705][info] 	- image pair (1350370487, 1888019723) contains 254 putative matches.
+[21:37:41.592705][info] 	- image pair (1350370487, 1915022538) contains 258 putative matches.
+[21:37:41.592705][info] 	- image pair (1350370487, 2086565607) contains 308 putative matches.
+[21:37:41.592705][info] 	- image pair (1612886025, 1615177411) contains 306 putative matches.
+[21:37:41.592705][info] 	- image pair (1612886025, 1888019723) contains 634 putative matches.
+[21:37:41.592705][info] 	- image pair (1612886025, 1915022538) contains 268 putative matches.
+[21:37:41.592705][info] 	- image pair (1612886025, 2086565607) contains 387 putative matches.
+[21:37:41.592705][info] 	- image pair (1615177411, 1888019723) contains 237 putative matches.
+[21:37:41.592705][info] 	- image pair (1615177411, 1915022538) contains 279 putative matches.
+[21:37:41.592705][info] 	- image pair (1615177411, 2086565607) contains 239 putative matches.
+[21:37:41.592705][info] 	- image pair (1888019723, 1915022538) contains 236 putative matches.
+[21:37:41.592705][info] 	- image pair (1888019723, 2086565607) contains 348 putative matches.
+[21:37:41.592705][info] 	- image pair (1915022538, 2086565607) contains 292 putative matches.
+[21:37:41.592705][info] Task (Regions Matching) done in (s): 18.322000
+[21:37:41.593702][info] Geometric filtering: using fundamental_matrix
+Robust Model Estimation
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+[21:37:43.976123][info] 14 geometric image pair matches:
+[21:37:43.976123][info] 	- image pair (143339054, 678082309) contains 884 geometric matches.
+[21:37:43.976123][info] 	- image pair (143339054, 1915022538) contains 835 geometric matches.
+[21:37:43.976123][info] 	- image pair (289407340, 1286801923) contains 299 geometric matches.
+[21:37:43.976123][info] 	- image pair (289407340, 1612886025) contains 185 geometric matches.
+[21:37:43.976123][info] 	- image pair (351323730, 1286801923) contains 159 geometric matches.
+[21:37:43.976123][info] 	- image pair (351323730, 1350370487) contains 1081 geometric matches.
+[21:37:43.976123][info] 	- image pair (678082309, 1612886025) contains 144 geometric matches.
+[21:37:43.976123][info] 	- image pair (678082309, 1888019723) contains 51 geometric matches.
+[21:37:43.976123][info] 	- image pair (1286801923, 1350370487) contains 546 geometric matches.
+[21:37:43.976123][info] 	- image pair (1286801923, 1612886025) contains 510 geometric matches.
+[21:37:43.976123][info] 	- image pair (1286801923, 2086565607) contains 131 geometric matches.
+[21:37:43.977120][info] 	- image pair (1612886025, 1615177411) contains 84 geometric matches.
+[21:37:43.977120][info] 	- image pair (1612886025, 1888019723) contains 328 geometric matches.
+[21:37:43.977120][info] 	- image pair (1612886025, 2086565607) contains 72 geometric matches.
+[21:37:43.977120][info] Grid filtering
+[21:37:43.977120][info] After grid filtering:
+[21:37:43.977120][info] 	- image pair (143339054, 678082309) contains 884 geometric matches.
+[21:37:43.977120][info] 	- image pair (143339054, 1915022538) contains 835 geometric matches.
+[21:37:43.977120][info] 	- image pair (289407340, 1286801923) contains 299 geometric matches.
+[21:37:43.977120][info] 	- image pair (289407340, 1612886025) contains 185 geometric matches.
+[21:37:43.977120][info] 	- image pair (351323730, 1286801923) contains 159 geometric matches.
+[21:37:43.977120][info] 	- image pair (351323730, 1350370487) contains 1081 geometric matches.
+[21:37:43.977120][info] 	- image pair (678082309, 1612886025) contains 144 geometric matches.
+[21:37:43.977120][info] 	- image pair (678082309, 1888019723) contains 51 geometric matches.
+[21:37:43.977120][info] 	- image pair (1286801923, 1350370487) contains 546 geometric matches.
+[21:37:43.977120][info] 	- image pair (1286801923, 1612886025) contains 510 geometric matches.
+[21:37:43.977120][info] 	- image pair (1286801923, 2086565607) contains 131 geometric matches.
+[21:37:43.977120][info] 	- image pair (1612886025, 1615177411) contains 84 geometric matches.
+[21:37:43.977120][info] 	- image pair (1612886025, 1888019723) contains 328 geometric matches.
+[21:37:43.977120][info] 	- image pair (1612886025, 2086565607) contains 72 geometric matches.
+[21:37:43.977120][info] Save geometric matches.
+[21:37:43.983104][info] Task done in (s): 2.388000

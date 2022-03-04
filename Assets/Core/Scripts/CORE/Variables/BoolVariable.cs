@@ -13,13 +13,5 @@ using UnityEngine;
 namespace Core
 {
     [CreateAssetMenu(menuName = "Variables/bool", order = 0)]
-    public class BoolVariable : ScriptableObject
-    {
-        public bool Value;
-
-        public static implicit operator bool(BoolVariable variable)
-        {
-            return variable.Value;
-        }
-    }
+    public class BoolVariable : BaseVariable<bool> { }
 }

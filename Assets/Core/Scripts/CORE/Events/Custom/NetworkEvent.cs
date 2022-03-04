@@ -28,5 +28,19 @@ namespace Core
         public UnityAction<Packet, object[]> SendMethod { get; set; }
 
         #endregion
+
+        #region Unity Methods
+
+        void Awake()
+        {
+            Validate();
+        }
+
+        void OnValidate()
+        {
+            Validate();
+        }
+
+        #endregion
     }
 }

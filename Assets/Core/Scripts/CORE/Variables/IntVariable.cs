@@ -13,13 +13,5 @@ using UnityEngine;
 namespace Core
 {
     [CreateAssetMenu(menuName = "Variables/int", order = 0)]
-    public class IntVariable : ScriptableObject
-    {
-        public int Value;
-
-        public static implicit operator int(IntVariable variable)
-        {
-            return variable.Value;
-        }
-    }
+    public class IntVariable : BaseVariable<int> { }
 }

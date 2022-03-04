@@ -16,6 +16,7 @@ using UnityEngine.Events;
 namespace Core
 {
     [Serializable]
+    [NodeWidth(320)]
     [CreateAssetMenu(menuName = "Console/CommandEvent", order = 4)]
     public class CommandEvent : BaseEvent
     {
@@ -89,11 +90,6 @@ namespace Core
         void Awake()
         {
             Validate();
-        }
-
-        void OnEnable()
-        {
-           Validate();
         }
 
         void OnValidate()
