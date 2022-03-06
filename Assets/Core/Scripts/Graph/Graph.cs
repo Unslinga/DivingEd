@@ -19,6 +19,8 @@ namespace Core
     {
         #region Fields & Properties
 
+        public GraphManager Manager { get; set; }
+
         public BaseNode Current { get; set; }
 
         #endregion
@@ -28,6 +30,31 @@ namespace Core
         #endregion
 
         #region Private Methods
+
+        public void Validate()
+        {
+            Manager = FindObjectOfType<GraphManager>();
+            
+            if (Manager == null)
+            {
+                Manager = new GameObject(typeof(GraphManager).Name).AddComponent<GraphManager>();
+                Manager.Graph = this;
+            }
+        }
+
+        #endregion
+
+        #region Unity Methods
+
+        void Awake()
+        {
+            Validate();
+        }
+
+        void OnValidate()
+        {
+            Validate();
+        }
 
         #endregion
     }
