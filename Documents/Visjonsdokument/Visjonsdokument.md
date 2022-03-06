@@ -81,7 +81,7 @@ Programmet skal brukes i dagens utdanning av Dykkerledere og brukes i undervisni
 | Debrief | 2 | Lærere og studenter | Verbal gjennomgang av sesjonen på dykkerpost | Logg etter endt scenario, mulighet for gjennomgang av alle detaljer og valg studenten gjorde |
 | Dykkere i vannet | 3 | Dykkerne | Dykkere i vannet og standby | Simulere dybde og relativ posisjon i forhold til markører |
 | Realistisk simulering av trykk og dybde | 4 | Lærere, studenter og dykkere | Sitte på fysisk dykkerpost med dykkere i vannet | Nodebasert simulering av trykk og dybde av dykkerpost og dykkere |
-|  |  |  |  |  |
+| Styring av scenarioer | 5 | Lærerne | instruere dykkere eller tukle med utstyr, distrahere | Sette opp tidsbaserte hendelser ved hjelp av kommandoer i programmet |
 
 ### 3.5	Alternativer til vårt produkt
 
@@ -99,13 +99,16 @@ DivingEd skal brukes som utdanningsverktøy og gi dykkerlederene mulighet for me
 - Brukertesting 
 - Tidsklemme
 - Endring av prosjektplan eller forventninger om produktet
-- 
 
 <div style="page-break-after: always;"></div>
 
 ## 5	PRODUKTETS FUNKSJONELLE EGENSKAPER
 
 - Realistisk simulering av trykk og dybde, trenger teknisk informasjon for dykkerposten vi skal simulere korrekt, eventuelt bruk av kilder på nett til <cite>approksimering[1]<cite>.
+- lasting og lagring av scenarioer, ferdiglagde eller nylig genererte.
+- Mulighet til å raskt bytte mellom oversikt og detaljer (zooming)
+- Mulighet til å bruke kommandoer til å gjøre endringer i scenarioer når de settes opp, "spole" gjennom tidslinjen for å sette opp hendelser.
+- logging av data som endres, eller kommandoer som blir trigget underveis i scenario til bruk i debrief
 - 
 
 ## 6	IKKE-FUNKSJONELLE EGENSKAPER OG ANDRE KRAV
