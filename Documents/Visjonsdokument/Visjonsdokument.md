@@ -36,6 +36,7 @@
 | --- | --- | --- |  --- | 
 | 25/01/2022 | 1.0 | Første utkast | Olav Pete |
 | 01/03/2022 | 1.1 | Mer teknisk beskrivelse | Olav Pete |
+| 06/03/2022 | 1.2 | andre utkast | Olav Pete |
 			
 <div style="page-break-after: always;"></div>
 
