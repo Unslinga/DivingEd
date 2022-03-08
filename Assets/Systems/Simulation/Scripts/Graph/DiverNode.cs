@@ -14,11 +14,11 @@ using XNode;
 
 namespace Simulation
 {
-    public class DiverNode : BaseNode
+    public class DiverNode : SimuationNode
     {
         #region Fields & Properties
 
-        [Input] public DoubleVariable In;
+        [Input] public Flow In;
 
         #endregion
 

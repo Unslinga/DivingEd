@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace Simulation
 {
-    public class Simulation : MonoBehaviour, IController
+    public class Simulation : MonoBehaviour
     {
         #region Fields & Properties
 

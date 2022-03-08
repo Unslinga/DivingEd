@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9107578133268659750
+--- !u!114 &-3399573250528701760
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,38 +9,63 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6768d2663c371b54ba962420a3836a62, type: 3}
-  m_Name: ToggleMainMenu
+  m_Script: {fileID: 11500000, guid: 259087feab683d34cbdaa13bca503fd0, type: 3}
+  m_Name: Control
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 376, y: -328}
+  position: {x: -216, y: -376}
   ports:
-    keys: []
-    values: []
-  <Event>k__BackingField: CommandEvent
-  <CommandOption>k__BackingField: 1
-  <CommandPattern>k__BackingField: ToggleMainMenu
-  <SupportedParameters>k__BackingField: 
---- !u!114 &-2753842605283140707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f96cea6ada90b4984cf627badd4634, type: 3}
-  m_Name: Active Events
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 56, y: -392}
-  ports:
-    keys: []
-    values: []
-  width: 720
-  height: 285
-  color: {r: 1, g: 1, b: 1, a: 0.1}
+    keys:
+    - controlIn
+    - controlOut
+    - In
+    - Out
+    values:
+    - _fieldName: controlIn
+      _node: {fileID: -3399573250528701760}
+      _typeQualifiedName: Core.DoubleReference, Core, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: controlOut
+      _node: {fileID: -3399573250528701760}
+      _typeQualifiedName: Core.DoubleReference, Core, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: In
+      _node: {fileID: -3399573250528701760}
+      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out
+      _node: {fileID: -3399573250528701760}
+      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  controlIn:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 0}
+  controlOut:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 0}
+  <Test>k__BackingField: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,5 +79,23 @@ MonoBehaviour:
   m_Name: System
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: -2753842605283140707}
-  - {fileID: -9107578133268659750}
+  - {fileID: 2068010494449665719}
+  - {fileID: -3399573250528701760}
+--- !u!114 &2068010494449665719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8d40979a0b49ca459c3615145ee7d46, type: 3}
+  m_Name: Bool Variable
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -696, y: -360}
+  ports:
+    keys: []
+    values: []
+  <Value>k__BackingField: 0

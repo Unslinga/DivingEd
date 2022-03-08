@@ -10,15 +10,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using XNode;
 
-namespace Simulation
+namespace Core
 {
-    public class InputNode : SimuationNode
+    public class GraphManager : MonoBehaviour
     {
         #region Fields & Properties
 
-        //[Output] public Flow Out;
+        [field: SerializeField]
+        public Graph Graph { get; set; }
 
         #endregion
 
@@ -34,11 +34,7 @@ namespace Simulation
 
         void Awake()
         {
-        }
-
-        void OnDestroy()
-        {
-        
+            this.Instance<GraphManager>();
         }
 
         #endregion
