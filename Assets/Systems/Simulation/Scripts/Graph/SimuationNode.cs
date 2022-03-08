@@ -10,15 +10,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using XNode;
 
-namespace Simulation
+namespace Core
 {
-    public class InputNode : SimuationNode
+    public abstract class SimuationNode : BaseNode
     {
         #region Fields & Properties
-
-        //[Output] public Flow Out;
 
         #endregion
 
@@ -27,19 +24,6 @@ namespace Simulation
         #endregion
 
         #region Private Methods
-
-        #endregion
-
-        #region Unity Methods
-
-        void Awake()
-        {
-        }
-
-        void OnDestroy()
-        {
-        
-        }
 
         #endregion
     }

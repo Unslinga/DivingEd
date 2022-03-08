@@ -14,12 +14,18 @@ using XNode;
 
 namespace Simulation
 {
-    public class ControlNode : BaseNode
+    public class ControlNode : SimuationNode
     {
         #region Fields & Properties
 
-        [Input] public DoubleVariable In;
-        [Output] public DoubleVariable Out;
+        [Input] public DoubleReference controlIn;
+        [Output] public DoubleReference controlOut;
+
+        [Input] public Flow In;
+        [Output] public Flow Out;
+
+        [field: SerializeField]
+        public InputEvent Test { get; set; }
 
         #endregion
 
