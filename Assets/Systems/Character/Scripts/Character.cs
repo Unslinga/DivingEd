@@ -22,26 +22,16 @@ namespace Character
         #region Properties
 
         [field: SerializeField]
-        public GameObject Body { get; set; }
+        public GameObject Camera { get; set; }
 
         [field: SerializeField]
-        public GameObject Head { get; set; }
-
-        [field: Header("Player Info")]
-        [field: SerializeField]
-        public Vector3Reference BodyPosition { get; set; }
-        [field: SerializeField]
-        public Vector3Reference BodyRotation { get; set; } // Pitch, Yaw, Roll
-
-        [field: SerializeField]
-        public Vector3Reference HeadPosition { get; set; }
-        [field: SerializeField]
-        public Vector3Reference HeadRotation { get; set; }
-
+        public Vector3Reference CameraPosition { get; set; }
+      
+        public InputEvent KeySpaceInputEvent { get; set; }
         #endregion
 
         #region Public Methods
-
+        
         #endregion
 
         #region Private Methods
@@ -54,9 +44,18 @@ namespace Character
             
         }
 
+        private void Awake()
+        {
+            //IputEvent.CreateListener(gameObject, KeyDown);
+            //KeySpaceInputEvent.CreateListener(gameObject, OnKeyboardInput);
+
+            //ZoomEvent
+        }
+
         private void Update()
         {
-            Body.transform.position = BodyPosition;
+            Camera.transform.position = CameraPosition;
+
         }
         #endregion
         
