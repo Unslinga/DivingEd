@@ -13,7 +13,8 @@ using UnityEngine;
 namespace Core
 {
     [Serializable]
-    public class UIEvent : BaseEvent
+    [NodeWidth(336)]
+    public class InputEventNamedSet : NamedSet<InputEvent>
     {
         #region Fields
 
@@ -22,29 +23,9 @@ namespace Core
         #region Properties
 
         #endregion
-
+        
         #region Public Methods
 
         #endregion
-
-        #region Unity Methods
-
-        void Awake()
-        {
-            Validate();
-        }
-
-        void OnValidate()
-        {
-            Validate();
-        }
-
-        #endregion
-
-    }
-
-    public struct UIData
-    {
-
-    }
+    }    
 }

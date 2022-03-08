@@ -16,7 +16,7 @@ using XNode;
 
 namespace Core
 {
-    [NodeWidth(260)]
+    [NodeWidth(272)]
     public abstract class BaseEvent : BaseNode
     {
         #region Fields
@@ -26,10 +26,6 @@ namespace Core
         #endregion
 
         #region Properties
-
-        [field: ReadOnlyField]
-        [field: SerializeField]
-        public string Event { get; internal set; }
 
         #endregion
 
@@ -135,7 +131,6 @@ namespace Core
 
         internal void Validate()
         {
-            Event = this.GetType().Name;
         }
 
         #endregion

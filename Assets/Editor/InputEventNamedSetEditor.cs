@@ -10,10 +10,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using XNodeEditor;
 
-[CustomNodeEditor(typeof(BaseNode))]
-public class BaseNodeEditor : NodeEditor
+[CustomNodeEditor(typeof(InputEventNamedSet))]
+
+public class InputEventNamedSetEditor : BaseNodeEditor
 {
     #region Fields & Properties
 
@@ -23,15 +23,16 @@ public class BaseNodeEditor : NodeEditor
 
     public override void OnBodyGUI()
     {
-        bool enabled = GUI.enabled;
-
-        GUI.enabled = false;
-        GUILayout.Label(target.GetType().Name);
-        GUI.enabled = enabled;
+        base.OnBodyGUI();
 
         GUILayout.Space(8);
 
-        base.OnBodyGUI();
+        var set = target as InputEventNamedSet;
+
+        if (GUILayout.Button("Update InputEvents"))
+        {
+            set.Items = GameManager.GetNodesByType<InputEvent>();
+        }
     }
 
     #endregion

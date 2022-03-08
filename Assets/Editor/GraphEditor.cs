@@ -9,11 +9,12 @@ using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using XNodeEditor;
 
-[CustomNodeEditor(typeof(BaseNode))]
-public class BaseNodeEditor : NodeEditor
+[CustomEditor(typeof(Graph))]
+public class GraphEditor : GlobalGraphEditor
 {
     #region Fields & Properties
 
@@ -21,17 +22,16 @@ public class BaseNodeEditor : NodeEditor
 
     #region Public Methods
 
-    public override void OnBodyGUI()
+    public override void OnInspectorGUI()
     {
-        bool enabled = GUI.enabled;
+        base.OnInspectorGUI();
 
-        GUI.enabled = false;
-        GUILayout.Label(target.GetType().Name);
-        GUI.enabled = enabled;
+        var graph = (Graph)target;
 
-        GUILayout.Space(8);
-
-        base.OnBodyGUI();
+        if (GUILayout.Button("Create GameManager Singleton", GUILayout.Height(40)))
+        {
+            graph.CreateGameManager();
+        }
     }
 
     #endregion

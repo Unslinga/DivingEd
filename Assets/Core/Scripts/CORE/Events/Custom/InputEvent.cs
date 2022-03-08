@@ -13,43 +13,23 @@ using UnityEngine;
 namespace Core
 {
     [Serializable]
-    [CreateAssetMenu(menuName = "InputController/InputEvent", order = 0)]
     public class InputEvent : BaseEvent
     {
+        #region Fields & Properties
 
-        #region Fields
-
-        #endregion
-
-        #region Properties
+        [field: SerializeField]
+        public KeyCode KeyCode { get; set; }
 
         #endregion
 
         #region Public Methods
 
         #endregion
-
-        #region Unity Methods
-
-        void Awake()
-        {
-            Validate();
-        }
-
-        void OnValidate()
-        {
-            Validate();
-        }
-
-        #endregion
-
     }
 
+    [Serializable]
     public struct InputData
     {
-        //properties
-        public KeyCode KeyCode  { get; set; }
-        public bool Holding { get; set; }
-
+        public int KeyState { get; set; }
     }
 }
