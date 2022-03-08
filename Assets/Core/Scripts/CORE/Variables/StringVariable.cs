@@ -13,13 +13,5 @@ using UnityEngine;
 namespace Core
 {
     [CreateAssetMenu(menuName = "Variables/string", order = 0)]
-    public class StringVariable : ScriptableObject
-    {
-        public string Value;
-
-        public static implicit operator string(StringVariable variable)
-        {
-            return variable.Value;
-        }
-    }
+    public class StringVariable : BaseVariable<string> { }
 }

@@ -1,0 +1,54 @@
+Program called with the following parameters:
+ * addLandmarksToTheDensePointCloud = 0
+ * angleFactor = 15
+ * colorizeOutput = 0
+ * contributeMarginFactor = 2
+ * densifyNbBack = 0 (default)
+ * densifyNbFront = 0 (default)
+ * densifyScale = 1 (default)
+ * depthMapsFolder = "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/DepthMapFilter/9be6f9b3e15f70dc1c0a56e0f389dcf77c494125"
+ * estimateSpaceFromSfM = 1
+ * estimateSpaceMinObservationAngle = 10
+ * estimateSpaceMinObservations = 3
+ * exportDebugTetrahedralization = 0
+ * fullWeight = 1
+ * helperPointsGridSize = 10
+ * input = "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/StructureFromMotion/947080f40fc9e5b52861f0fa8db9792273e09270/sfm.abc"
+ * invertTetrahedronBasedOnNeighborsNbIterations = 10
+ * maskBorderSize = 1 (default)
+ * maskHelperPointsWeight = 0 (default)
+ * maxInputPoints = 50000000
+ * maxNbConnectedHelperPoints = 50
+ * maxPoints = 5000000
+ * maxPointsPerVoxel = 1000000
+ * minAngleThreshold = 1
+ * minSolidAngleRatio = 0.2
+ * minStep = 2
+ * minVis = 2 (default)
+ * nPixelSizeBehind = 4
+ * nbSolidAngleFilteringIterations = 2
+ * output = "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/Meshing/db861ca4e739f6cf60b3bf85f7ab5d874e251480/densePointCloud.abc"
+ * outputMesh = "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/Meshing/db861ca4e739f6cf60b3bf85f7ab5d874e251480/mesh.obj"
+ * partitioning =  Unknown Type "enum EPartitioningMode"
+ * pixSizeMarginFinalCoef = 4
+ * pixSizeMarginInitCoef = 2
+ * refineFuse = 1
+ * repartition =  Unknown Type "enum ERepartitionMode"
+ * saveRawDensePointCloud = 0
+ * seed =  Unknown Type "unsigned int"
+ * simFactor = 15
+ * simGaussianSize = 10
+ * simGaussianSizeInit = 10
+ * universePercentile = 0.999 (default)
+ * verboseLevel = "info"
+ * voteFilteringForWeaklySupportedSurfaces = 1
+ * voteMarginFactor = 4
+
+[21:39:14.452058][info] Found 1 image dimension(s): 
+[21:39:14.452058][info] 	- [3024x4032]
+[21:39:14.455051][info] Overall maximum dimension: [3024x4032]
+[21:39:14.455051][warning] repartitionMode: 1
+[21:39:14.455051][warning] partitioningMode: 1
+[21:39:14.455051][info] Meshing mode: multi-resolution, partitioning: single block.
+[21:39:14.455051][info] Estimate space from SfM.
+[21:39:14.456070][fatal] Failed to estimate space from SfM: The space bounding box is too small.

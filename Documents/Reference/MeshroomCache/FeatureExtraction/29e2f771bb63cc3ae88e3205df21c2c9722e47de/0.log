@@ -1,0 +1,78 @@
+Program called with the following parameters:
+ * contrastFiltering =  Unknown Type "enum aliceVision::feature::EFeatureConstrastFiltering"
+ * describerPreset =  Unknown Type "enum aliceVision::feature::EImageDescriberPreset"
+ * describerQuality =  Unknown Type "enum aliceVision::feature::EFeatureQuality"
+ * describerTypes = "sift"
+ * forceCpuExtraction = 1
+ * gridFiltering = 1
+ * input = "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/CameraInit/71cabc0050c6171ecfa2ffc6b79e80de8995f10e/cameraInit.sfm"
+ * maxNbFeatures = 0 (default)
+ * maxThreads = 0
+ * output = "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/FeatureExtraction/29e2f771bb63cc3ae88e3205df21c2c9722e47de"
+ * rangeSize = 40
+ * rangeStart = 0
+ * relativePeakThreshold = 0.02 (default)
+ * verboseLevel =  Unknown Type "enum aliceVision::system::EVerboseLevel"
+
+[21:33:57.070961][info] CUDA-Enabled GPU.
+Device information:
+	- id:                      0
+	- name:                    GeForce GTX 1060 6GB
+	- compute capability:      6.1
+	- total device memory:     6144 MB 
+	- device memory available: 5222 MB 
+	- per-block shared memory: 49152
+	- warp size:               32
+	- max threads per block:   1024
+	- max threads per SM(X):   2048
+	- max block sizes:         {1024,1024,64}
+	- max grid sizes:          {2147483647,65535,65535}
+	- max 2D array texture:    {131072,65536}
+	- max 3D array texture:    {16384,16384,16384}
+	- max 2D linear texture:   {131072,65000,2097120}
+	- max 2D layered texture:  {32768,32768,2048}
+	- number of SM(x)s:        10
+	- registers per SM(x):     65536
+	- registers per block:     65536
+	- concurrent kernels:      yes
+	- mapping host memory:     yes
+	- unified addressing:      yes
+	- texture alignment:       512 byte
+	- pitch alignment:         32 byte
+0
+[21:33:57.257463][info] Supported CUDA-Enabled GPU detected.
+[21:33:57.258460][info] Job max memory consumption for one image: 3730 MB
+[21:33:57.258460][info] Memory information: 
+	- Total RAM:     7.94201 GB
+	- Free RAM:      1.23803 GB
+	- Available RAM: 1.23803 GB
+	- Total swap:    131072 GB
+	- Free swap:     131043 GB
+[21:33:57.258460][info] Max number of threads regarding memory usage: 1
+[21:33:57.258460][warning] The amount of RAM available is critical to extract features.
+[21:33:57.258460][warning] But the total amount of RAM is enough to extract features, so you should close other running applications.
+[21:33:57.258460][warning]  => 7 GB are used by other applications for a total RAM capacity of 8 GB.
+[21:33:57.258460][info] # threads for extraction: 1
+[21:33:57.821954][info] Extracting sift features from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7043.png' [cpu]
+[21:34:29.533196][info]       20000 sift features extracted from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7043.png'
+[21:34:29.932158][info] Extracting sift features from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7051.png' [cpu]
+[21:34:49.206898][info]       20000 sift features extracted from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7051.png'
+[21:34:49.578903][info] Extracting sift features from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7048.png' [cpu]
+[21:35:04.601678][info]       20000 sift features extracted from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7048.png'
+[21:35:04.958751][info] Extracting sift features from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7044.png' [cpu]
+[21:35:19.473845][info]       20000 sift features extracted from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7044.png'
+[21:35:19.819948][info] Extracting sift features from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7046.png' [cpu]
+[21:35:35.382448][info]       20000 sift features extracted from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7046.png'
+[21:35:35.737498][info] Extracting sift features from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7047.png' [cpu]
+[21:35:51.534278][info]       20000 sift features extracted from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7047.png'
+[21:35:51.912943][info] Extracting sift features from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7045.png' [cpu]
+[21:36:07.022888][info]       20000 sift features extracted from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7045.png'
+[21:36:07.419826][info] Extracting sift features from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7052.png' [cpu]
+[21:36:23.493185][info]       20000 sift features extracted from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7052.png'
+[21:36:23.870576][info] Extracting sift features from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7050.png' [cpu]
+[21:36:39.166670][info]       20000 sift features extracted from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7050.png'
+[21:36:39.574579][info] Extracting sift features from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7042.png' [cpu]
+[21:36:58.033300][info]       20000 sift features extracted from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7042.png'
+[21:36:58.628709][info] Extracting sift features from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7049.png' [cpu]
+[21:37:21.057475][info]       20000 sift features extracted from view 'C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7049.png'
+[21:37:21.062461][info] Task done in (s): 203.804000

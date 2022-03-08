@@ -1,0 +1,25 @@
+Program called with the following parameters:
+ * computeNormalMaps = 0
+ * depthMapsFolder = "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/DepthMap/b123115ae622d867942d196b225c5fe923513307"
+ * input = "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/StructureFromMotion/947080f40fc9e5b52861f0fa8db9792273e09270/sfm.abc"
+ * maxViewAngle = 70
+ * minNumOfConsistentCams = 3
+ * minNumOfConsistentCamsWithLowSimilarity = 4
+ * minViewAngle = 2
+ * nNearestCams = 10
+ * output = "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/DepthMapFilter/9be6f9b3e15f70dc1c0a56e0f389dcf77c494125"
+ * pixSizeBall = 0
+ * pixSizeBallWithLowSimilarity = 0
+ * rangeSize = 10
+ * rangeStart = 0
+ * verboseLevel = "info"
+
+[21:38:00.588914][info] Found 1 image dimension(s): 
+[21:38:00.588914][info] 	- [3024x4032]
+[21:38:00.590908][info] Overall maximum dimension: [3024x4032]
+[21:38:00.590908][info] Filter depth maps.
+[21:38:00.590908][info] Precomputing groups.
+[21:38:00.693143][info] Found only 1/10 nearest cameras for view id: 1915022538
+[21:38:00.703118][info] Found only 1/10 nearest cameras for view id: 143339054
+[21:38:02.505670][info] Filtering depth maps.
+[21:38:02.829803][info] Task done in (s): 2.247000

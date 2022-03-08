@@ -1,0 +1,178 @@
+{
+    "version": [
+        1,
+        0,
+        0
+    ],
+    "views": [
+        {
+            "viewId": 143339054,
+            "poseId": 143339054,
+            "path": "C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7043.png",
+            "intrinsicId": 319428370,
+            "metadata": {
+                "AliceVision:useWhiteBalance": "1",
+                "ICCProfile": "0, 0, 2, 36, 97, 112, 112, 108, 4, 0, 0, 0, 109, 110, 116, 114, 82, 71, 66, 32, 88, 89, 90, 32, 7, 225, 0, 7, 0, 7, 0, 13, 0, 22, 0, 32, 97, 99, 115, 112, 65, 80, 80, 76, 0, 0, 0, 0, 65, 80, 80, 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ... [548 x uint8]",
+                "ResolutionUnit": "inch",
+                "XResolution": "71.9836",
+                "YResolution": "71.9836"
+            }
+        },
+        {
+            "viewId": 289407340,
+            "poseId": 289407340,
+            "path": "C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7051.png",
+            "intrinsicId": 319428370,
+            "metadata": {
+                "AliceVision:useWhiteBalance": "1",
+                "ICCProfile": "0, 0, 2, 36, 97, 112, 112, 108, 4, 0, 0, 0, 109, 110, 116, 114, 82, 71, 66, 32, 88, 89, 90, 32, 7, 225, 0, 7, 0, 7, 0, 13, 0, 22, 0, 32, 97, 99, 115, 112, 65, 80, 80, 76, 0, 0, 0, 0, 65, 80, 80, 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ... [548 x uint8]",
+                "ResolutionUnit": "inch",
+                "XResolution": "71.9836",
+                "YResolution": "71.9836"
+            }
+        },
+        {
+            "viewId": 351323730,
+            "poseId": 351323730,
+            "path": "C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7048.png",
+            "intrinsicId": 319428370,
+            "metadata": {
+                "AliceVision:useWhiteBalance": "1",
+                "ICCProfile": "0, 0, 2, 36, 97, 112, 112, 108, 4, 0, 0, 0, 109, 110, 116, 114, 82, 71, 66, 32, 88, 89, 90, 32, 7, 225, 0, 7, 0, 7, 0, 13, 0, 22, 0, 32, 97, 99, 115, 112, 65, 80, 80, 76, 0, 0, 0, 0, 65, 80, 80, 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ... [548 x uint8]",
+                "ResolutionUnit": "inch",
+                "XResolution": "71.9836",
+                "YResolution": "71.9836"
+            }
+        },
+        {
+            "viewId": 678082309,
+            "poseId": 678082309,
+            "path": "C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7044.png",
+            "intrinsicId": 319428370,
+            "metadata": {
+                "AliceVision:useWhiteBalance": "1",
+                "ICCProfile": "0, 0, 2, 36, 97, 112, 112, 108, 4, 0, 0, 0, 109, 110, 116, 114, 82, 71, 66, 32, 88, 89, 90, 32, 7, 225, 0, 7, 0, 7, 0, 13, 0, 22, 0, 32, 97, 99, 115, 112, 65, 80, 80, 76, 0, 0, 0, 0, 65, 80, 80, 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ... [548 x uint8]",
+                "ResolutionUnit": "inch",
+                "XResolution": "71.9836",
+                "YResolution": "71.9836"
+            }
+        },
+        {
+            "viewId": 1286801923,
+            "poseId": 1286801923,
+            "path": "C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7046.png",
+            "intrinsicId": 319428370,
+            "metadata": {
+                "AliceVision:useWhiteBalance": "1",
+                "ICCProfile": "0, 0, 2, 36, 97, 112, 112, 108, 4, 0, 0, 0, 109, 110, 116, 114, 82, 71, 66, 32, 88, 89, 90, 32, 7, 225, 0, 7, 0, 7, 0, 13, 0, 22, 0, 32, 97, 99, 115, 112, 65, 80, 80, 76, 0, 0, 0, 0, 65, 80, 80, 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ... [548 x uint8]",
+                "ResolutionUnit": "inch",
+                "XResolution": "71.9836",
+                "YResolution": "71.9836"
+            }
+        },
+        {
+            "viewId": 1350370487,
+            "poseId": 1350370487,
+            "path": "C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7047.png",
+            "intrinsicId": 319428370,
+            "metadata": {
+                "AliceVision:useWhiteBalance": "1",
+                "ICCProfile": "0, 0, 2, 36, 97, 112, 112, 108, 4, 0, 0, 0, 109, 110, 116, 114, 82, 71, 66, 32, 88, 89, 90, 32, 7, 225, 0, 7, 0, 7, 0, 13, 0, 22, 0, 32, 97, 99, 115, 112, 65, 80, 80, 76, 0, 0, 0, 0, 65, 80, 80, 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ... [548 x uint8]",
+                "ResolutionUnit": "inch",
+                "XResolution": "71.9836",
+                "YResolution": "71.9836"
+            }
+        },
+        {
+            "viewId": 1612886025,
+            "poseId": 1612886025,
+            "path": "C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7045.png",
+            "intrinsicId": 319428370,
+            "metadata": {
+                "AliceVision:useWhiteBalance": "1",
+                "ICCProfile": "0, 0, 2, 36, 97, 112, 112, 108, 4, 0, 0, 0, 109, 110, 116, 114, 82, 71, 66, 32, 88, 89, 90, 32, 7, 225, 0, 7, 0, 7, 0, 13, 0, 22, 0, 32, 97, 99, 115, 112, 65, 80, 80, 76, 0, 0, 0, 0, 65, 80, 80, 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ... [548 x uint8]",
+                "ResolutionUnit": "inch",
+                "XResolution": "71.9836",
+                "YResolution": "71.9836"
+            }
+        },
+        {
+            "viewId": 1615177411,
+            "poseId": 1615177411,
+            "path": "C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7052.png",
+            "intrinsicId": 319428370,
+            "metadata": {
+                "AliceVision:useWhiteBalance": "1",
+                "ICCProfile": "0, 0, 2, 36, 97, 112, 112, 108, 4, 0, 0, 0, 109, 110, 116, 114, 82, 71, 66, 32, 88, 89, 90, 32, 7, 225, 0, 7, 0, 7, 0, 13, 0, 22, 0, 32, 97, 99, 115, 112, 65, 80, 80, 76, 0, 0, 0, 0, 65, 80, 80, 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ... [548 x uint8]",
+                "ResolutionUnit": "inch",
+                "XResolution": "71.9836",
+                "YResolution": "71.9836"
+            }
+        },
+        {
+            "viewId": 1888019723,
+            "poseId": 1888019723,
+            "path": "C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7050.png",
+            "intrinsicId": 319428370,
+            "metadata": {
+                "AliceVision:useWhiteBalance": "1",
+                "ICCProfile": "0, 0, 2, 36, 97, 112, 112, 108, 4, 0, 0, 0, 109, 110, 116, 114, 82, 71, 66, 32, 88, 89, 90, 32, 7, 225, 0, 7, 0, 7, 0, 13, 0, 22, 0, 32, 97, 99, 115, 112, 65, 80, 80, 76, 0, 0, 0, 0, 65, 80, 80, 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ... [548 x uint8]",
+                "ResolutionUnit": "inch",
+                "XResolution": "71.9836",
+                "YResolution": "71.9836"
+            }
+        },
+        {
+            "viewId": 1915022538,
+            "poseId": 1915022538,
+            "path": "C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7042.png",
+            "intrinsicId": 319428370,
+            "metadata": {
+                "AliceVision:useWhiteBalance": "1",
+                "ICCProfile": "0, 0, 2, 36, 97, 112, 112, 108, 4, 0, 0, 0, 109, 110, 116, 114, 82, 71, 66, 32, 88, 89, 90, 32, 7, 225, 0, 7, 0, 7, 0, 13, 0, 22, 0, 32, 97, 99, 115, 112, 65, 80, 80, 76, 0, 0, 0, 0, 65, 80, 80, 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ... [548 x uint8]",
+                "ResolutionUnit": "inch",
+                "XResolution": "71.9836",
+                "YResolution": "71.9836"
+            }
+        },
+        {
+            "viewId": 2086565607,
+            "poseId": 2086565607,
+            "path": "C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7049.png",
+            "intrinsicId": 319428370,
+            "metadata": {
+                "AliceVision:useWhiteBalance": "1",
+                "ICCProfile": "0, 0, 2, 36, 97, 112, 112, 108, 4, 0, 0, 0, 109, 110, 116, 114, 82, 71, 66, 32, 88, 89, 90, 32, 7, 225, 0, 7, 0, 7, 0, 13, 0, 22, 0, 32, 97, 99, 115, 112, 65, 80, 80, 76, 0, 0, 0, 0, 65, 80, 80, 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ... [548 x uint8]",
+                "ResolutionUnit": "inch",
+                "XResolution": "71.9836",
+                "YResolution": "71.9836"
+            }
+        }
+    ],
+    "intrinsics": [
+        {
+            "intrinsicId": 319428370,
+            "pxInitialFocalLength": -1.0,
+            "pxFocalLength": 4867.054541744159,
+            "type": "radial3",
+            "width": 3024,
+            "height": 4032,
+            "sensorWidth": -1.0,
+            "sensorHeight": -0.75,
+            "serialNumber": "C:/Users/olav_/Projects/DivingEd/Documents/Reference",
+            "principalPoint": [
+                1512.0,
+                2016.0
+            ],
+            "initializationMode": "unknown",
+            "distortionParams": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "locked": false
+        }
+    ],
+    "featureFolder": "",
+    "matchingFolder": ""
+}

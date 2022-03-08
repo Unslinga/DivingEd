@@ -11,10 +11,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.Events;
+using UnityEditor;
+using XNode;
 
 namespace Core
 {
-    public abstract class BaseEvent : ScriptableObject
+    [NodeWidth(260)]
+    public abstract class BaseEvent : BaseNode
     {
         #region Fields
 
@@ -26,7 +29,7 @@ namespace Core
 
         [field: ReadOnlyField]
         [field: SerializeField]
-        public string Name { get; private set; }
+        public string Event { get; internal set; }
 
         #endregion
 
@@ -45,7 +48,7 @@ namespace Core
 
             if (gameObject == null)
             {
-                Debug.LogError($"GameObject [{info}][{Name}] cannot be null!");
+                Debug.LogError($"GameObject [{info}][{name}] cannot be null!");
             }
 
             List<EventListener> listeners = new List<EventListener>();
@@ -70,7 +73,7 @@ namespace Core
 
             if (gameObject == null)
             {
-                Debug.LogError($"GameObject [{info}][{Name}] cannot be null!");
+                Debug.LogError($"GameObject [{info}][{name}] cannot be null!");
             }
 
             List<EventListener> listeners = new List<EventListener>();
@@ -120,7 +123,7 @@ namespace Core
 
         protected EventListener CreateGameObjectListener(GameObject gameObject)
         {
-            var eventObject = new GameObject($"EVENT_{Name}");
+            var eventObject = new GameObject($"EVENT_{name}");
             eventObject.transform.parent = gameObject.transform;
 
             var listner = eventObject.AddComponent<EventListener>();
@@ -130,13 +133,23 @@ namespace Core
             return listner;
         }
 
+        internal void Validate()
+        {
+            Event = this.GetType().Name;
+        }
+
         #endregion
 
         #region Unity Methods
 
-        private void OnValidate()
+        void Awake()
         {
-            Name = name;
+            Validate();
+        }
+
+        void OnValidate()
+        {
+            Validate();
         }
 
         #endregion
