@@ -22,60 +22,105 @@ namespace InputController
 
         #region Properties
         [field: SerializeField]
-        public InputEvent KeyboardInputEvent { get; set; }
+        private float keyPressDuration;
+
+        [field: SerializeField]
+        private KeyCode[] unPressedKeys;
+        private KeyCode[] pressedKeys;
+        private float[] timer;
+
+
+        [field: SerializeField]
+        public InputEvent KeyInputEvent { get; set; }
+
 
 
         #endregion
 
         #region Public Methods
-        public void OnKeyboardInput(object data)
-        {
-            //string msg = "The key: " + dataInput as InputData + " is pressed.";
-            //Debug.Log(msg);
-            InputData inputData =  (InputData) data ;
-            if (inputData.Holding)
-            {
-                Debug.Log($"Holding {inputData.KeyCode}");
-               
-            } else
-            {
-                Debug.Log($"pressed {inputData.KeyCode}");
-               
-            }
-        }
+
         #endregion
 
         #region Private Methods
 
+        private void ToRaise(KeyCode keyCode, int i)
+        {
+            //Lock the pressed key
+            unPressedKeys[i] = 0;
+            pressedKeys[i] = keyCode;
+            timer[i] = Time.time;
+            Debug.Log(keyCode + "down");
+        }
+
         #endregion
 
         #region Unity Methods
-        private void Awake()
-        {
-            //IputEvent.CreateListener(gameObject, KeyDown);
-            KeyboardInputEvent.CreateListener(gameObject, OnKeyboardInput);
-        }
-        
+
+
         private void Start()
         {
-            
+            //Initialize the array
+            pressedKeys = new KeyCode[unPressedKeys.Length];
+            timer = new float[unPressedKeys.Length];
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            //Checking if any key of the reserved keys is pressed
+            for (int i = 0; i < unPressedKeys.Length; i++)
             {
-                KeyboardInputEvent.Raise(new InputData {KeyCode =KeyCode.Space, Holding = false });
+                if (Input.GetKeyDown(unPressedKeys[i]))
+                {
+                    //Removing the key from the reserved keys and start timing
+                    ToRaise(unPressedKeys[i], i);
+                }
             }
 
-            if (Input.GetKey(KeyCode.Space))
+            //Checking if a pressed key is released
+            for (int i = 0; i < pressedKeys.Length; i++)
             {
-                KeyboardInputEvent.Raise(new InputData { KeyCode = KeyCode.Space, Holding = true });
+                if (Input.GetKeyUp(pressedKeys[i]))
+                {
+                    //Determin if its a press, or hold
+                    if (timer[i] > -1)
+                    {
+                        Debug.Log("press");
+                        Debug.Log(pressedKeys[i] + "up");
+                        //KeyInputEvent.Raise(new InputData { KeyCode = pressedKeys[i], Holding = false });
+                        unPressedKeys[i] = pressedKeys[i];
+                        pressedKeys[i] = 0;
+                        timer[i] = 0;
+                        
+                    } else
+                    {
+                        Debug.Log(pressedKeys[i] + "up");
+                        unPressedKeys[i] = pressedKeys[i];
+                        pressedKeys[i] = 0;
+                        timer[i] = 0;
+                    }
+
+                    
+                }
+            }
+
+
+            for (int i = 0; i < timer.Length; i++)
+            {
+                if (timer[i] > 0)
+                {               
+                    if (Time.time - timer[i] > keyPressDuration)
+                    {
+                        //Hold
+                        {
+                            Debug.Log("holding");
+                            //KeyInputEvent.Raise(new InputData { KeyCode = pressedKeys[i], Holding = true });
+                            timer[i] = -1;
+                        }
+
+                    }
+                }
+                #endregion
             }
         }
-
-
-        #endregion
-        
-    } 
+    }
 }
