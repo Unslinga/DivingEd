@@ -12,21 +12,6 @@ using UnityEngine;
 
 namespace Core
 {
-    [Serializable]
-    public class MouseInputEvent : InputEvent
-    {
-        #region Fields & Properties
-
-        [field: SerializeField]
-        public int Button { get; set; }
-
-        #endregion
-    }
-
-    [Serializable]
-    public struct MouseInputData
-    {
-        public int Button { get; set; }
-        public byte State { get; set; }
-    }
+    [CreateAssetMenu(menuName = "Variables/Vector2", order = 0)]
+    public class Vector2Variable  : BaseVariable<Vector2> { }
 }

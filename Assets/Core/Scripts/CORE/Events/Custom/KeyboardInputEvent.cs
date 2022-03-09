@@ -24,17 +24,13 @@ namespace Core
         public KeyCode KeyCode { get; set; }
 
         #endregion
-
-        #region Public Methods
-
-        #endregion
     }
 
     [Serializable]
-    public struct InputData
+    public struct KeyboardInputData
     {
         public KeyCode KeyCode { get; set; }
         public bool Modifier { get; set; }
-        public byte KeyState { get; set; }
+        public byte State { get; set; }
     }
 }

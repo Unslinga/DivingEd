@@ -13,7 +13,7 @@ using UnityEngine;
 using UnityEditor;
 
 [CustomNodeEditor(typeof(KeyboardInputEvent))]
-public class InputEventEditor : BaseNodeEditor
+public class KeyboardInputEventEditor : BaseNodeEditor
 {
     #region Fields & Properties
 
@@ -28,9 +28,15 @@ public class InputEventEditor : BaseNodeEditor
     {
         base.OnBodyGUI();
 
-        GUILayout.Space(8);
-
         KeyboardInputEvent inputEvent = target as KeyboardInputEvent;
+
+        if (search)
+        {
+            Search(inputEvent);
+            return;
+        }
+
+        GUILayout.Space(8);
 
         GUILayout.BeginHorizontal();
         

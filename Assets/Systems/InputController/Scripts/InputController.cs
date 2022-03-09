@@ -9,6 +9,7 @@ using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace InputController
@@ -20,6 +21,13 @@ namespace InputController
         [field: SerializeField]
         public InputNamedSet InputEvents { get; private set; }
 
+        [field: SerializeField]
+        public Vector2Reference MousePosition { get; set; }
+
+        private Vector2 lastPosition;
+        [field: SerializeField]
+        public Vector2Reference MouseDelta { get; set; }
+
         private bool[] pressedInputs;
 
         #endregion
@@ -28,8 +36,14 @@ namespace InputController
 
         public void TestKeys(object data)
         {
-            var keyData = (InputData)data;
-            Debug.Log($"Key: [{keyData.KeyCode}], s: [{keyData.KeyState}], m: [{keyData.Modifier}]");
+            var keyData = (KeyboardInputData)data;
+            Debug.Log($"Key: [{keyData.KeyCode}], s: [{keyData.State}], m: [{keyData.Modifier}]");
+        }
+
+        public void TestButtons(object data)
+        {
+            var ButtonData = (MouseInputData)data;
+            Debug.Log($"Button: [{ButtonData.Button}], s: [{ButtonData.State}]");
         }
 
         #endregion
@@ -38,7 +52,7 @@ namespace InputController
 
         private void HandleKeyboardInputs()
         {
-            foreach (KeyboardInputEvent inputEvent in InputEvents.Items)
+            foreach (KeyboardInputEvent inputEvent in InputEvents.Items.Where(i => i is KeyboardInputEvent))
             {
                 int index = InputEvents.IndexOf(inputEvent);
 
@@ -61,14 +75,44 @@ namespace InputController
 
                 void Raise(byte state)
                 {
-                    inputEvent.Raise(new InputData { KeyCode = inputEvent.KeyCode, KeyState = state, Modifier = modifier });
+                    inputEvent.Raise(new KeyboardInputData { KeyCode = inputEvent.KeyCode, State = state, Modifier = modifier });
                 }
             }
         }
 
         private void HandleMouseInputs()
         {
+            foreach (MouseInputEvent inputEvent in InputEvents.Items.Where(i => i is MouseInputEvent))
+            {
+                int index = InputEvents.IndexOf(inputEvent);
 
+                if (Input.GetMouseButtonDown(inputEvent.Button))
+                {
+                    Raise(0);
+                }
+                if (Input.GetMouseButton(inputEvent.Button) && !pressedInputs[index])
+                {
+                    Raise(1);
+                    pressedInputs[index] = true;
+                }
+                if (Input.GetMouseButtonUp(inputEvent.Button))
+                {
+                    Raise(2);
+                    pressedInputs[index] = false;
+                }
+
+                void Raise(byte state)
+                {
+                    inputEvent.Raise(new MouseInputData { Button = inputEvent.Button, State = state });
+                }
+            }
+        }
+
+        private void HandleMouseMovement()
+        {
+            MousePosition.Value = Input.mousePosition;
+            MouseDelta.Value = MousePosition - lastPosition;
+            lastPosition = MousePosition;
         }
 
         #endregion
@@ -79,13 +123,17 @@ namespace InputController
         {
             pressedInputs = new bool[InputEvents.Count];
 
+            MousePosition.Value = Input.mousePosition;
+
             InputEvents["Back"].CreateListener(gameObject, TestKeys);
+            InputEvents["RightClick"].CreateListener(gameObject, TestButtons);
         }
 
         void Update()
         {
             HandleKeyboardInputs();
             HandleMouseInputs();
+            HandleMouseMovement();
         }
 
         #endregion

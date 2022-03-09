@@ -18,6 +18,7 @@ namespace Core
     [CustomPropertyDrawer(typeof(FloatReference))]
     [CustomPropertyDrawer(typeof(IntReference))]
     [CustomPropertyDrawer(typeof(StringReference))]
+    [CustomPropertyDrawer(typeof(Vector2Reference))]
     [CustomPropertyDrawer(typeof(Vector3Reference))]
     public class ReferenceDrawer : PropertyDrawer
     {

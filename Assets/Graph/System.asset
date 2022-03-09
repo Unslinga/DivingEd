@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8258853192890821675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd7954cc241cfb4a896e15db0de8a7f, type: 3}
+  m_Name: MouseDelta
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -264, y: -792}
+  ports:
+    keys: []
+    values: []
+  <Value>k__BackingField: {x: 0, y: 0}
+--- !u!114 &-8084319352410066067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce85a3b7b7486d545b8e84a30fddb27a, type: 3}
+  m_Name: RightClick
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1096, y: -776}
+  ports:
+    keys: []
+    values: []
+  <Button>k__BackingField: 1
+--- !u!114 &-6327925628071295119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce85a3b7b7486d545b8e84a30fddb27a, type: 3}
+  m_Name: MiddleClick
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1096, y: -648}
+  ports:
+    keys: []
+    values: []
+  <Button>k__BackingField: 2
 --- !u!114 &-6101253077844926297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,12 +67,32 @@ MonoBehaviour:
   m_Name: Space
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -712, y: -408}
+  position: {x: -712, y: -472}
   ports:
     keys: []
     values: []
   <Modifier>k__BackingField: 0
   <KeyCode>k__BackingField: 32
+--- !u!114 &-4113064798855798560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f96cea6ada90b4984cf627badd4634, type: 3}
+  m_Name: MouseMovement
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -328, y: -968}
+  ports:
+    keys: []
+    values: []
+  width: 400
+  height: 400
+  color: {r: 1, g: 1, b: 1, a: 0.1}
 --- !u!114 &-3436174636410729126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,7 +106,7 @@ MonoBehaviour:
   m_Name: Inputs
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1096, y: -840}
+  position: {x: -1096, y: -520}
   ports:
     keys: []
     values: []
@@ -42,6 +116,8 @@ MonoBehaviour:
   - {fileID: -728742968945651133}
   - {fileID: -6101253077844926297}
   - {fileID: 250412578330969638}
+  - {fileID: -8084319352410066067}
+  - {fileID: -6327925628071295119}
 --- !u!114 &-728742968945651133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55,7 +131,7 @@ MonoBehaviour:
   m_Name: Back
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -712, y: -696}
+  position: {x: -712, y: -760}
   ports:
     keys: []
     values: []
@@ -74,6 +150,7 @@ MonoBehaviour:
   m_Name: System
   m_EditorClassIdentifier: 
   nodes:
+  - {fileID: -4113064798855798560}
   - {fileID: 8603289289984696909}
   - {fileID: 1578148085060411446}
   - {fileID: 6670151146045740342}
@@ -81,6 +158,10 @@ MonoBehaviour:
   - {fileID: -3436174636410729126}
   - {fileID: -6101253077844926297}
   - {fileID: 250412578330969638}
+  - {fileID: -8084319352410066067}
+  - {fileID: -6327925628071295119}
+  - {fileID: 3185855804248201712}
+  - {fileID: -8258853192890821675}
 --- !u!114 &250412578330969638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,13 +172,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce85a3b7b7486d545b8e84a30fddb27a, type: 3}
-  m_Name: Mouse Input Event
+  m_Name: LeftClick
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -264, y: -776}
+  position: {x: -1096, y: -904}
   ports:
     keys: []
     values: []
+  <Button>k__BackingField: 0
 --- !u!114 &1578148085060411446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,12 +193,30 @@ MonoBehaviour:
   m_Name: Return
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -712, y: -552}
+  position: {x: -712, y: -616}
   ports:
     keys: []
     values: []
   <Modifier>k__BackingField: 0
   <KeyCode>k__BackingField: 13
+--- !u!114 &3185855804248201712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd7954cc241cfb4a896e15db0de8a7f, type: 3}
+  m_Name: MousePosition
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -264, y: -904}
+  ports:
+    keys: []
+    values: []
+  <Value>k__BackingField: {x: 0, y: 0}
 --- !u!114 &6670151146045740342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +230,7 @@ MonoBehaviour:
   m_Name: Escape
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -712, y: -840}
+  position: {x: -712, y: -904}
   ports:
     keys: []
     values: []
@@ -149,10 +249,10 @@ MonoBehaviour:
   m_Name: Input Events
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1160, y: -904}
+  position: {x: -1160, y: -968}
   ports:
     keys: []
     values: []
-  width: 786
-  height: 659
+  width: 785
+  height: 793
   color: {r: 1, g: 1, b: 1, a: 0.1}
