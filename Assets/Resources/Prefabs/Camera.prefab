@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 869627284401080502}
+  - component: {fileID: 7463295132570312017}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -31,6 +32,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7463295132570312017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869627284401080505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f4b7aa31c9aff488fa70f50ddfbc09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Camera>k__BackingField: {fileID: 869627284781532500}
+  <CameraFOV>k__BackingField:
+    UseConstant: 0
+    ConstantValue: 60
+    Variable: {fileID: -3991258822004152438, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
+  <CameraPosition>k__BackingField:
+    UseConstant: 0
+    ConstantValue: {x: 0, y: 0, z: 0}
+    Variable: {fileID: -7864940268428510488, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
+  <CameraRotation>k__BackingField:
+    UseConstant: 0
+    ConstantValue: {x: 0, y: 0, z: 0, w: 0}
+    Variable: {fileID: -6216765618036949561, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
 --- !u!1 &869627284781532502
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +69,6 @@ GameObject:
   - component: {fileID: 869627284781532500}
   - component: {fileID: 869627284781532503}
   - component: {fileID: 869627284781532498}
-  - component: {fileID: 869627284781532499}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -58,8 +83,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869627284781532502}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
-  m_LocalPosition: {x: 0, y: 1.6, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 869627284401080502}
@@ -90,7 +115,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 0.00001
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -149,23 +174,3 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &869627284781532499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 869627284781532502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7f4b7aa31c9aff488fa70f50ddfbc09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <CameraPosition>k__BackingField:
-    UseConstant: 0
-    ConstantValue: {x: 0, y: 0, z: 0}
-    Variable: {fileID: -7864940268428510488, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
-  <CameraRotation>k__BackingField:
-    UseConstant: 0
-    ConstantValue: {x: 0, y: 0, z: 0, w: 0}
-    Variable: {fileID: -6216765618036949561, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}

@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: CameraPosition
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -264, y: -520}
+  position: {x: -264, y: -424}
   ports:
     keys: []
     values: []
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Name: CameraRotation
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -264, y: -392}
+  position: {x: -264, y: -312}
   ports:
     keys: []
     values: []
@@ -129,6 +129,24 @@ MonoBehaviour:
   width: 399
   height: 285
   color: {r: 1, g: 1, b: 1, a: 0.1}
+--- !u!114 &-3991258822004152438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1948334c5cf66f549994ee8c6c015784, type: 3}
+  m_Name: CameraFOV
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -264, y: -520}
+  ports:
+    keys: []
+    values: []
+  <Value>k__BackingField: 60
 --- !u!114 &-3436174636410729126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +219,7 @@ MonoBehaviour:
   - {fileID: -8258853192890821675}
   - {fileID: -7864940268428510488}
   - {fileID: -6216765618036949561}
+  - {fileID: -3991258822004152438}
 --- !u!114 &250412578330969638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +274,7 @@ MonoBehaviour:
   ports:
     keys: []
     values: []
-  <Value>k__BackingField: {x: 853.7561, y: 1171.317}
+  <Value>k__BackingField: {x: 871.3171, y: 1173.0731}
 --- !u!114 &5859284122985594453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,8 +292,8 @@ MonoBehaviour:
   ports:
     keys: []
     values: []
-  width: 402
-  height: 288
+  width: 400
+  height: 351
   color: {r: 1, g: 1, b: 1, a: 0.1}
 --- !u!114 &6670151146045740342
 MonoBehaviour:

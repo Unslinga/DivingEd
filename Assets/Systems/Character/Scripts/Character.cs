@@ -15,23 +15,18 @@ namespace Character
 {
     public class Character : MonoBehaviour
     {
-        #region Fields
-
-        #endregion
-
-        #region Properties
+        #region Fields & Properties
 
         [field: SerializeField]
-        public GameObject Camera { get; set; }
+        public FloatReference CameraFOV { get; set; }
 
         [field: SerializeField]
         public Vector3Reference CameraPosition { get; set; }
-      
-        public KeyboardInputEvent KeySpaceInputEvent { get; set; }
+
         #endregion
 
         #region Public Methods
-        
+
         #endregion
 
         #region Private Methods
@@ -39,24 +34,8 @@ namespace Character
         #endregion
 
         #region Unity Methods
-        private void Start()
-        {
-            
-        }
 
-        private void Awake()
-        {
-            //IputEvent.CreateListener(gameObject, KeyDown);
-            //KeySpaceInputEvent.CreateListener(gameObject, OnKeyboardInput);
-
-            //ZoomEvent
-        }
-
-        private void Update()
-        {
-            Camera.transform.position = CameraPosition;
-
-        }
+        
         #endregion
         
     } 

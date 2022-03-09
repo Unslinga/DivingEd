@@ -10,6 +10,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cam = UnityEngine.Camera;
 
 namespace Camera
 {
@@ -19,10 +20,19 @@ namespace Camera
         #region Fields & Properties
 
         [field: SerializeField]
+        [field: ReadOnlyField]
+        public Cam Camera { get; set; }
+
+        [field: Header("Camera Settings")]
+        [field: SerializeField]
+        public FloatReference CameraFOV { get; set; }
+
+        [field: SerializeField]
         public Vector3Reference CameraPosition { get; set; }
 
         [field: SerializeField]
         public QuaternionReference CameraRotation { get; set; }
+
 
         #endregion
 
@@ -36,10 +46,17 @@ namespace Camera
 
         #region Unity Methods
 
+        void Start()
+        {
+            Camera = GetComponentInChildren<Cam>();
+            CameraFOV.Value = Camera.fieldOfView; // prohibits snapping of values
+        }
+
         void Update()
         {
-            transform.position = CameraPosition;
-            transform.rotation = CameraRotation;
+            Camera.fieldOfView = CameraFOV;
+            Camera.transform.position = CameraPosition;
+            Camera.transform.rotation = CameraRotation;
         }
 
         #endregion
