@@ -26,6 +26,8 @@ public class GraphEditor : GlobalGraphEditor
     {
         base.OnInspectorGUI();
 
+        GUILayout.Space(EditorGUIUtility.singleLineHeight);
+
         var graph = (Graph)target;
 
         if (GUILayout.Button("Create GameManager Singleton", GUILayout.Height(40)))

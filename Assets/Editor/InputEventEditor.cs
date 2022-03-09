@@ -12,11 +12,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomNodeEditor(typeof(InputEvent))]
+[CustomNodeEditor(typeof(KeyboardInputEvent))]
 public class InputEventEditor : BaseNodeEditor
 {
     #region Fields & Properties
 
+    private bool modifier = false;
     private bool search = false;
 
     #endregion
@@ -29,12 +30,21 @@ public class InputEventEditor : BaseNodeEditor
 
         GUILayout.Space(8);
 
-        InputEvent inputEvent = target as InputEvent;
+        KeyboardInputEvent inputEvent = target as KeyboardInputEvent;
 
+        GUILayout.BeginHorizontal();
+        
+        if (GUILayout.Button("Set Modifier"))
+        {
+            modifier = true;
+            search = true;
+        }
         if (GUILayout.Button("Set Key"))
         {
             search = true;
         }
+
+        GUILayout.EndHorizontal();
 
         Search(inputEvent);
     }
@@ -43,7 +53,7 @@ public class InputEventEditor : BaseNodeEditor
 
     #region Private Methods
 
-    private void Search(InputEvent inputEvent)
+    private void Search(KeyboardInputEvent inputEvent)
     {
         if (!search) return;
 
@@ -51,8 +61,19 @@ public class InputEventEditor : BaseNodeEditor
 
         if (current.isKey)
         {
-            inputEvent.KeyCode = current.keyCode;
-            Debug.Log($"Set [{inputEvent.name}] key to [{inputEvent.KeyCode}]");
+            if (modifier)
+            {
+                inputEvent.Modifier = current.keyCode;
+                Debug.Log($"Set [{inputEvent.name}] modifier to [{inputEvent.KeyCode}]");
+            }
+            else
+            {
+                inputEvent.KeyCode = current.keyCode;
+                Debug.Log($"Set [{inputEvent.name}] key to [{inputEvent.KeyCode}]");
+            }
+            
+            
+            modifier = false;
             search = false;
         }
     }

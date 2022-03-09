@@ -13,19 +13,14 @@ using UnityEngine;
 namespace Core
 {
     [Serializable]
-    [NodeWidth(336)]
-    public class InputEventNamedSet : NamedSet<InputEvent>
+    public class MouseInputEvent : InputEvent
     {
-        #region Fields
+        #region Fields & Properties
 
         #endregion
 
-        #region Properties
-
-        #endregion
-        
         #region Public Methods
 
         #endregion
-    }    
+    }
 }

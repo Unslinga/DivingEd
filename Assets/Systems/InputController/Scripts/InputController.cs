@@ -18,7 +18,7 @@ namespace InputController
         #region Fields & Properties
 
         [field: SerializeField]
-        public InputEventNamedSet InputEvents { get; private set; }
+        public InputNamedSet InputEvents { get; private set; }
 
         private bool[] pressedInputs;
 
@@ -36,6 +36,41 @@ namespace InputController
 
         #region Private Methods
 
+        private void HandleKeyboardInputs()
+        {
+            foreach (KeyboardInputEvent inputEvent in InputEvents.Items)
+            {
+                int index = InputEvents.IndexOf(inputEvent);
+
+                bool modifier = Input.GetKey(inputEvent.Modifier) || Input.GetKeyUp(inputEvent.Modifier);
+
+                if (Input.GetKeyDown(inputEvent.KeyCode))
+                {
+                    Raise(0);
+                }
+                if (Input.GetKey(inputEvent.KeyCode) && !pressedInputs[index])
+                {
+                    Raise(1);
+                    pressedInputs[index] = true;
+                }
+                if (Input.GetKeyUp(inputEvent.KeyCode))
+                {
+                    Raise(2);
+                    pressedInputs[index] = false;
+                }
+
+                void Raise(byte state)
+                {
+                    inputEvent.Raise(new InputData { KeyCode = inputEvent.KeyCode, KeyState = state, Modifier = modifier });
+                }
+            }
+        }
+
+        private void HandleMouseInputs()
+        {
+
+        }
+
         #endregion
 
         #region Unity Methods
@@ -49,36 +84,8 @@ namespace InputController
 
         void Update()
         {
-            foreach (var inputEvent in InputEvents.Items)
-            {
-                int index = InputEvents.IndexOf(inputEvent);
-
-                bool modifier = Input.GetKeyDown(inputEvent.Modifier) || 
-                    Input.GetKey(inputEvent.Modifier) ||
-                    Input.GetKeyUp(inputEvent.Modifier);
-
-                if (Input.GetKeyDown(inputEvent.KeyCode))
-                {
-                    Raise(1);
-                }
-                if (Input.GetKey(inputEvent.KeyCode) && !pressedInputs[index])
-                {
-                    Raise(2);
-                    pressedInputs[index] = true;
-                }
-                if (Input.GetKeyUp(inputEvent.KeyCode))
-                {
-                    Raise(3);
-                    pressedInputs[index] = false;
-                }
-
-                void Raise(int state)
-                {
-                    inputEvent.Raise(new InputData { KeyCode = inputEvent.KeyCode, KeyState = state, Modifier = modifier });
-                }
-            }
-
-            
+            HandleKeyboardInputs();
+            HandleMouseInputs();
         }
 
         #endregion

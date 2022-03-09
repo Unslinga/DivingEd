@@ -27,7 +27,7 @@ namespace Character
         [field: SerializeField]
         public Vector3Reference CameraPosition { get; set; }
       
-        public InputEvent KeySpaceInputEvent { get; set; }
+        public KeyboardInputEvent KeySpaceInputEvent { get; set; }
         #endregion
 
         #region Public Methods

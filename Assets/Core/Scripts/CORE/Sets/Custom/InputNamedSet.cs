@@ -5,7 +5,6 @@
 // Aahed Diyab, Olav Pete
 // ----------------------------------------------------------------------------
 
-using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,5 +13,19 @@ using UnityEngine;
 namespace Core
 {
     [Serializable]
-    public abstract class InputEvent : BaseEvent { }
+    [NodeWidth(336)]
+    public class InputNamedSet : NamedSet<InputEvent>
+    {
+        #region Fields
+
+        #endregion
+
+        #region Properties
+
+        #endregion
+        
+        #region Public Methods
+
+        #endregion
+    }    
 }

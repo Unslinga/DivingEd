@@ -43,7 +43,7 @@ namespace Core
 
         public static List<T> GetNodesByType<T>() where T : Node
         {
-            return Instance.Graph.nodes.Where(n => n.GetType() == typeof(T)).Select(n => (T)n).ToList();
+            return Instance.Graph.nodes.Where(n => n is T).Select(n => (T)n).ToList();
         }
 
         #endregion
