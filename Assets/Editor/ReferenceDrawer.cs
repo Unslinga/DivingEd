@@ -20,6 +20,7 @@ namespace Core
     [CustomPropertyDrawer(typeof(StringReference))]
     [CustomPropertyDrawer(typeof(Vector2Reference))]
     [CustomPropertyDrawer(typeof(Vector3Reference))]
+    [CustomPropertyDrawer(typeof(QuaternionReference))]
     public class ReferenceDrawer : PropertyDrawer
     {
         #region Fields
