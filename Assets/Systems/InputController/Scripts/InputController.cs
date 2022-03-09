@@ -29,7 +29,7 @@ namespace InputController
         public void TestKeys(object data)
         {
             var keyData = (InputData)data;
-
+            Debug.Log($"Key: [{keyData.KeyCode}], s: [{keyData.KeyState}], m: [{keyData.Modifier}]");
         }
 
         #endregion
