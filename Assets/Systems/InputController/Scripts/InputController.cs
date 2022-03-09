@@ -20,9 +20,17 @@ namespace InputController
         [field: SerializeField]
         public InputEventNamedSet InputEvents { get; private set; }
 
+        private bool[] pressedInputs;
+
         #endregion
 
         #region Public Methods
+
+        public void TestKeys(object data)
+        {
+            var keyData = (InputData)data;
+
+        }
 
         #endregion
 
@@ -32,23 +40,45 @@ namespace InputController
 
         #region Unity Methods
 
+        void Start()
+        {
+            pressedInputs = new bool[InputEvents.Count];
+
+            InputEvents["Back"].CreateListener(gameObject, TestKeys);
+        }
+
         void Update()
         {
             foreach (var inputEvent in InputEvents.Items)
             {
+                int index = InputEvents.IndexOf(inputEvent);
+
+                bool modifier = Input.GetKeyDown(inputEvent.Modifier) || 
+                    Input.GetKey(inputEvent.Modifier) ||
+                    Input.GetKeyUp(inputEvent.Modifier);
+
                 if (Input.GetKeyDown(inputEvent.KeyCode))
                 {
-                    inputEvent.Raise(new InputData { KeyState = 1 });
+                    Raise(1);
                 }
-                if (Input.GetKey(inputEvent.KeyCode))
+                if (Input.GetKey(inputEvent.KeyCode) && !pressedInputs[index])
                 {
-                    inputEvent.Raise(new InputData { KeyState = 2 });
+                    Raise(2);
+                    pressedInputs[index] = true;
                 }
                 if (Input.GetKeyUp(inputEvent.KeyCode))
                 {
-                    inputEvent.Raise(new InputData { KeyState = 3 });
+                    Raise(3);
+                    pressedInputs[index] = false;
+                }
+
+                void Raise(int state)
+                {
+                    inputEvent.Raise(new InputData { KeyCode = inputEvent.KeyCode, KeyState = state, Modifier = modifier });
                 }
             }
+
+            
         }
 
         #endregion

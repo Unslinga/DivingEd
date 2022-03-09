@@ -18,6 +18,9 @@ namespace Core
         #region Fields & Properties
 
         [field: SerializeField]
+        public KeyCode Modifier { get; set; }
+
+        [field: SerializeField]
         public KeyCode KeyCode { get; set; }
 
         #endregion
@@ -30,6 +33,8 @@ namespace Core
     [Serializable]
     public struct InputData
     {
+        public KeyCode KeyCode { get; set; }
+        public bool Modifier { get; set; }
         public int KeyState { get; set; }
     }
 }
