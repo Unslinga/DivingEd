@@ -1,0 +1,445 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8258853192890821675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd7954cc241cfb4a896e15db0de8a7f, type: 3}
+  m_Name: MouseDelta
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -264, y: -344}
+  ports:
+    keys: []
+    values: []
+  <Value>k__BackingField: {x: 0, y: 0}
+--- !u!114 &-8084319352410066067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce85a3b7b7486d545b8e84a30fddb27a, type: 3}
+  m_Name: RightClick
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1096, y: -776}
+  ports:
+    keys: []
+    values: []
+  <Button>k__BackingField: 1
+--- !u!114 &-7864940268428510488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb4599f5d6b02b47b861aa95a54e6c2, type: 3}
+  m_Name: CameraPosition
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -264, y: -808}
+  ports:
+    keys: []
+    values: []
+  <Value>k__BackingField: {x: 0.475, y: 1.2, z: 0}
+--- !u!114 &-7033123584585434508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5481c99995adab740aee4b77bca3690b, type: 3}
+  m_Name: Input Event Set
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1096, y: -520}
+  ports:
+    keys: []
+    values: []
+  <Items>k__BackingField:
+  - {fileID: 1578148085060411446}
+  - {fileID: 6670151146045740342}
+  - {fileID: -728742968945651133}
+  - {fileID: -6101253077844926297}
+  - {fileID: 250412578330969638}
+  - {fileID: -8084319352410066067}
+  - {fileID: -6327925628071295119}
+  - {fileID: 1754927386200688542}
+  - {fileID: 4447631832616926569}
+  - {fileID: 8970294812456661808}
+  - {fileID: -4294262833794940171}
+--- !u!114 &-6327925628071295119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce85a3b7b7486d545b8e84a30fddb27a, type: 3}
+  m_Name: MiddleClick
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1096, y: -648}
+  ports:
+    keys: []
+    values: []
+  <Button>k__BackingField: 2
+--- !u!114 &-6216765618036949561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deab1ae37fcd34e46b22c8bc57b4c9b0, type: 3}
+  m_Name: CameraRotation
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -264, y: -696}
+  ports:
+    keys: []
+    values: []
+  <Value>k__BackingField: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+--- !u!114 &-6101253077844926297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85d5c2f7e63df940a9b3e2c3422c4e6, type: 3}
+  m_Name: Space
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -712, y: -472}
+  ports:
+    keys: []
+    values: []
+  <Modifier>k__BackingField: 0
+  <KeyCode>k__BackingField: 32
+--- !u!114 &-4294262833794940171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85d5c2f7e63df940a9b3e2c3422c4e6, type: 3}
+  m_Name: ArrowRight
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -712, y: 104}
+  ports:
+    keys: []
+    values: []
+  <Modifier>k__BackingField: 0
+  <KeyCode>k__BackingField: 275
+--- !u!114 &-4113064798855798560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f96cea6ada90b4984cf627badd4634, type: 3}
+  m_Name: MouseMovement
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -328, y: -520}
+  ports:
+    keys: []
+    values: []
+  width: 400
+  height: 288
+  color: {r: 1, g: 1, b: 1, a: 0.1}
+--- !u!114 &-3991258822004152438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1948334c5cf66f549994ee8c6c015784, type: 3}
+  m_Name: CameraFOV
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -264, y: -904}
+  ports:
+    keys: []
+    values: []
+  <Value>k__BackingField: 85
+--- !u!114 &-3436174636410729126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09f7ef21ead65f478ba1d6379eb57bd, type: 3}
+  m_Name: Inputs
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1096, y: -520}
+  ports:
+    keys: []
+    values: []
+  <Items>k__BackingField:
+  - {fileID: 1578148085060411446}
+  - {fileID: 6670151146045740342}
+  - {fileID: -728742968945651133}
+  - {fileID: -6101253077844926297}
+  - {fileID: 250412578330969638}
+  - {fileID: -8084319352410066067}
+  - {fileID: -6327925628071295119}
+--- !u!114 &-728742968945651133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85d5c2f7e63df940a9b3e2c3422c4e6, type: 3}
+  m_Name: Back
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -712, y: -760}
+  ports:
+    keys: []
+    values: []
+  <Modifier>k__BackingField: 304
+  <KeyCode>k__BackingField: 8
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a08357740c2d6d94080e221079916af4, type: 3}
+  m_Name: System
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 8603289289984696909}
+  - {fileID: -4113064798855798560}
+  - {fileID: 5859284122985594453}
+  - {fileID: 1578148085060411446}
+  - {fileID: 6670151146045740342}
+  - {fileID: -728742968945651133}
+  - {fileID: -6101253077844926297}
+  - {fileID: 250412578330969638}
+  - {fileID: -8084319352410066067}
+  - {fileID: -6327925628071295119}
+  - {fileID: 3185855804248201712}
+  - {fileID: -8258853192890821675}
+  - {fileID: -7864940268428510488}
+  - {fileID: -6216765618036949561}
+  - {fileID: -3991258822004152438}
+  - {fileID: -7033123584585434508}
+  - {fileID: 1754927386200688542}
+  - {fileID: 4447631832616926569}
+  - {fileID: 8970294812456661808}
+  - {fileID: -4294262833794940171}
+--- !u!114 &250412578330969638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce85a3b7b7486d545b8e84a30fddb27a, type: 3}
+  m_Name: LeftClick
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1096, y: -904}
+  ports:
+    keys: []
+    values: []
+  <Button>k__BackingField: 0
+--- !u!114 &1578148085060411446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85d5c2f7e63df940a9b3e2c3422c4e6, type: 3}
+  m_Name: Return
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -712, y: -616}
+  ports:
+    keys: []
+    values: []
+  <Modifier>k__BackingField: 0
+  <KeyCode>k__BackingField: 13
+--- !u!114 &1754927386200688542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85d5c2f7e63df940a9b3e2c3422c4e6, type: 3}
+  m_Name: ArrowUp
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -712, y: -328}
+  ports:
+    keys: []
+    values: []
+  <Modifier>k__BackingField: 0
+  <KeyCode>k__BackingField: 273
+--- !u!114 &3185855804248201712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd7954cc241cfb4a896e15db0de8a7f, type: 3}
+  m_Name: MousePosition
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -264, y: -456}
+  ports:
+    keys: []
+    values: []
+  <Value>k__BackingField: {x: 1152.3903, y: 1559.4146}
+--- !u!114 &4447631832616926569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85d5c2f7e63df940a9b3e2c3422c4e6, type: 3}
+  m_Name: ArrowDown
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -712, y: -184}
+  ports:
+    keys: []
+    values: []
+  <Modifier>k__BackingField: 0
+  <KeyCode>k__BackingField: 274
+--- !u!114 &5859284122985594453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f96cea6ada90b4984cf627badd4634, type: 3}
+  m_Name: CameraMovement
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -328, y: -968}
+  ports:
+    keys: []
+    values: []
+  width: 400
+  height: 352
+  color: {r: 1, g: 1, b: 1, a: 0.1}
+--- !u!114 &6670151146045740342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85d5c2f7e63df940a9b3e2c3422c4e6, type: 3}
+  m_Name: Escape
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -712, y: -904}
+  ports:
+    keys: []
+    values: []
+  <Modifier>k__BackingField: 0
+  <KeyCode>k__BackingField: 27
+--- !u!114 &8603289289984696909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f96cea6ada90b4984cf627badd4634, type: 3}
+  m_Name: Input Events
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1160, y: -968}
+  ports:
+    keys: []
+    values: []
+  width: 786
+  height: 1305
+  color: {r: 1, g: 1, b: 1, a: 0.1}
+--- !u!114 &8970294812456661808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85d5c2f7e63df940a9b3e2c3422c4e6, type: 3}
+  m_Name: ArrowLeft
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -712, y: -40}
+  ports:
+    keys: []
+    values: []
+  <Modifier>k__BackingField: 0
+  <KeyCode>k__BackingField: 276

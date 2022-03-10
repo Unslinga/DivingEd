@@ -25,7 +25,7 @@ namespace Simulation
         [Output] public Flow Out;
 
         [field: SerializeField]
-        public InputEvent Test { get; set; }
+        public KeyboardInputEvent Test { get; set; }
 
         #endregion
 

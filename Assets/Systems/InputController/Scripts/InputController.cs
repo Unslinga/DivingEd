@@ -9,118 +9,133 @@ using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace InputController
 {
     public class InputController : MonoBehaviour
     {
-        #region Fields
-
-
-        #endregion
-
-        #region Properties
-        [field: SerializeField]
-        private float keyPressDuration;
+        #region Fields & Properties
 
         [field: SerializeField]
-        private KeyCode[] unPressedKeys;
-        private KeyCode[] pressedKeys;
-        private float[] timer;
-
+        public InputEventSet InputEvents { get; private set; }
 
         [field: SerializeField]
-        public InputEvent KeyInputEvent { get; set; }
+        public Vector2Reference MousePosition { get; set; }
 
+        private Vector2 lastPosition;
+        [field: SerializeField]
+        public Vector2Reference MouseDelta { get; set; }
 
+        private bool[] pressedInputs;
 
         #endregion
 
         #region Public Methods
 
+        public void TestKeys(object data)
+        {
+            var keyData = (KeyboardInputData)data;
+            Debug.Log($"Key: [{keyData.KeyCode}], s: [{keyData.State}], m: [{keyData.Modifier}]");
+        }
+
+        public void TestButtons(object data)
+        {
+            var ButtonData = (MouseInputData)data;
+            Debug.Log($"Button: [{ButtonData.Button}], s: [{ButtonData.State}]");
+        }
+
         #endregion
 
         #region Private Methods
 
-        private void ToRaise(KeyCode keyCode, int i)
+        private void HandleKeyboardInputs()
         {
-            //Lock the pressed key
-            unPressedKeys[i] = 0;
-            pressedKeys[i] = keyCode;
-            timer[i] = Time.time;
-            Debug.Log(keyCode + "down");
+            foreach (KeyboardInputEvent inputEvent in InputEvents.Items.Where(i => i is KeyboardInputEvent))
+            {
+                int index = InputEvents.IndexOf(inputEvent);
+
+                bool modifier = Input.GetKey(inputEvent.Modifier) || Input.GetKeyUp(inputEvent.Modifier);
+
+                if (Input.GetKeyDown(inputEvent.KeyCode))
+                {
+                    Raise(0);
+                }
+                if (Input.GetKey(inputEvent.KeyCode) && !pressedInputs[index])
+                {
+                    Raise(1);
+                    pressedInputs[index] = true;
+                }
+                if (Input.GetKeyUp(inputEvent.KeyCode))
+                {
+                    Raise(2);
+                    pressedInputs[index] = false;
+                }
+
+                void Raise(byte state)
+                {
+                    inputEvent.Raise(new KeyboardInputData { KeyCode = inputEvent.KeyCode, State = state, Modifier = modifier });
+                }
+            }
+        }
+
+        private void HandleMouseInputs()
+        {
+            foreach (MouseInputEvent inputEvent in InputEvents.Items.Where(i => i is MouseInputEvent))
+            {
+                int index = InputEvents.IndexOf(inputEvent);
+
+                if (Input.GetMouseButtonDown(inputEvent.Button))
+                {
+                    Raise(0);
+                }
+                if (Input.GetMouseButton(inputEvent.Button) && !pressedInputs[index])
+                {
+                    Raise(1);
+                    pressedInputs[index] = true;
+                }
+                if (Input.GetMouseButtonUp(inputEvent.Button))
+                {
+                    Raise(2);
+                    pressedInputs[index] = false;
+                }
+
+                void Raise(byte state)
+                {
+                    inputEvent.Raise(new MouseInputData { Button = inputEvent.Button, State = state });
+                }
+            }
+        }
+
+        private void HandleMouseMovement()
+        {
+            MousePosition.Value = Input.mousePosition;
+            MouseDelta.Value = MousePosition - lastPosition;
+            lastPosition = MousePosition;
         }
 
         #endregion
 
         #region Unity Methods
 
-
-        private void Start()
+        void Start()
         {
-            //Initialize the array
-            pressedKeys = new KeyCode[unPressedKeys.Length];
-            timer = new float[unPressedKeys.Length];
+            pressedInputs = new bool[InputEvents.Count];
+
+            MousePosition.Value = Input.mousePosition;
+
+            InputEvents["Back"].CreateListener(gameObject, TestKeys);
+            InputEvents["RightClick"].CreateListener(gameObject, TestButtons);
         }
 
-        private void Update()
+        void Update()
         {
-            //Checking if any key of the reserved keys is pressed
-            for (int i = 0; i < unPressedKeys.Length; i++)
-            {
-                if (Input.GetKeyDown(unPressedKeys[i]))
-                {
-                    //Removing the key from the reserved keys and start timing
-                    ToRaise(unPressedKeys[i], i);
-                }
-            }
-
-            //Checking if a pressed key is released
-            for (int i = 0; i < pressedKeys.Length; i++)
-            {
-                if (Input.GetKeyUp(pressedKeys[i]))
-                {
-                    //Determin if its a press, or hold
-                    if (timer[i] > -1)
-                    {
-                        Debug.Log("press");
-                        Debug.Log(pressedKeys[i] + "up");
-                        //KeyInputEvent.Raise(new InputData { KeyCode = pressedKeys[i], Holding = false });
-                        unPressedKeys[i] = pressedKeys[i];
-                        pressedKeys[i] = 0;
-                        timer[i] = 0;
-                        
-                    } else
-                    {
-                        Debug.Log(pressedKeys[i] + "up");
-                        unPressedKeys[i] = pressedKeys[i];
-                        pressedKeys[i] = 0;
-                        timer[i] = 0;
-                    }
-
-                    
-                }
-            }
-
-
-            for (int i = 0; i < timer.Length; i++)
-            {
-                if (timer[i] > 0)
-                {               
-                    if (Time.time - timer[i] > keyPressDuration)
-                    {
-                        //Hold
-                        {
-                            Debug.Log("holding");
-                            //KeyInputEvent.Raise(new InputData { KeyCode = pressedKeys[i], Holding = true });
-                            timer[i] = -1;
-                        }
-
-                    }
-                }
-                #endregion
-            }
+            HandleKeyboardInputs();
+            HandleMouseInputs();
+            HandleMouseMovement();
         }
+
+        #endregion
     }
 }

@@ -17,7 +17,6 @@ namespace Core
 {
     [Serializable]
     [NodeWidth(320)]
-    [CreateAssetMenu(menuName = "Console/CommandEvent", order = 4)]
     public class CommandEvent : BaseEvent
     {
         #region Fields

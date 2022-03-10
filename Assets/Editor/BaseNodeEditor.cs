@@ -29,6 +29,8 @@ public class BaseNodeEditor : NodeEditor
         GUILayout.Label(target.GetType().Name);
         GUI.enabled = enabled;
 
+        GUILayout.Space(8);
+
         base.OnBodyGUI();
     }
 
