@@ -11,7 +11,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CustomNodeEditor(typeof(InputNamedSet))]
+[CustomNodeEditor(typeof(InputEventSet))]
 public class InputEventNamedSetEditor : BaseNodeEditor
 {
     #region Fields & Properties
@@ -26,7 +26,7 @@ public class InputEventNamedSetEditor : BaseNodeEditor
 
         GUILayout.Space(8);
 
-        var set = target as InputNamedSet;
+        var set = target as InputEventSet;
 
         if (GUILayout.Button("Update InputEvents"))
         {

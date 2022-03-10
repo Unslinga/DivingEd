@@ -19,7 +19,7 @@ namespace InputController
         #region Fields & Properties
 
         [field: SerializeField]
-        public InputNamedSet InputEvents { get; private set; }
+        public InputEventSet InputEvents { get; private set; }
 
         [field: SerializeField]
         public Vector2Reference MousePosition { get; set; }

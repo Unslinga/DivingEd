@@ -47,7 +47,7 @@ MonoBehaviour:
   <Camera>k__BackingField: {fileID: 869627284781532500}
   <CameraFOV>k__BackingField:
     UseConstant: 0
-    ConstantValue: 60
+    ConstantValue: 0.00001
     Variable: {fileID: -3991258822004152438, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
   <CameraPosition>k__BackingField:
     UseConstant: 0
@@ -113,7 +113,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 0.00001
   orthographic: 0

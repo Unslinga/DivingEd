@@ -14,7 +14,7 @@ namespace Core
 {
     [Serializable]
     [NodeWidth(336)]
-    public class InputNamedSet : NamedSet<InputEvent>
+    public class InputEventSet : NamedSet<InputEvent>
     {
         #region Fields
 

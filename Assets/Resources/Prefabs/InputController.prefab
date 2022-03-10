@@ -43,4 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a3e3e24084f924498028c2d40ee2c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InputEvents>k__BackingField: {fileID: -3436174636410729126, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
+  <InputEvents>k__BackingField: {fileID: -7033123584585434508, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
+  <MousePosition>k__BackingField:
+    UseConstant: 0
+    ConstantValue: {x: 0, y: 0}
+    Variable: {fileID: 3185855804248201712, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
+  <MouseDelta>k__BackingField:
+    UseConstant: 0
+    ConstantValue: {x: 0, y: 0}
+    Variable: {fileID: -8258853192890821675, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
