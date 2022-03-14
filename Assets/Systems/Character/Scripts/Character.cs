@@ -70,12 +70,25 @@ namespace Character
 
         public void ToggleZoomed(object data)
         {
-            var button = (MouseInputData)data;
-
-            if (button.State == 0)
+            if (data is MouseInputData)
             {
-                Zoomed = !Zoomed;
-                StartCoroutine(Zoom());
+                var button = (MouseInputData)data;
+
+                if (button.State == 0)
+                {
+                    Zoomed = !Zoomed;
+                    StartCoroutine(Zoom());
+                }
+            }
+            if (data is KeyboardInputData)
+            {
+                var key = (KeyboardInputData)data;
+
+                if (key.State == 0)
+                {
+                    Zoomed = !Zoomed;
+                    StartCoroutine(Zoom());
+                }
             }
         }
 
@@ -248,6 +261,7 @@ namespace Character
             CameraPosition.Value = NormalPosition;
 
             InputEvents["MiddleClick"].CreateListener(gameObject, ToggleZoomed);
+            InputEvents["Zoom"].CreateListener(gameObject, ToggleZoomed);
 
             InputEvents["ArrowUp"].CreateListener(gameObject, MoveUp);
             InputEvents["ArrowDown"].CreateListener(gameObject, MoveDown);
