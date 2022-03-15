@@ -1,0 +1,238 @@
+Program called with the following parameters:
+ * describerTypes = "sift"
+ * extraInfoFolder = "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/StructureFromMotion/947080f40fc9e5b52861f0fa8db9792273e09270"
+ * featuresFolders =  = [C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/FeatureExtraction/29e2f771bb63cc3ae88e3205df21c2c9722e47de]
+ * filterTrackForks = 0
+ * initialPairA = ""
+ * initialPairB = ""
+ * input = "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/CameraInit/71cabc0050c6171ecfa2ffc6b79e80de8995f10e/cameraInit.sfm"
+ * interFileExtension = ".abc"
+ * localBAGraphDistance = 1
+ * localizerEstimator =  Unknown Type "enum aliceVision::robustEstimation::ERobustEstimator"
+ * localizerEstimatorError = 0
+ * localizerEstimatorMaxIterations = 4096
+ * lockAllIntrinsics = 0
+ * lockScenePreviouslyReconstructed = 0
+ * matchesFolders =  = [C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/FeatureMatching/3fa9f8868a7480315aeb73c5568d8eae69dc56a8]
+ * maxAngleInitialPair = 40
+ * maxNumberOfMatches = 0
+ * maxReprojectionError = 4
+ * minAngleForLandmark = 2
+ * minAngleForTriangulation = 3
+ * minAngleInitialPair = 5
+ * minInputTrackLength = 2
+ * minNumberOfMatches = 0
+ * minNumberOfObservationsForTriangulation = 2
+ * observationConstraint =  Unknown Type "enum aliceVision::sfm::EFeatureConstraint"
+ * output = "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/StructureFromMotion/947080f40fc9e5b52861f0fa8db9792273e09270/sfm.abc"
+ * outputViewsAndPoses = "C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/StructureFromMotion/947080f40fc9e5b52861f0fa8db9792273e09270/cameras.sfm"
+ * randomSeed = 5489 (default)
+ * useLocalBA = 1
+ * useOnlyMatchesFromInputFolder = 0
+ * useRigConstraint = 1
+ * verboseLevel = "info"
+
+Loading features
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+[21:37:44.227789][info] Supported CUDA-Enabled GPU detected.
+***************************************************
+[21:37:44.764560][info] Fuse matches into tracks: 
+	- # tracks: 4925
+	- # images in tracks: 11
+[21:37:44.764560][info] TrackLength, Occurrence
+[21:37:44.765557][info] 	2	4636
+[21:37:44.765557][info] 	3	287
+[21:37:44.765557][info] 	4	2
+Automatic selection of an initial pair:
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***********************************[21:37:45.016445][info] robustRelativePose: no sufficient coverage (the model does not support enough samples): 34
+****************
+[21:37:45.172338][info] Initial pair is:
+	- [A] view id: 143339054, filepath: C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7043.png
+	- [B] view id: 1915022538, filepath: C:/Users/olav_/Projects/DivingEd/Documents/Reference/IMG_7042.png
+[21:37:45.176328][info] 835 matches in the image pair for the initial pose estimation.
+[21:37:45.799980][info] Bundle adjustment start.
+[21:37:45.800977][info] Start bundle adjustment iteration: 0
+[21:37:45.816935][info] Bundle Adjustment Statistics:
+	- local strategy enabled: no
+	- adjustment duration: 0.0112954 s
+	- poses:
+	    - # refined:  2
+	    - # constant: 0
+	    - # ignored:  0
+	- landmarks:
+	    - # refined:  736
+	    - # constant: 0
+	    - # ignored:  0
+	- intrinsics:
+	    - # refined:  0
+	    - # constant: 1
+	    - # ignored:  0
+	- # residual blocks: 1472
+	- # successful iterations: 4
+	- # unsuccessful iterations: 0
+	- initial RMSE: 1.12618
+	- final   RMSE: 1.05754
+[21:37:45.817933][info] Remove outliers: 
+	- # outliers residual error: 27
+	- # outliers angular error: 0
+[21:37:45.817933][info] Bundle adjustment iteration: 0 took 17 msec.
+[21:37:45.817933][info] Start bundle adjustment iteration: 1
+[21:37:45.826908][info] Bundle Adjustment Statistics:
+	- local strategy enabled: no
+	- adjustment duration: 0.0070496 s
+	- poses:
+	    - # refined:  2
+	    - # constant: 0
+	    - # ignored:  0
+	- landmarks:
+	    - # refined:  702
+	    - # constant: 0
+	    - # ignored:  0
+	- intrinsics:
+	    - # refined:  0
+	    - # constant: 1
+	    - # ignored:  0
+	- # residual blocks: 1404
+	- # successful iterations: 4
+	- # unsuccessful iterations: 0
+	- initial RMSE: 0.978497
+	- final   RMSE: 0.970204
+[21:37:45.828904][info] Remove outliers: 
+	- # outliers residual error: 6
+	- # outliers angular error: 0
+[21:37:45.828904][info] Bundle adjustment iteration: 1 took 11 msec.
+[21:37:45.828904][info] Start bundle adjustment iteration: 2
+[21:37:45.836881][info] Bundle Adjustment Statistics:
+	- local strategy enabled: no
+	- adjustment duration: 0.0053029 s
+	- poses:
+	    - # refined:  2
+	    - # constant: 0
+	    - # ignored:  0
+	- landmarks:
+	    - # refined:  694
+	    - # constant: 0
+	    - # ignored:  0
+	- intrinsics:
+	    - # refined:  0
+	    - # constant: 1
+	    - # ignored:  0
+	- # residual blocks: 1388
+	- # successful iterations: 3
+	- # unsuccessful iterations: 0
+	- initial RMSE: 0.951404
+	- final   RMSE: 0.950911
+[21:37:45.836881][info] Remove outliers: 
+	- # outliers residual error: 1
+	- # outliers angular error: 0
+[21:37:45.836881][info] Bundle adjustment iteration: 2 took 7 msec.
+[21:37:45.836881][info] Start bundle adjustment iteration: 3
+[21:37:45.842866][info] Bundle Adjustment Statistics:
+	- local strategy enabled: no
+	- adjustment duration: 0.0045033 s
+	- poses:
+	    - # refined:  2
+	    - # constant: 0
+	    - # ignored:  0
+	- landmarks:
+	    - # refined:  692
+	    - # constant: 0
+	    - # ignored:  0
+	- intrinsics:
+	    - # refined:  0
+	    - # constant: 1
+	    - # ignored:  0
+	- # residual blocks: 1384
+	- # successful iterations: 2
+	- # unsuccessful iterations: 0
+	- initial RMSE: 0.946317
+	- final   RMSE: 0.946268
+[21:37:45.843863][info] Remove outliers: 
+	- # outliers residual error: 0
+	- # outliers angular error: 0
+[21:37:45.843863][info] Bundle adjustment iteration: 3 took 6 msec.
+[21:37:45.843863][info] Bundle adjustment with 4 iterations took 43 msec.
+[21:37:45.843863][info] Initial pair is: 143339054, 1915022538
+[21:37:45.843863][info] Begin Incremental Reconstruction:
+	- mode: SfM augmentation
+	- # images in input: 11
+	- # images in resection: 9
+	- # landmarks in input: 346
+	- # cameras already calibrated: 2
+[21:37:45.843863][info] Incremental Reconstruction start iteration 0:
+	- # number of resection groups: 0
+	- # number of poses: 2
+	- # number of landmarks: 346
+	- # remaining images: 9
+[21:37:45.843863][info] Update Reconstruction:
+	- resection id: 0
+	- # images in the resection group: 1
+	- # images remaining: 9
+[21:37:45.843863][info] [3/11] Robust Resection of view: 678082309
+[21:37:45.847852][info] Robust Resection information:
+	- resection status: false
+	- threshold (error max): 11.1899
+	- # points used for resection: 9
+	- # points validated by robust resection: 9
+[21:37:45.847852][info] Resection of view 678082309 failed.
+[21:37:45.848849][info] Incremental Reconstruction completed with 1 iterations:
+	- # number of resection groups: 0
+	- # number of poses: 2
+	- # number of landmarks: 346
+	- # remaining images: 8
+[21:37:45.848849][info] Structure from Motion statistics:
+	- # input images: 11
+	- # cameras calibrated: 2
+	- # poses: 2
+	- # landmarks: 346
+	- elapsed time: 0.004
+	- residual RMSE: 1.33823
+[21:37:45.848849][info]  - # sift: 346
+[21:37:45.848849][info] Histogram of residuals:
+
+0	|	92
+0.5	|	1.2e+02
+1	|	1.2e+02
+1.5	|	1.1e+02
+2	|	97
+2.5	|	81
+3	|	50
+3.5	|	19
+4
+[21:37:45.848849][info] # landmarks: 346
+[21:37:45.848849][info] # overall observations: 692
+[21:37:45.848849][info] Landmarks observations length min: 2, mean: 2, median: 2, max: 2
+[21:37:45.848849][info] Histogram of observations length:
+
+2	|	346
+3
+[21:37:45.849846][info] Landmarks per view min: 0, mean: 0, median: 0, max: 0
+[21:37:45.849846][info] Histogram of nb landmarks per view:
+
+0	|	0
+0	|	0
+0	|	0
+0	|	0
+0	|	0
+0	|	0
+0	|	0
+0	|	0
+0	|	0
+0	|	0
+1
+
+Compute scene structure color
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+[21:37:46.439190][info] Structure from motion took (s): 1.691000
+[21:37:46.440187][info] Generating HTML report...
+[21:37:46.444177][info] Export SfMData to disk: C:/Users/olav_/Projects/DivingEd/Documents/Reference/MeshroomCache/StructureFromMotion/947080f40fc9e5b52861f0fa8db9792273e09270/sfm.abc
+[21:37:46.468113][info] Structure from Motion results:
+	- # input images: 11
+	- # cameras calibrated: 2
+	- # poses: 2
+	- # landmarks: 346
