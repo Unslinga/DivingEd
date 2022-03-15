@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace Core
 {
-    [Serializable, NodeWidth(256)]
+    [Serializable, NodeWidth(272)]
     public abstract class BaseVariable<T> : BaseNode
     {
         #region Fields & Properties

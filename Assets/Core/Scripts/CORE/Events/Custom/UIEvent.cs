@@ -13,7 +13,6 @@ using UnityEngine;
 namespace Core
 {
     [Serializable]
-    [CreateAssetMenu(menuName = "UI/UIEvent", order = 0)]
     public class UIEvent : BaseEvent
     {
         #region Fields

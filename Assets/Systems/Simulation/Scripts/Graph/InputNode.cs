@@ -14,11 +14,11 @@ using XNode;
 
 namespace Simulation
 {
-    public class InputNode : BaseNode
+    public class InputNode : SimuationNode
     {
         #region Fields & Properties
 
-        [Output] public DoubleVariable Out;
+        //[Output] public Flow Out;
 
         #endregion
 
@@ -32,12 +32,11 @@ namespace Simulation
 
         #region Unity Methods
 
-        void Start()
+        void Awake()
         {
-        
         }
 
-        void Update()
+        void OnDestroy()
         {
         
         }

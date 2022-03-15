@@ -9,73 +9,133 @@ using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace InputController
 {
     public class InputController : MonoBehaviour
     {
-        #region Fields
+        #region Fields & Properties
 
-
-        #endregion
-
-        #region Properties
         [field: SerializeField]
-        public InputEvent KeyboardInputEvent { get; set; }
+        public InputEventSet InputEvents { get; private set; }
 
+        [field: SerializeField]
+        public Vector2Reference MousePosition { get; set; }
+
+        private Vector2 lastPosition;
+        [field: SerializeField]
+        public Vector2Reference MouseDelta { get; set; }
+
+        private bool[] pressedInputs;
 
         #endregion
 
         #region Public Methods
-        public void OnKeyboardInput(object data)
+
+        public void TestKeys(object data)
         {
-            //string msg = "The key: " + dataInput as InputData + " is pressed.";
-            //Debug.Log(msg);
-            InputData inputData =  (InputData) data ;
-            if (inputData.Holding)
-            {
-                Debug.Log($"Holding {inputData.KeyCode}");
-               
-            } else
-            {
-                Debug.Log($"pressed {inputData.KeyCode}");
-               
-            }
+            var keyData = (KeyboardInputData)data;
+            Debug.Log($"Key: [{keyData.KeyCode}], s: [{keyData.State}], m: [{keyData.Modifier}]");
         }
+
+        public void TestButtons(object data)
+        {
+            var ButtonData = (MouseInputData)data;
+            Debug.Log($"Button: [{ButtonData.Button}], s: [{ButtonData.State}]");
+        }
+
         #endregion
 
         #region Private Methods
 
+        private void HandleKeyboardInputs()
+        {
+            foreach (KeyboardInputEvent inputEvent in InputEvents.Items.Where(i => i is KeyboardInputEvent))
+            {
+                int index = InputEvents.IndexOf(inputEvent);
+
+                bool modifier = Input.GetKey(inputEvent.Modifier) || Input.GetKeyUp(inputEvent.Modifier);
+
+                if (Input.GetKeyDown(inputEvent.KeyCode))
+                {
+                    Raise(0);
+                }
+                if (Input.GetKey(inputEvent.KeyCode) && !pressedInputs[index])
+                {
+                    Raise(1);
+                    pressedInputs[index] = true;
+                }
+                if (Input.GetKeyUp(inputEvent.KeyCode))
+                {
+                    Raise(2);
+                    pressedInputs[index] = false;
+                }
+
+                void Raise(byte state)
+                {
+                    inputEvent.Raise(new KeyboardInputData { KeyCode = inputEvent.KeyCode, State = state, Modifier = modifier });
+                }
+            }
+        }
+
+        private void HandleMouseInputs()
+        {
+            foreach (MouseInputEvent inputEvent in InputEvents.Items.Where(i => i is MouseInputEvent))
+            {
+                int index = InputEvents.IndexOf(inputEvent);
+
+                if (Input.GetMouseButtonDown(inputEvent.Button))
+                {
+                    Raise(0);
+                }
+                if (Input.GetMouseButton(inputEvent.Button) && !pressedInputs[index])
+                {
+                    Raise(1);
+                    pressedInputs[index] = true;
+                }
+                if (Input.GetMouseButtonUp(inputEvent.Button))
+                {
+                    Raise(2);
+                    pressedInputs[index] = false;
+                }
+
+                void Raise(byte state)
+                {
+                    inputEvent.Raise(new MouseInputData { Button = inputEvent.Button, State = state });
+                }
+            }
+        }
+
+        private void HandleMouseMovement()
+        {
+            MousePosition.Value = Input.mousePosition;
+            MouseDelta.Value = MousePosition - lastPosition;
+            lastPosition = MousePosition;
+        }
+
         #endregion
 
         #region Unity Methods
-        private void Awake()
-        {
-            //IputEvent.CreateListener(gameObject, KeyDown);
-            KeyboardInputEvent.CreateListener(gameObject, OnKeyboardInput);
-        }
-        
-        private void Start()
-        {
-            
-        }
 
-        private void Update()
+        void Start()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                KeyboardInputEvent.Raise(new InputData {KeyCode =KeyCode.Space, Holding = false });
-            }
+            pressedInputs = new bool[InputEvents.Count];
 
-            if (Input.GetKey(KeyCode.Space))
-            {
-                KeyboardInputEvent.Raise(new InputData { KeyCode = KeyCode.Space, Holding = true });
-            }
+            MousePosition.Value = Input.mousePosition;
+
+            InputEvents["Back"].CreateListener(gameObject, TestKeys);
+            InputEvents["RightClick"].CreateListener(gameObject, TestButtons);
         }
 
+        void Update()
+        {
+            HandleKeyboardInputs();
+            HandleMouseInputs();
+            HandleMouseMovement();
+        }
 
         #endregion
-        
-    } 
+    }
 }

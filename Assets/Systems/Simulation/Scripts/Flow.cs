@@ -14,32 +14,5 @@ using UnityEngine;
 namespace Simulation
 {
     [Serializable]
-    public class Flow
-    {
-        #region Fields & Properties
-
-        #endregion
-
-        #region Public Methods
-
-        #endregion
-
-        #region Private Methods
-
-        #endregion
-
-        #region Unity Methods
-    
-        void Start()
-        {
-        
-        }
-
-        void Update()
-        {
-        
-        }
-
-        #endregion
-    }
+    public class Flow { }
 }
