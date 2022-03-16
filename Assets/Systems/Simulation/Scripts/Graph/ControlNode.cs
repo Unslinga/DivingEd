@@ -18,14 +18,8 @@ namespace Simulation
     {
         #region Fields & Properties
 
-        [Input] public DoubleReference controlIn;
-        [Output] public DoubleReference controlOut;
-
         [Input] public Flow In;
         [Output] public Flow Out;
-
-        [field: SerializeField]
-        public KeyboardInputEvent Test { get; set; }
 
         #endregion
 

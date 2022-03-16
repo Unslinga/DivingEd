@@ -18,7 +18,7 @@ namespace Simulation
     {
         #region Fields & Properties
 
-        //[Output] public Flow Out;
+        [Output] public Flow Out;
 
         #endregion
 

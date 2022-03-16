@@ -171,20 +171,20 @@ namespace Character
             var heightPercent = height * EdgeMovePercent / 100;
             var widthPercent = width * EdgeMovePercent * aspect / 100;
 
-            if (MousePosition.Value.x < widthPercent && MousePosition.Value.x > 0)
+            if (MousePosition.Value.x < widthPercent && MousePosition.Value.x >= 0)
             {
                 pos.x += (widthPercent - MousePosition.Value.x) * EdgeMoveSpeed / widthPercent;
             }
-            if (MousePosition.Value.x > width - widthPercent && MousePosition.Value.x < width)
+            if (MousePosition.Value.x > width - widthPercent && MousePosition.Value.x <= width)
             {
                 pos.x -= (widthPercent + (MousePosition.Value.x - width)) * EdgeMoveSpeed / widthPercent;
             }
 
-            if (MousePosition.Value.y < heightPercent && MousePosition.Value.y > 0)
+            if (MousePosition.Value.y < heightPercent && MousePosition.Value.y >= 0)
             {
                 pos.y -= (heightPercent - MousePosition.Value.y) * EdgeMoveSpeed / heightPercent;
             }
-            if (MousePosition.Value.y > height - heightPercent && MousePosition.Value.y < height)
+            if (MousePosition.Value.y > height - heightPercent && MousePosition.Value.y <= height)
             {
                 pos.y += (heightPercent + (MousePosition.Value.y - height)) * EdgeMoveSpeed / heightPercent;
             }
