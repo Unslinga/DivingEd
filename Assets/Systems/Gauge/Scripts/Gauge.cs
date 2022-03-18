@@ -11,12 +11,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DEFAULT_REPLACE
+namespace Gauge
 {
-    public class Gauge : MonoBehaviour
+    public class Gauge : DoubleReference
     {
         #region Fields
-
+        [SerializeField]
+        public DoubleReference gaugeNode;
         #endregion
 
         #region Properties
