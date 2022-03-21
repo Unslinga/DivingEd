@@ -21,6 +21,9 @@ public class SimulationNodeEditor : BaseNodeEditor
 
     private SimuationNode simuationNode;
 
+    private SerializedProperty flowIn;
+    private SerializedProperty flowOut;
+
     #endregion
 
     #region Public Methods
@@ -29,10 +32,27 @@ public class SimulationNodeEditor : BaseNodeEditor
     {
         if (simuationNode == null) simuationNode = target as SimuationNode;
 
-        //NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("controlIn"));
-        //NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("controlOut"));
-        //NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("in"));
-        //NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("out"));
+        //flowIn = serializedObject.FindProperty("In");
+        //flowOut = serializedObject.FindProperty("Out");
+
+        //if (flowIn != null)
+        //{
+        //    NodeEditorGUILayout.PortField(new Vector2(0, 32), new NodePort("Test",
+        //        typeof(Simulation.Flow),
+        //        NodePort.IO.Input, 
+        //        Node.ConnectionType.Override, 
+        //        Node.TypeConstraint.Inherited, 
+        //        simuationNode));
+        //}
+        //if (flowOut != null)
+        //{
+        //    NodeEditorGUILayout.PortField(new Vector2(GetWidth() - 16, 32), new NodePort("",
+        //        typeof(Simulation.Flow),
+        //        NodePort.IO.Output,
+        //        Node.ConnectionType.Override,
+        //        Node.TypeConstraint.Inherited,
+        //        simuationNode));
+        //}
 
         base.OnBodyGUI();
 
