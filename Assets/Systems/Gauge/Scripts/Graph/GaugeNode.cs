@@ -13,15 +13,11 @@ using UnityEngine;
 
 namespace Gauge
 {
-    public class Gauge : DoubleReference
+    public class GaugeNode : BaseNode
     {
-        #region Fields
-        [SerializeField]
-        public DoubleReference gaugeNode;
-        #endregion
-
-        #region Properties
-
+        #region Fields & Properties
+        [Input]
+        public DoubleReference value; 
         #endregion
 
         #region Public Methods
@@ -33,16 +29,17 @@ namespace Gauge
         #endregion
 
         #region Unity Methods
-        private void Start()
+    
+        void Start()
         {
-            
+        
         }
 
-        private void Update()
+        void Update()
         {
-            
-        }
-        #endregion
         
-    } 
+        }
+
+        #endregion
+    }
 }
