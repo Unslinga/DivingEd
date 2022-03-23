@@ -15,7 +15,6 @@ using UnityEngine.Events;
 namespace Core
 {
     [Serializable]
-    [CreateAssetMenu(menuName = "Networking/NetworkEvent", order = 0)]
     public class NetworkEvent : BaseEvent
     {
         #region Properties

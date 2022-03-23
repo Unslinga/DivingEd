@@ -23,6 +23,9 @@ public class SimulationNodeEditor : BaseNodeEditor
 
     private SimuationNode simuationNode;
 
+    private SerializedProperty flowIn;
+    private SerializedProperty flowOut;
+
     #endregion
 
     #region Public Methods

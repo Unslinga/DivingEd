@@ -14,7 +14,7 @@ using UnityEditor;
 namespace Core
 {
     [Serializable]
-    public abstract class RuntimeSet<T> : ScriptableObject
+    public abstract class RuntimeSet<T> : BaseNode
     {
         #region Properties
 

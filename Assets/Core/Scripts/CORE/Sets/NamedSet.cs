@@ -17,6 +17,7 @@ namespace Core
     public abstract class NamedSet<T> : RuntimeSet<T> where T : UnityEngine.Object
     {
         #region Public Methods
+        
         public T this[string name]
         {
             get
@@ -29,6 +30,14 @@ namespace Core
                 }
 
                 return item;
+            }
+        }
+
+        public void AddFromList(List<T> items)
+        {
+            foreach (var item in items)
+            {
+                Add(item);
             }
         }
         #endregion

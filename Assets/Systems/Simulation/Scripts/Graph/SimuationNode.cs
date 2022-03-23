@@ -15,6 +15,7 @@ using XNode;
 
 namespace Core
 {
+    [NodeWidth(272)]
     public abstract class SimuationNode : BaseNode
     {
         #region Fields & Properties

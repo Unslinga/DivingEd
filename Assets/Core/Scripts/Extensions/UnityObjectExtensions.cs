@@ -75,33 +75,17 @@ namespace Core
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="unityObject"></param>
-        public static void Instance<T>(this Object unityObject) where T : Object
+        public static T Instance<T>(this Object unityObject) where T : Object
         {
-            if (Object.FindObjectsOfType(typeof(T)).Length > 1)
+            var objects = Object.FindObjectsOfType(typeof(T));
+
+            if (objects.Length > 0)
             {
                 Debug.LogError($"Cannot have more than one instance of [{typeof(T).Name}].");
                 Quit(unityObject);
             }
-        }
 
-        public static IInstance GetInstance<T>(this GameObject unityObject) where T : IInstance
-        {
-            IInstance instance = Object.FindObjectsOfType<MonoBehaviour>().OfType<IInstance>().SingleOrDefault();
-
-            try
-            {
-
-
-                if (instance != null)
-                {
-                    return (T)instance;
-                }
-                return null;
-            }
-            catch (InvalidCastException)
-            {
-                return null;
-            }
+            return (T)objects[0];
         }
 
         /// <summary>
