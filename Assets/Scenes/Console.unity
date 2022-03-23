@@ -293,7 +293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 869627284781532501, guid: 02eab312aabb0b84baa36699cf570f10, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6
+      value: -0.39999998
       objectReference: {fileID: 0}
     - target: {fileID: 869627284781532501, guid: 02eab312aabb0b84baa36699cf570f10, type: 3}
       propertyPath: m_LocalPosition.z
@@ -310,14 +310,6 @@ PrefabInstance:
     - target: {fileID: 869627284781532501, guid: 02eab312aabb0b84baa36699cf570f10, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7463295132570312017, guid: 02eab312aabb0b84baa36699cf570f10, type: 3}
-      propertyPath: <CameraFOV>k__BackingField.UseConstant
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7463295132570312017, guid: 02eab312aabb0b84baa36699cf570f10, type: 3}
-      propertyPath: <CameraFOV>k__BackingField.ConstantValue
-      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02eab312aabb0b84baa36699cf570f10, type: 3}

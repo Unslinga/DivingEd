@@ -1279,15 +1279,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5132223fb80f9924f83504a0a0743c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InputEvents>k__BackingField: {fileID: -7033123584585434508, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
+  <InputEvents>k__BackingField: {fileID: -7033123584585434508, guid: 76719cee3b751af4b9da7fbfabff8a78, type: 2}
   <MousePosition>k__BackingField:
     UseConstant: 0
     ConstantValue: {x: 0, y: 0}
-    Variable: {fileID: 3185855804248201712, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
+    Variable: {fileID: 3185855804248201712, guid: 76719cee3b751af4b9da7fbfabff8a78, type: 2}
   <CameraFOV>k__BackingField:
     UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: -3991258822004152438, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
+    Variable: {fileID: -3991258822004152438, guid: 76719cee3b751af4b9da7fbfabff8a78, type: 2}
   <NormalZoom>k__BackingField: 75
   <DetailZoom>k__BackingField: 25
   <ZoomDuration>k__BackingField: 1
@@ -1295,7 +1295,7 @@ MonoBehaviour:
   <CameraPosition>k__BackingField:
     UseConstant: 0
     ConstantValue: {x: 0, y: 0, z: 0}
-    Variable: {fileID: -7864940268428510488, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
+    Variable: {fileID: -7864940268428510488, guid: 76719cee3b751af4b9da7fbfabff8a78, type: 2}
   <LocalPosition>k__BackingField: {x: 0, y: 0}
   <EdgeMovePercent>k__BackingField: 7.5
   <EdgeMoveSpeed>k__BackingField: 0.005

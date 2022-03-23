@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace Gauge
 {
-    public class Gauge : DoubleReference
+    public class Gauge : MonoBehaviour
     {
         #region Fields
         [SerializeField]
