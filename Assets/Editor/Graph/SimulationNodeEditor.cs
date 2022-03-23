@@ -19,6 +19,8 @@ public class SimulationNodeEditor : BaseNodeEditor
 {
     #region Fields & Properties
 
+    private GUIStyle style = new GUIStyle();
+
     private SimuationNode simuationNode;
 
     #endregion
@@ -29,13 +31,24 @@ public class SimulationNodeEditor : BaseNodeEditor
     {
         if (simuationNode == null) simuationNode = target as SimuationNode;
 
-        //NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("controlIn"));
-        //NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("controlOut"));
-        //NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("in"));
-        //NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("out"));
-
         base.OnBodyGUI();
 
+        EditorGUILayout.Space(8);
+
+        EditorGUILayout.LabelField("Pressure");
+
+        style.fontSize = 24;
+        style.alignment = TextAnchor.MiddleCenter;
+        style.normal.textColor = Color.white;
+
+        EditorGUILayout.LabelField(simuationNode.Value.ToString(), style);
+
+        EditorGUILayout.Space(8);
+
+        if (GUILayout.Button("Update"))
+        {
+            simuationNode.UpdateValue();
+        }
     }
 
     #endregion

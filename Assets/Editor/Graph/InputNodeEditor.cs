@@ -10,10 +10,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using XNode;
+using UnityEditor;
+using Simulation;
 
-namespace Simulation
+[CustomNodeEditor(typeof(InputNode))]
+public class InputNodeEditor : SimulationNodeEditor
 {
-    [Serializable]
-    public class Flow { }
+    #region Fields & Properties
+
+    #endregion
+
+    #region Public Methods
+
+    public override void OnBodyGUI()
+    {
+        base.OnBodyGUI();
+    }
+
+    #endregion
 }

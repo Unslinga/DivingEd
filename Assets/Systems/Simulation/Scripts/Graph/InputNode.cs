@@ -18,27 +18,18 @@ namespace Simulation
     {
         #region Fields & Properties
 
-        //[Output] public Flow Out;
+        [field: SerializeField]
+        public DoubleReference InputPressure { get; set; }
+
+        [Output(ShowBackingValue.Never, ConnectionType.Override)] public double Out;
 
         #endregion
 
         #region Public Methods
 
-        #endregion
-
-        #region Private Methods
-
-        #endregion
-
-        #region Unity Methods
-
-        void Awake()
+        public override void UpdateValue()
         {
-        }
-
-        void OnDestroy()
-        {
-        
+            Value = InputPressure.Value;
         }
 
         #endregion

@@ -18,15 +18,16 @@ namespace Simulation
     {
         #region Fields & Properties
 
-        [Input] public Flow In;
+        [Input(ShowBackingValue.Never, ConnectionType.Override)] public double In;
 
         #endregion
 
         #region Public Methods
 
-        #endregion
-
-        #region Private Methods
+        public override void UpdateValue()
+        {
+            
+        }
 
         #endregion
     }

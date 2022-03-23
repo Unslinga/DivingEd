@@ -16,10 +16,8 @@ namespace Core
     public class GraphManager : MonoBehaviour
     {
         #region Fields & Properties
-
-        [field: SerializeField]
-        public Graph Graph { get; set; }
-
+        [Input(ShowBackingValue.Never, ConnectionType.Override)]
+        public DoubleVariable value; 
         #endregion
 
         #region Public Methods

@@ -9,6 +9,7 @@ using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using XNode;
 
@@ -18,40 +19,24 @@ namespace Simulation
     {
         #region Fields & Properties
 
-        [Input] public DoubleReference controlIn;
-        [Output] public DoubleReference controlOut;
+        
 
-        [Input] public Flow In;
-        [Output] public Flow Out;
+        [Output(ShowBackingValue.Never, ConnectionType.Override)] public DoubleVariable control;
 
-        [field: SerializeField]
-        public InputEvent Test { get; set; }
+        [Input(ShowBackingValue.Never, ConnectionType.Override)] public double In;
+        [Output(ShowBackingValue.Never, ConnectionType.Override)] public double Out;
 
         #endregion
 
         #region Public Methods
 
-        #endregion
-
-        #region Private Methods
-
-        #endregion
-
-        #region Unity Methods
-
-        void Awake()
+        public override void UpdateValue()
         {
-            
-        }
+            double output = GetOutputValue("Out", 0.0);
 
-        void OnDestroy()
-        {
-            
-        }
+            var input = GetInputValue("In", 0.0);
 
-        void OnValidate()
-        {
-            
+            Value = Math.Max(output, input);
         }
 
         #endregion

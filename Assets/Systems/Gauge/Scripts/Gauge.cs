@@ -16,7 +16,8 @@ namespace DEFAULT_REPLACE
     public class Gauge : MonoBehaviour
     {
         #region Fields
-
+        [field: SerializeField]
+        public GaugeNode node { get; private set; }
         #endregion
 
         #region Properties
