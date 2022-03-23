@@ -17,26 +17,27 @@ namespace Simulation
     {
         #region Fields & Properties
 
+        private static Simulation instance;
+        public static Simulation Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = Singleton.Create<Simulation>();
+                }
+
+                return instance;
+            }
+        }
+
         private bool mainTick;
 
         private List<ITickable> tickables = new List<ITickable>();
 
-        [field: SerializeField]
-        public List<ISimulation> SimulationNodes { get; set; } = new List<ISimulation>();
-
         #endregion
 
         #region Public Methods
-
-        public void Load()
-        {
-
-        }
-
-        public void Save()
-        {
-
-        }
 
         public void Register(ITickable tickable)
         {
@@ -83,18 +84,13 @@ namespace Simulation
 
         #region Private Methods
 
-        private void CreateNode()
-        {
-
-        }
-
         #endregion
 
         #region Unity Methods
 
         void Awake()
         {
-            Load();
+
         }
 
         void FixedUpdate()

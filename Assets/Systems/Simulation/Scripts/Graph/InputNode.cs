@@ -30,6 +30,7 @@ namespace Simulation
         public override void UpdateValue()
         {
             Value = InputPressure.Value;
+            
         }
 
         #endregion
