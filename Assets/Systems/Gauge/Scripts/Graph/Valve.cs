@@ -11,9 +11,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Referanse gameobject
-//active/inactive
-
 namespace Valve
 {
     public class Valve : MonoBehaviour
@@ -52,6 +49,3 @@ namespace Valve
         #endregion
     }
 }
-
-// Inputcontroller
-// bool active/inactive
