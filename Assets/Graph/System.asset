@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: Gauge-17-Control
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1528, y: -328}
+  position: {x: 1528, y: -200}
   ports:
     keys:
     - control
@@ -88,7 +88,7 @@ MonoBehaviour:
       - fieldName: In
         node: {fileID: 3455934089141879239}
         reroutePoints:
-        - {x: 2064, y: -208}
+        - {x: 2064, y: -80}
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
@@ -147,10 +147,7 @@ MonoBehaviour:
       _node: {fileID: -7791224253227235900}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Out
-        node: {fileID: -1849151451058201305}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 0
@@ -443,10 +440,7 @@ MonoBehaviour:
       _node: {fileID: -5173855120246897350}
       _typeQualifiedName: Core.DoubleVariable, Core, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      connections:
-      - fieldName: In1
-        node: {fileID: -4790873492680268499}
-        reroutePoints: []
+      connections: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
@@ -467,7 +461,10 @@ MonoBehaviour:
       _node: {fileID: -5173855120246897350}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: In1
+        node: {fileID: -4790873492680268499}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
@@ -507,7 +504,7 @@ MonoBehaviour:
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: control
+      - fieldName: Out
         node: {fileID: -5173855120246897350}
         reroutePoints: []
       _direction: 0
@@ -703,7 +700,7 @@ MonoBehaviour:
   m_Name: Gauge-17
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1848, y: -328}
+  position: {x: 1848, y: -200}
   ports:
     keys:
     - value
@@ -769,11 +766,7 @@ MonoBehaviour:
       _node: {fileID: -1849151451058201305}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: In
-        node: {fileID: -7791224253227235900}
-        reroutePoints:
-        - {x: 2064, y: -464}
+      connections: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
@@ -883,9 +876,9 @@ MonoBehaviour:
   m_Name: System
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: 8603289289984696909}
-  - {fileID: -4113064798855798560}
   - {fileID: 5859284122985594453}
+  - {fileID: -4113064798855798560}
+  - {fileID: 8603289289984696909}
   - {fileID: 1578148085060411446}
   - {fileID: 6670151146045740342}
   - {fileID: -728742968945651133}
@@ -1156,7 +1149,7 @@ MonoBehaviour:
   m_Name: Valve-34-Control
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2104, y: -328}
+  position: {x: 2104, y: -200}
   ports:
     keys:
     - control
@@ -1251,7 +1244,7 @@ MonoBehaviour:
   m_Name: Control
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2488, y: -328}
+  position: {x: 2488, y: -200}
   ports:
     keys:
     - control

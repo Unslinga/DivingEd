@@ -13,15 +13,16 @@ using UnityEngine;
 using UnityEditor;
 using XNode;
 using XNodeEditor;
+using Simulation;
 
-[CustomNodeEditor(typeof(SimuationNode))]
+[CustomNodeEditor(typeof(SimulationNode))]
 public class SimulationNodeEditor : BaseNodeEditor
 {
     #region Fields & Properties
 
     private GUIStyle style = new GUIStyle();
 
-    private SimuationNode simuationNode;
+    private SimulationNode simuationNode;
 
     private SerializedProperty flowIn;
     private SerializedProperty flowOut;
@@ -32,7 +33,7 @@ public class SimulationNodeEditor : BaseNodeEditor
 
     public override void OnBodyGUI()
     {
-        if (simuationNode == null) simuationNode = target as SimuationNode;
+        if (simuationNode == null) simuationNode = target as SimulationNode;
 
         base.OnBodyGUI();
 
@@ -51,6 +52,16 @@ public class SimulationNodeEditor : BaseNodeEditor
         if (GUILayout.Button("Update"))
         {
             simuationNode.UpdateValue();
+        }
+
+        EditorGUILayout.Space(8);
+
+            if (GUILayout.Button("Propagate"))
+            {
+                simuationNode.Propagate(this.GetHashCode());
+            }
+        if (simuationNode is InputNode)
+        {
         }
     }
 

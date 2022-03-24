@@ -9,11 +9,12 @@ using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Simulation
 {
-    public class BranchNode : SimuationNode
+    public class BranchNode : SimulationNode
     {
         #region Fields & Properties
 
@@ -47,14 +48,16 @@ namespace Simulation
         [Output(ShowBackingValue.Never, ConnectionType.Override)]
         public double Out5;
 
-
         #endregion
 
         #region Public Methods
 
         public override void UpdateValue()
         {
-            
+            //Value = GetConnectedNodePorts()
+            //    .Where(n => n is SimulationNode)
+            //    .Select(n => ((SimulationNode)n).Value)
+            //    .Max();
         }
 
         #endregion

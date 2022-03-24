@@ -31,53 +31,16 @@ namespace Simulation
             }
         }
 
-        private bool mainTick;
-
-        private List<ITickable> tickables = new List<ITickable>();
+        [field: SerializeField]
+        public SimulationNode InputNodes { get; set; }
 
         #endregion
 
         #region Public Methods
 
-        public void Register(ITickable tickable)
+        public void UpdateNodes()
         {
-            if (tickables.Contains(tickable))
-                return;
 
-            tickables.Add(tickable);
-        }
-
-        public void Unregister(ITickable tickable)
-        {
-            if (!tickables.Contains(tickable))
-                return;
-
-            tickables.Remove(tickable);
-        }
-
-        public IEnumerator MainTick()
-        {
-            foreach (var tickable in tickables)
-            {
-                tickable.MainTick();
-                yield return null;
-            }
-        }
-
-        public IEnumerator SubTick()
-        {
-            foreach (var tickable in tickables)
-            {
-                tickable.SubTick();
-                yield return null;
-            }
-        }
-
-        public void Tick()
-        {
-            mainTick = !mainTick;
-
-            StartCoroutine(mainTick ? MainTick() : SubTick());
         }
 
         #endregion
@@ -95,7 +58,7 @@ namespace Simulation
 
         void FixedUpdate()
         {
-            Tick();
+
         }
 
         #endregion

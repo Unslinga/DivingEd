@@ -14,7 +14,7 @@ using XNode;
 
 namespace Simulation
 {
-    public class DiverNode : SimuationNode
+    public class DiverNode : SimulationNode
     {
         #region Fields & Properties
 

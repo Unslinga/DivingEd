@@ -14,7 +14,7 @@ using XNode;
 
 namespace Simulation
 {
-    public class InputNode : SimuationNode
+    public class InputNode : SimulationNode
     {
         #region Fields & Properties
 
@@ -30,7 +30,6 @@ namespace Simulation
         public override void UpdateValue()
         {
             Value = InputPressure.Value;
-            
         }
 
         #endregion

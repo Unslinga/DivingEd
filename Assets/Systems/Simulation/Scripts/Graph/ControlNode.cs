@@ -15,7 +15,7 @@ using XNode;
 
 namespace Simulation
 {
-    public class ControlNode : SimuationNode
+    public class ControlNode : SimulationNode
     {
         #region Fields & Properties
 
@@ -32,11 +32,10 @@ namespace Simulation
 
         public override void UpdateValue()
         {
-            double output = GetOutputValue("Out", 0.0);
-
-            var input = GetInputValue("In", 0.0);
-
-            Value = Math.Max(output, input);
+            //Value = GetConnectedNodePorts()
+            //    .Where(n => n is SimulationNode)
+            //    .Select(n => ((SimulationNode)n).Value)
+            //    .Max();
         }
 
         #endregion
