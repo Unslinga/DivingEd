@@ -11,27 +11,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Simulation
+namespace Core
 {
     [Serializable]
-    public class NodeData
+    public class Flow
     {
         #region Fields & Properties
-        [field: SerializeField]
-        public DoubleReference Value { get; set; }
 
-        #endregion
-
-        #region Public Methods
-
-        public static implicit operator double(NodeData data)
-        {
-            return data.Value;
-        }
-
-        #endregion
-
-        #region Private Methods
+        public double Value { get; set; }
 
         #endregion
     }

@@ -47,16 +47,16 @@ MonoBehaviour:
   <Camera>k__BackingField: {fileID: 869627284781532500}
   <CameraFOV>k__BackingField:
     UseConstant: 0
-    ConstantValue: 0.00001
-    Variable: {fileID: -3991258822004152438, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
+    ConstantValue: 75
+    Variable: {fileID: -3991258822004152438, guid: 76719cee3b751af4b9da7fbfabff8a78, type: 2}
   <CameraPosition>k__BackingField:
     UseConstant: 0
     ConstantValue: {x: 0, y: 0, z: 0}
-    Variable: {fileID: -7864940268428510488, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
+    Variable: {fileID: -7864940268428510488, guid: 76719cee3b751af4b9da7fbfabff8a78, type: 2}
   <CameraRotation>k__BackingField:
     UseConstant: 0
     ConstantValue: {x: 0, y: 0, z: 0, w: 0}
-    Variable: {fileID: -6216765618036949561, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
+    Variable: {fileID: -6216765618036949561, guid: 76719cee3b751af4b9da7fbfabff8a78, type: 2}
 --- !u!1 &869627284781532502
 GameObject:
   m_ObjectHideFlags: 0

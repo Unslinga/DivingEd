@@ -11,26 +11,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Simulation
+namespace Core
 {
-    public interface ISimulation : ITickable
+    public interface IControl
     {
         #region Fields & Properties
 
-        string ID { get; set; }
-
-        List<ISimulation> Previous { get; set; }
-        
-        List<ISimulation> Next { get; set; }
-
-        Flow Flow { get; set; }
+        ControlFlow Control { get; }
 
         #endregion
 
         #region Public Methods
 
-
+        public void UpdateValue();
 
         #endregion
+
     }
 }

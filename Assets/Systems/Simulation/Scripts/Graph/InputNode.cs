@@ -14,31 +14,28 @@ using XNode;
 
 namespace Simulation
 {
-    public class InputNode : SimuationNode
+    public class InputNode : SimulationNode
     {
         #region Fields & Properties
 
-        [Output] public Flow Out;
+        [field: SerializeField]
+        public DoubleReference InputPressure { get; set; }
+
+        [Output(ShowBackingValue.Never, ConnectionType.Override)]
+        public Flow Out;
 
         #endregion
 
         #region Public Methods
 
-        #endregion
-
-        #region Private Methods
-
-        #endregion
-
-        #region Unity Methods
-
-        void Awake()
+        public override void ClearValue()
         {
+            Value = 0;
         }
 
-        void OnDestroy()
+        public override void UpdateValue()
         {
-        
+            Value = InputPressure.Value;
         }
 
         #endregion

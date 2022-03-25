@@ -68,6 +68,11 @@ namespace Character
 
         #region Public Methods
 
+        public void TestMouseLeftClick(object data)
+        {
+            Debug.Log("Test");
+        }
+
         public void ToggleZoomed(object data)
         {
             if (data is MouseInputData)
@@ -259,6 +264,8 @@ namespace Character
 
             CameraFOV.Value = NormalZoom;
             CameraPosition.Value = NormalPosition;
+
+            InputEvents["LeftClick"].CreateListener(gameObject, TestMouseLeftClick);
 
             InputEvents["MiddleClick"].CreateListener(gameObject, ToggleZoomed);
             InputEvents["Zoom"].CreateListener(gameObject, ToggleZoomed);

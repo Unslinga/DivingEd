@@ -18,75 +18,6 @@ MonoBehaviour:
     keys: []
     values: []
   <Value>k__BackingField: {x: 0, y: 0}
---- !u!114 &-8194423920987042019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 259087feab683d34cbdaa13bca503fd0, type: 3}
-  m_Name: Control
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -2216, y: -40}
-  ports:
-    keys:
-    - controlIn
-    - controlOut
-    - In
-    - Out
-    values:
-    - _fieldName: controlIn
-      _node: {fileID: -8194423920987042019}
-      _typeQualifiedName: Core.DoubleReference, Core, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: controlOut
-      _node: {fileID: -8194423920987042019}
-      _typeQualifiedName: Core.DoubleReference, Core, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: value
-        node: {fileID: -856795229586219560}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: In
-      _node: {fileID: -8194423920987042019}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Out
-      _node: {fileID: -8194423920987042019}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  controlIn:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 0}
-  controlOut:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 0}
-  <Test>k__BackingField: {fileID: 0}
 --- !u!114 &-8084319352410066067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +36,60 @@ MonoBehaviour:
     keys: []
     values: []
   <Button>k__BackingField: 1
+--- !u!114 &-7891462790431847636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259087feab683d34cbdaa13bca503fd0, type: 3}
+  m_Name: Gauge-17-Control
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1144, y: -200}
+  ports:
+    keys:
+    - control
+    - In
+    - Out
+    values:
+    - _fieldName: control
+      _node: {fileID: -7891462790431847636}
+      _typeQualifiedName: Core.ControlFlow, Core, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: control
+        node: {fileID: -1870428597067308330}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: In
+      _node: {fileID: -7891462790431847636}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Out1
+        node: {fileID: -7357208988742168897}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out
+      _node: {fileID: -7891462790431847636}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: In
+        node: {fileID: 3455934089141879239}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
 --- !u!114 &-7864940268428510488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +108,173 @@ MonoBehaviour:
     keys: []
     values: []
   <Value>k__BackingField: {x: 0, y: 1.2, z: 0}
+--- !u!114 &-7791224253227235900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259087feab683d34cbdaa13bca503fd0, type: 3}
+  m_Name: Valve-34-Control
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1720, y: -584}
+  ports:
+    keys:
+    - control
+    - In
+    - Out
+    values:
+    - _fieldName: control
+      _node: {fileID: -7791224253227235900}
+      _typeQualifiedName: Core.ControlFlow, Core, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: control
+        node: {fileID: 5943255154638082011}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: In
+      _node: {fileID: -7791224253227235900}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Out
+        node: {fileID: -1849151451058201305}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out
+      _node: {fileID: -7791224253227235900}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: In
+        node: {fileID: -5173855120246897350}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+--- !u!114 &-7357208988742168897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0cbd2ffc78a89040b0cf2170bb7281d, type: 3}
+  m_Name: Branch
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 824, y: -200}
+  ports:
+    keys:
+    - In1
+    - Out1
+    - In2
+    - Out2
+    - In3
+    - Out3
+    - In4
+    - Out4
+    - In5
+    - Out5
+    values:
+    - _fieldName: In1
+      _node: {fileID: -7357208988742168897}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Out
+        node: {fileID: -1208836848518943714}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out1
+      _node: {fileID: -7357208988742168897}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: In
+        node: {fileID: -7891462790431847636}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: In2
+      _node: {fileID: -7357208988742168897}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out2
+      _node: {fileID: -7357208988742168897}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: In3
+      _node: {fileID: -7357208988742168897}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out3
+      _node: {fileID: -7357208988742168897}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: In4
+      _node: {fileID: -7357208988742168897}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out4
+      _node: {fileID: -7357208988742168897}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: In5
+      _node: {fileID: -7357208988742168897}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out5
+      _node: {fileID: -7357208988742168897}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
 --- !u!114 &-7033123584585434508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +360,7 @@ MonoBehaviour:
     values: []
   <Modifier>k__BackingField: 0
   <KeyCode>k__BackingField: 32
---- !u!114 &-5534377355757690416
+--- !u!114 &-5173855120246897350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,37 +373,48 @@ MonoBehaviour:
   m_Name: Control
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1336, y: 440}
+  position: {x: 2296, y: -584}
   ports:
     keys:
+    - control
     - In
     - Out
     values:
-    - _fieldName: In
-      _node: {fileID: -5534377355757690416}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
+    - _fieldName: control
+      _node: {fileID: -5173855120246897350}
+      _typeQualifiedName: Core.ControlFlow, Core, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
+      - fieldName: control
+        node: {fileID: 2583101993367623918}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: In
+      _node: {fileID: -5173855120246897350}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
       - fieldName: Out
-        node: {fileID: -1766427273310832960}
+        node: {fileID: -7791224253227235900}
         reroutePoints: []
       _direction: 0
-      _connectionType: 0
+      _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Out
-      _node: {fileID: -5534377355757690416}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      _node: {fileID: -5173855120246897350}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: In
-        node: {fileID: -3648161530495500403}
+      - fieldName: In1
+        node: {fileID: -4790873492680268499}
         reroutePoints: []
       _direction: 1
-      _connectionType: 0
+      _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
---- !u!114 &-5132134960745010863
+--- !u!114 &-4790873492680268499
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,38 +423,111 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 259087feab683d34cbdaa13bca503fd0, type: 3}
-  m_Name: Control
+  m_Script: {fileID: 11500000, guid: a0cbd2ffc78a89040b0cf2170bb7281d, type: 3}
+  m_Name: Branch
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1336, y: -136}
+  position: {x: 2872, y: -584}
   ports:
     keys:
-    - In
-    - Out
+    - In1
+    - Out1
+    - In2
+    - Out2
+    - In3
+    - Out3
+    - In4
+    - Out4
+    - In5
+    - Out5
     values:
-    - _fieldName: In
-      _node: {fileID: -5132134960745010863}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+    - _fieldName: In1
+      _node: {fileID: -4790873492680268499}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Out
-        node: {fileID: 772870876242695693}
+        node: {fileID: -5173855120246897350}
         reroutePoints: []
       _direction: 0
-      _connectionType: 0
+      _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: Out
-      _node: {fileID: -5132134960745010863}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+    - _fieldName: Out1
+      _node: {fileID: -4790873492680268499}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: In
-        node: {fileID: 4065136962373685053}
+        node: {fileID: 3453664898591940276}
         reroutePoints: []
       _direction: 1
-      _connectionType: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: In2
+      _node: {fileID: -4790873492680268499}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Out
+        node: {fileID: 6045982065858652592}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out2
+      _node: {fileID: -4790873492680268499}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: In3
+      _node: {fileID: -4790873492680268499}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out3
+      _node: {fileID: -4790873492680268499}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: In4
+      _node: {fileID: -4790873492680268499}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out4
+      _node: {fileID: -4790873492680268499}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: In5
+      _node: {fileID: -4790873492680268499}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out5
+      _node: {fileID: -4790873492680268499}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
 --- !u!114 &-4294262833794940171
@@ -351,42 +587,6 @@ MonoBehaviour:
     keys: []
     values: []
   <Value>k__BackingField: 75
---- !u!114 &-3648161530495500403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6693afabfe9a7f4f92f5f7b62ab33c7, type: 3}
-  m_Name: Diver
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1720, y: 568}
-  ports:
-    keys:
-    - In
-    values:
-    - _fieldName: In
-      _node: {fileID: -3648161530495500403}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: Out
-        node: {fileID: -5534377355757690416}
-        reroutePoints: []
-      - fieldName: Out
-        node: {fileID: 8582225236482704453}
-        reroutePoints: []
-      - fieldName: Out
-        node: {fileID: 8634226722000967830}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
 --- !u!114 &-3436174636410729126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +612,7 @@ MonoBehaviour:
   - {fileID: 250412578330969638}
   - {fileID: -8084319352410066067}
   - {fileID: -6327925628071295119}
---- !u!114 &-856795229586219560
+--- !u!114 &-1870428597067308330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -422,29 +622,145 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5d2718ea18e4234eaa97e5016eb4498, type: 3}
-  m_Name: Gauge
+  m_Name: Gauge-17
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1832, y: -8}
+  position: {x: 1464, y: -328}
   ports:
     keys:
-    - value
+    - control
     values:
-    - _fieldName: value
-      _node: {fileID: -856795229586219560}
-      _typeQualifiedName: Core.DoubleReference, Core, Version=0.0.0.0, Culture=neutral,
+    - _fieldName: control
+      _node: {fileID: -1870428597067308330}
+      _typeQualifiedName: Core.ControlFlow, Core, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
-      - fieldName: controlOut
-        node: {fileID: -8194423920987042019}
+      - fieldName: control
+        node: {fileID: -7891462790431847636}
         reroutePoints: []
       _direction: 0
-      _connectionType: 0
+      _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  value:
-    UseConstant: 0
-    ConstantValue: 0
+--- !u!114 &-1849151451058201305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259087feab683d34cbdaa13bca503fd0, type: 3}
+  m_Name: Valve-17-Control
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1144, y: -584}
+  ports:
+    keys:
+    - control
+    - In
+    - Out
+    values:
+    - _fieldName: control
+      _node: {fileID: -1849151451058201305}
+      _typeQualifiedName: Core.ControlFlow, Core, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: control
+        node: {fileID: 3668992528590618764}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: In
+      _node: {fileID: -1849151451058201305}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Out1
+        node: {fileID: 408660913437474908}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out
+      _node: {fileID: -1849151451058201305}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: In
+        node: {fileID: -7791224253227235900}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+--- !u!114 &-1208836848518943714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98189086ba749f749850c9e7ce0e34ce, type: 3}
+  m_Name: Bank-2-Input
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 504, y: -200}
+  ports:
+    keys:
+    - Out
+    values:
+    - _fieldName: Out
+      _node: {fileID: -1208836848518943714}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: In1
+        node: {fileID: -7357208988742168897}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  <InputPressure>k__BackingField:
+    UseConstant: 1
+    ConstantValue: 100
+    Variable: {fileID: 0}
+--- !u!114 &-1168895462957973536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98189086ba749f749850c9e7ce0e34ce, type: 3}
+  m_Name: Bank-1-Input
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 504, y: -584}
+  ports:
+    keys:
+    - Out
+    values:
+    - _fieldName: Out
+      _node: {fileID: -1168895462957973536}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: In1
+        node: {fileID: 408660913437474908}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  <InputPressure>k__BackingField:
+    UseConstant: 1
+    ConstantValue: 100
     Variable: {fileID: 0}
 --- !u!114 &-728742968945651133
 MonoBehaviour:
@@ -478,9 +794,9 @@ MonoBehaviour:
   m_Name: System
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: 5859284122985594453}
-  - {fileID: -4113064798855798560}
   - {fileID: 8603289289984696909}
+  - {fileID: -4113064798855798560}
+  - {fileID: 5859284122985594453}
   - {fileID: 1578148085060411446}
   - {fileID: 6670151146045740342}
   - {fileID: -728742968945651133}
@@ -499,8 +815,22 @@ MonoBehaviour:
   - {fileID: 8970294812456661808}
   - {fileID: -4294262833794940171}
   - {fileID: 2029713567591008656}
-  - {fileID: -856795229586219560}
-  - {fileID: -8194423920987042019}
+  - {fileID: 408660913437474908}
+  - {fileID: -1168895462957973536}
+  - {fileID: -1849151451058201305}
+  - {fileID: -7791224253227235900}
+  - {fileID: -5173855120246897350}
+  - {fileID: -7357208988742168897}
+  - {fileID: -1208836848518943714}
+  - {fileID: -7891462790431847636}
+  - {fileID: -1870428597067308330}
+  - {fileID: 3455934089141879239}
+  - {fileID: 6045982065858652592}
+  - {fileID: -4790873492680268499}
+  - {fileID: 3453664898591940276}
+  - {fileID: 3668992528590618764}
+  - {fileID: 5943255154638082011}
+  - {fileID: 2583101993367623918}
 --- !u!114 &250412578330969638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,7 +849,7 @@ MonoBehaviour:
     keys: []
     values: []
   <Button>k__BackingField: 0
---- !u!114 &772870876242695693
+--- !u!114 &408660913437474908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -528,130 +858,108 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 259087feab683d34cbdaa13bca503fd0, type: 3}
-  m_Name: Control
+  m_Script: {fileID: 11500000, guid: a0cbd2ffc78a89040b0cf2170bb7281d, type: 3}
+  m_Name: Bank-1-Branch
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 952, y: -8}
+  position: {x: 824, y: -584}
   ports:
     keys:
-    - In
-    - Out
+    - In1
+    - Out1
+    - In2
+    - Out2
+    - In3
+    - Out3
+    - In4
+    - Out4
+    - In5
+    - Out5
     values:
-    - _fieldName: In
-      _node: {fileID: 772870876242695693}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+    - _fieldName: In1
+      _node: {fileID: 408660913437474908}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Out
-        node: {fileID: 83244675424180592}
+        node: {fileID: -1168895462957973536}
         reroutePoints: []
       _direction: 0
-      _connectionType: 0
+      _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: Out
-      _node: {fileID: 772870876242695693}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+    - _fieldName: Out1
+      _node: {fileID: 408660913437474908}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: In
-        node: {fileID: 4613970776181336073}
-        reroutePoints: []
-      - fieldName: In
-        node: {fileID: -5132134960745010863}
-        reroutePoints: []
-      - fieldName: In
-        node: {fileID: -1028011484009649740}
+        node: {fileID: -1849151451058201305}
         reroutePoints: []
       _direction: 1
-      _connectionType: 0
+      _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
---- !u!114 &933856677207493588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 259087feab683d34cbdaa13bca503fd0, type: 3}
-  m_Name: Control
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1336, y: -584}
-  ports:
-    keys:
-    - In
-    - Out
-    values:
-    - _fieldName: In
-      _node: {fileID: 933856677207493588}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: Out
-        node: {fileID: 8533142198080721170}
-        reroutePoints: []
+    - _fieldName: In2
+      _node: {fileID: 408660913437474908}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
       _direction: 0
-      _connectionType: 0
+      _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: Out
-      _node: {fileID: 933856677207493588}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: In
-        node: {fileID: 8191066562520683059}
-        reroutePoints: []
+    - _fieldName: Out2
+      _node: {fileID: 408660913437474908}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
       _direction: 1
-      _connectionType: 0
+      _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
---- !u!114 &1293701452983931616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 259087feab683d34cbdaa13bca503fd0, type: 3}
-  m_Name: Control
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1336, y: -456}
-  ports:
-    keys:
-    - In
-    - Out
-    values:
-    - _fieldName: In
-      _node: {fileID: 1293701452983931616}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: Out
-        node: {fileID: 8533142198080721170}
-        reroutePoints: []
+    - _fieldName: In3
+      _node: {fileID: 408660913437474908}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
       _direction: 0
-      _connectionType: 0
+      _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: Out
-      _node: {fileID: 1293701452983931616}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: In
-        node: {fileID: 8191066562520683059}
-        reroutePoints: []
+    - _fieldName: Out3
+      _node: {fileID: 408660913437474908}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
       _direction: 1
-      _connectionType: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: In4
+      _node: {fileID: 408660913437474908}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out4
+      _node: {fileID: 408660913437474908}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: In5
+      _node: {fileID: 408660913437474908}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out5
+      _node: {fileID: 408660913437474908}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
 --- !u!114 &1578148085060411446
@@ -711,6 +1019,36 @@ MonoBehaviour:
     values: []
   <Modifier>k__BackingField: 0
   <KeyCode>k__BackingField: 122
+--- !u!114 &2583101993367623918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5d2718ea18e4234eaa97e5016eb4498, type: 3}
+  m_Name: Gauge
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2616, y: -648}
+  ports:
+    keys:
+    - control
+    values:
+    - _fieldName: control
+      _node: {fileID: 2583101993367623918}
+      _typeQualifiedName: Core.ControlFlow, Core, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: control
+        node: {fileID: -5173855120246897350}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
 --- !u!114 &3185855804248201712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -728,51 +1066,8 @@ MonoBehaviour:
   ports:
     keys: []
     values: []
-  <Value>k__BackingField: {x: 874.8293, y: 1167.8048}
---- !u!114 &3309947449912941683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 259087feab683d34cbdaa13bca503fd0, type: 3}
-  m_Name: Control
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1336, y: -328}
-  ports:
-    keys:
-    - In
-    - Out
-    values:
-    - _fieldName: In
-      _node: {fileID: 3309947449912941683}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: Out
-        node: {fileID: 8533142198080721170}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Out
-      _node: {fileID: 3309947449912941683}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: In
-        node: {fileID: 8191066562520683059}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
---- !u!114 &4065136962373685053
+  <Value>k__BackingField: {x: 223.31711, y: 1132.6829}
+--- !u!114 &3453664898591940276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -785,29 +1080,107 @@ MonoBehaviour:
   m_Name: Diver
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1720, y: 120}
+  position: {x: 3192, y: -584}
   ports:
     keys:
     - In
     values:
     - _fieldName: In
-      _node: {fileID: 4065136962373685053}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      _node: {fileID: 3453664898591940276}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: Out
-        node: {fileID: 4613970776181336073}
-        reroutePoints: []
-      - fieldName: Out
-        node: {fileID: -5132134960745010863}
-        reroutePoints: []
-      - fieldName: Out
-        node: {fileID: -1028011484009649740}
+      - fieldName: Out1
+        node: {fileID: -4790873492680268499}
         reroutePoints: []
       _direction: 0
-      _connectionType: 0
+      _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
+--- !u!114 &3455934089141879239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259087feab683d34cbdaa13bca503fd0, type: 3}
+  m_Name: Valve-34-Control
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1720, y: -200}
+  ports:
+    keys:
+    - control
+    - In
+    - Out
+    values:
+    - _fieldName: control
+      _node: {fileID: 3455934089141879239}
+      _typeQualifiedName: Core.ControlFlow, Core, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: In
+      _node: {fileID: 3455934089141879239}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Out
+        node: {fileID: -7891462790431847636}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out
+      _node: {fileID: 3455934089141879239}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: In
+        node: {fileID: 6045982065858652592}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+--- !u!114 &3668992528590618764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b174d8f1dbbd24f89343ef6f14a190, type: 3}
+  m_Name: Valve-17
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1464, y: -648}
+  ports:
+    keys:
+    - control
+    values:
+    - _fieldName: control
+      _node: {fileID: 3668992528590618764}
+      _typeQualifiedName: Core.ControlFlow, Core, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: control
+        node: {fileID: -1849151451058201305}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  <ValveOpen>k__BackingField:
+    UseConstant: 1
+    ConstantValue: 0.12
+    Variable: {fileID: 0}
 --- !u!114 &4447631832616926569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -827,49 +1200,6 @@ MonoBehaviour:
     values: []
   <Modifier>k__BackingField: 0
   <KeyCode>k__BackingField: 274
---- !u!114 &4613970776181336073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 259087feab683d34cbdaa13bca503fd0, type: 3}
-  m_Name: Control
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1336, y: -8}
-  ports:
-    keys:
-    - In
-    - Out
-    values:
-    - _fieldName: In
-      _node: {fileID: 4613970776181336073}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: Out
-        node: {fileID: 772870876242695693}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Out
-      _node: {fileID: 4613970776181336073}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: In
-        node: {fileID: 4065136962373685053}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
 --- !u!114 &5859284122985594453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -890,6 +1220,87 @@ MonoBehaviour:
   width: 400
   height: 352
   color: {r: 1, g: 1, b: 1, a: 0.1}
+--- !u!114 &5943255154638082011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5d2718ea18e4234eaa97e5016eb4498, type: 3}
+  m_Name: Gauge
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2040, y: -648}
+  ports:
+    keys:
+    - control
+    values:
+    - _fieldName: control
+      _node: {fileID: 5943255154638082011}
+      _typeQualifiedName: Core.ControlFlow, Core, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: control
+        node: {fileID: -7791224253227235900}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+--- !u!114 &6045982065858652592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259087feab683d34cbdaa13bca503fd0, type: 3}
+  m_Name: Control
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2296, y: -200}
+  ports:
+    keys:
+    - control
+    - In
+    - Out
+    values:
+    - _fieldName: control
+      _node: {fileID: 6045982065858652592}
+      _typeQualifiedName: Core.ControlFlow, Core, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: In
+      _node: {fileID: 6045982065858652592}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Out
+        node: {fileID: 3455934089141879239}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out
+      _node: {fileID: 6045982065858652592}
+      _typeQualifiedName: Core.Flow, Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: In2
+        node: {fileID: -4790873492680268499}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
 --- !u!114 &6670151146045740342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -909,134 +1320,6 @@ MonoBehaviour:
     values: []
   <Modifier>k__BackingField: 0
   <KeyCode>k__BackingField: 27
---- !u!114 &8191066562520683059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6693afabfe9a7f4f92f5f7b62ab33c7, type: 3}
-  m_Name: Diver
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1720, y: -328}
-  ports:
-    keys:
-    - In
-    values:
-    - _fieldName: In
-      _node: {fileID: 8191066562520683059}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: Out
-        node: {fileID: 3309947449912941683}
-        reroutePoints: []
-      - fieldName: Out
-        node: {fileID: 1293701452983931616}
-        reroutePoints: []
-      - fieldName: Out
-        node: {fileID: 933856677207493588}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
---- !u!114 &8533142198080721170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 259087feab683d34cbdaa13bca503fd0, type: 3}
-  m_Name: Control
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 952, y: -456}
-  ports:
-    keys:
-    - In
-    - Out
-    values:
-    - _fieldName: In
-      _node: {fileID: 8533142198080721170}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: Out
-        node: {fileID: 83244675424180592}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Out
-      _node: {fileID: 8533142198080721170}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: In
-        node: {fileID: 1293701452983931616}
-        reroutePoints: []
-      - fieldName: In
-        node: {fileID: 933856677207493588}
-        reroutePoints: []
-      - fieldName: In
-        node: {fileID: 3309947449912941683}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
---- !u!114 &8582225236482704453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 259087feab683d34cbdaa13bca503fd0, type: 3}
-  m_Name: Control
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1336, y: 312}
-  ports:
-    keys:
-    - In
-    - Out
-    values:
-    - _fieldName: In
-      _node: {fileID: 8582225236482704453}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: Out
-        node: {fileID: -1766427273310832960}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Out
-      _node: {fileID: 8582225236482704453}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: In
-        node: {fileID: -3648161530495500403}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
 --- !u!114 &8603289289984696909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1057,49 +1340,6 @@ MonoBehaviour:
   width: 784
   height: 1455
   color: {r: 1, g: 1, b: 1, a: 0.1}
---- !u!114 &8634226722000967830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 259087feab683d34cbdaa13bca503fd0, type: 3}
-  m_Name: Control
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1336, y: 568}
-  ports:
-    keys:
-    - In
-    - Out
-    values:
-    - _fieldName: In
-      _node: {fileID: 8634226722000967830}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: Out
-        node: {fileID: -1766427273310832960}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Out
-      _node: {fileID: 8634226722000967830}
-      _typeQualifiedName: Simulation.Flow, Simulation, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: In
-        node: {fileID: -3648161530495500403}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
 --- !u!114 &8970294812456661808
 MonoBehaviour:
   m_ObjectHideFlags: 0

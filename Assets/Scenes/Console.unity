@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d1086a7571a0a4e8382138b71298ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Graph>k__BackingField: {fileID: 11400000, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
+  <Graph>k__BackingField: {fileID: 11400000, guid: 76719cee3b751af4b9da7fbfabff8a78, type: 2}
 --- !u!4 &2068304808
 Transform:
   m_ObjectHideFlags: 0
@@ -299,13 +299,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7463295132570312017, guid: 02eab312aabb0b84baa36699cf570f10, type: 3}
-      propertyPath: <CameraFOV>k__BackingField.UseConstant
+    - target: {fileID: 869627284781532501, guid: 02eab312aabb0b84baa36699cf570f10, type: 3}
+      propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7463295132570312017, guid: 02eab312aabb0b84baa36699cf570f10, type: 3}
-      propertyPath: <CameraFOV>k__BackingField.ConstantValue
-      value: 60
+    - target: {fileID: 869627284781532501, guid: 02eab312aabb0b84baa36699cf570f10, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 869627284781532501, guid: 02eab312aabb0b84baa36699cf570f10, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02eab312aabb0b84baa36699cf570f10, type: 3}
@@ -373,6 +377,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 489644826627439148, guid: 92bdae883ea1a4a4aab7da2f9216522e, type: 3}
+      propertyPath: <node>k__BackingField
+      value: 
+      objectReference: {fileID: 5900319256610500340, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
+    - target: {fileID: 7634740866622804354, guid: 92bdae883ea1a4a4aab7da2f9216522e, type: 3}
+      propertyPath: <node>k__BackingField
+      value: 
+      objectReference: {fileID: -4380273335518804339, guid: 0e50deb34aa58a146823fef0783ad211, type: 2}
     - target: {fileID: 7821697440518117449, guid: 92bdae883ea1a4a4aab7da2f9216522e, type: 3}
       propertyPath: m_Name
       value: Room

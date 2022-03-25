@@ -22,9 +22,27 @@ namespace Core
 
         #region Public Methods
 
-        #endregion
+        public T GetOutputValue<T>(string fieldName, T fallback = default(T))
+        {
+            NodePort port = GetPort(fieldName);
+            if (port?.IsConnected ?? false)
+            {
+                return port.GetOutputValue<T>();
+            }
 
-        #region Private Methods
+            return fallback;
+        }
+
+        public T[] GetOutputValues<T>(string fieldName, params T[] fallback)
+        {
+            NodePort port = GetPort(fieldName);
+            if (port?.IsConnected ?? false)
+            {
+                return port.GetOutputValues<T>();
+            }
+
+            return fallback;
+        }
 
         #endregion
     }

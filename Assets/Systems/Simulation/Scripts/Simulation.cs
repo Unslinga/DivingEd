@@ -17,76 +17,37 @@ namespace Simulation
     {
         #region Fields & Properties
 
-        private bool mainTick;
+        private static Simulation instance;
+        public static Simulation Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = Singleton.Create<Simulation>();
+                }
 
-        private List<ITickable> tickables = new List<ITickable>();
+                return instance;
+            }
+        }
 
         [field: SerializeField]
-        public List<ISimulation> SimulationNodes { get; set; } = new List<ISimulation>();
+        public List<InputNode> InputNodes { get; set; }
 
         #endregion
 
         #region Public Methods
 
-        public void Load()
+        public void UpdateNodes()
         {
+            InputNodes.ForEach(n => n.ClearCascade(n.ID));
 
-        }
-
-        public void Save()
-        {
-
-        }
-
-        public void Register(ITickable tickable)
-        {
-            if (tickables.Contains(tickable))
-                return;
-
-            tickables.Add(tickable);
-        }
-
-        public void Unregister(ITickable tickable)
-        {
-            if (!tickables.Contains(tickable))
-                return;
-
-            tickables.Remove(tickable);
-        }
-
-        public IEnumerator MainTick()
-        {
-            foreach (var tickable in tickables)
-            {
-                tickable.MainTick();
-                yield return null;
-            }
-        }
-
-        public IEnumerator SubTick()
-        {
-            foreach (var tickable in tickables)
-            {
-                tickable.SubTick();
-                yield return null;
-            }
-        }
-
-        public void Tick()
-        {
-            mainTick = !mainTick;
-
-            StartCoroutine(mainTick ? MainTick() : SubTick());
+            InputNodes.ForEach(n => n.CascadeValue(n.ID));
         }
 
         #endregion
 
         #region Private Methods
-
-        private void CreateNode()
-        {
-
-        }
 
         #endregion
 
@@ -94,12 +55,12 @@ namespace Simulation
 
         void Awake()
         {
-            Load();
+
         }
 
         void FixedUpdate()
         {
-            Tick();
+            UpdateNodes();
         }
 
         #endregion

@@ -11,8 +11,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Simulation
+namespace Core
 {
     [Serializable]
-    public class Flow { }
+    public class ControlFlow : Flow { }
 }
