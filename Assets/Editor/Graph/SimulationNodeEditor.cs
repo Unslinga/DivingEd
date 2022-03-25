@@ -56,12 +56,13 @@ public class SimulationNodeEditor : BaseNodeEditor
 
         EditorGUILayout.Space(8);
 
-            if (GUILayout.Button("Propagate"))
-            {
-                simuationNode.Propagate(this.GetHashCode());
-            }
         if (simuationNode is InputNode)
         {
+            if (GUILayout.Button("Cascade"))
+            {
+                simuationNode.ClearCascade(simuationNode.ID);
+                simuationNode.CascadeValue(simuationNode.ID);
+            }
         }
     }
 

@@ -32,7 +32,7 @@ namespace Simulation
         }
 
         [field: SerializeField]
-        public SimulationNode InputNodes { get; set; }
+        public List<InputNode> InputNodes { get; set; }
 
         #endregion
 
@@ -40,7 +40,9 @@ namespace Simulation
 
         public void UpdateNodes()
         {
+            InputNodes.ForEach(n => n.ClearCascade(n.ID));
 
+            InputNodes.ForEach(n => n.CascadeValue(n.ID));
         }
 
         #endregion
@@ -58,7 +60,7 @@ namespace Simulation
 
         void FixedUpdate()
         {
-
+            UpdateNodes();
         }
 
         #endregion

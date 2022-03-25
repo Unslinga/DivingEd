@@ -10,29 +10,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using XNode;
 
-namespace Gauge
+namespace Core
 {
-    public class GaugeNode : BaseNode, IControl
+    public interface IControl
     {
         #region Fields & Properties
 
-        [Input(ShowBackingValue.Never, ConnectionType.Override)]
-        public ControlFlow control;
-
-        public ControlFlow Control { get { return control; } }
+        ControlFlow Control { get; }
 
         #endregion
 
         #region Public Methods
 
-        public void UpdateValue()
-        {
-            var controlNode = (IControl)GetPort("control").Connection?.node;
-            control.Value = controlNode != null ? controlNode.Control.Value : 0;
-        }
+        public void UpdateValue();
 
         #endregion
+
     }
 }

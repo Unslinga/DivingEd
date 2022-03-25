@@ -19,45 +19,47 @@ namespace Simulation
         #region Fields & Properties
 
         [Input(ShowBackingValue.Never, ConnectionType.Override)]
-        public double In1;
+        public Flow In1;
 
         [Output(ShowBackingValue.Never, ConnectionType.Override)]
-        public double Out1;
+        public Flow Out1;
 
         [Input(ShowBackingValue.Never, ConnectionType.Override)]
-        public double In2;
+        public Flow In2;
 
         [Output(ShowBackingValue.Never, ConnectionType.Override)]
-        public double Out2;
+        public Flow Out2;
 
         [Input(ShowBackingValue.Never, ConnectionType.Override)]
-        public double In3;
+        public Flow In3;
 
         [Output(ShowBackingValue.Never, ConnectionType.Override)]
-        public double Out3;
+        public Flow Out3;
 
         [Input(ShowBackingValue.Never, ConnectionType.Override)]
-        public double In4;
+        public Flow In4;
 
         [Output(ShowBackingValue.Never, ConnectionType.Override)]
-        public double Out4;
+        public Flow Out4;
 
         [Input(ShowBackingValue.Never, ConnectionType.Override)]
-        public double In5;
+        public Flow In5;
 
         [Output(ShowBackingValue.Never, ConnectionType.Override)]
-        public double Out5;
+        public Flow Out5;
 
         #endregion
 
         #region Public Methods
 
+        public override void ClearValue()
+        {
+            Value = 0;
+        }
+
         public override void UpdateValue()
         {
-            //Value = GetConnectedNodePorts()
-            //    .Where(n => n is SimulationNode)
-            //    .Select(n => ((SimulationNode)n).Value)
-            //    .Max();
+            Value = GetConnectedSimulationNodes(ID).Select(x => x.Value).Max();
         }
 
         #endregion

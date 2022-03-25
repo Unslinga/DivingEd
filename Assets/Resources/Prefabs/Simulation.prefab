@@ -43,3 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 731106b65bbde6644b19c2bba1e4bf72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <InputNodes>k__BackingField:
+  - {fileID: -1168895462957973536, guid: 76719cee3b751af4b9da7fbfabff8a78, type: 2}
+  - {fileID: -1208836848518943714, guid: 76719cee3b751af4b9da7fbfabff8a78, type: 2}

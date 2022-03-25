@@ -1,0 +1,17 @@
+{
+    "name": "Valve",
+    "rootNamespace": "Valve",
+    "references": [
+        "GUID:da7f98070cca49f45873c277314f338d",
+        "GUID:b8e24fd1eb19b4226afebb2810e3c19b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

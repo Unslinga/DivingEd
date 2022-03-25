@@ -21,11 +21,17 @@ namespace Simulation
         [field: SerializeField]
         public DoubleReference InputPressure { get; set; }
 
-        [Output(ShowBackingValue.Never, ConnectionType.Override)] public double Out;
+        [Output(ShowBackingValue.Never, ConnectionType.Override)]
+        public Flow Out;
 
         #endregion
 
         #region Public Methods
+
+        public override void ClearValue()
+        {
+            Value = 0;
+        }
 
         public override void UpdateValue()
         {
