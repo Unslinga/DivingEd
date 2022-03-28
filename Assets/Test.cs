@@ -16,7 +16,7 @@ public class Test : MonoBehaviour
 
     private void Start()
     {
-        test = ScriptableObject.CreateInstance<StringVariable>();
+        test = UnityEngine.ScriptableObject.CreateInstance<StringVariable>();
     }
 
 }
