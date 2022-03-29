@@ -10,14 +10,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Timeline;
+using UnityEngine.Playables;
 
-[TrackBindingType(typeof(BaseEvent))]
-[TrackClipType(typeof(EventClip))]
-public class EventTrack : TrackAsset
+public class EventBehaviour : PlayableBehaviour
 {
     #region Fields & Properties
-
+    public BaseEvent BaseEvent;
     #endregion
 
     #region Public Methods
@@ -29,7 +27,7 @@ public class EventTrack : TrackAsset
     #endregion
 
     #region Unity Methods
-    
+
     void Start()
     {
         
