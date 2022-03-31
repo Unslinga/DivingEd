@@ -1284,6 +1284,10 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: {x: 0, y: 0}
     Variable: {fileID: 3185855804248201712, guid: 76719cee3b751af4b9da7fbfabff8a78, type: 2}
+  <MouseActive>k__BackingField:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: -5012092828393845509, guid: 76719cee3b751af4b9da7fbfabff8a78, type: 2}
   <CameraFOV>k__BackingField:
     UseConstant: 0
     ConstantValue: 0

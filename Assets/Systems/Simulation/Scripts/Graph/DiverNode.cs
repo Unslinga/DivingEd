@@ -20,7 +20,12 @@ namespace Simulation
         #region Fields & Properties
 
         [Input(ShowBackingValue.Never, ConnectionType.Override)]
-        public Flow In;
+        public Flow AirIn;
+
+        [Space(16)]
+
+        [Input(ShowBackingValue.Never, ConnectionType.Override)]
+        public Flow DepthPressureOut;
 
         #endregion
 

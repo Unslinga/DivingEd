@@ -15,16 +15,40 @@ namespace Gauge
 {
     public class Gauge : MonoBehaviour
     {
-        #region Fields
-        [SerializeField]
-        public DoubleReference gaugeNode;
-        #endregion
+        #region Fields & Properties
 
-        #region Properties
+        [field: SerializeField]
+        public GaugeNode GaugeNode { get; set; }
+
+        [field: SerializeField]
+        public GameObject Pointer { get; set; }
+
+        [field: Header("Gauge Settings")]
+
+        [field: SerializeField]
+        public float OffsetAngle { get; set; }
+
+        [field: SerializeField]
+        public float ScaleAngle { get; set; }
+
+        public float PointerAngle
+        {
+            get
+            {
+                return (float)(OffsetAngle + (GaugeNode.Value * ScaleAngle));
+            }
+        }
 
         #endregion
 
         #region Public Methods
+
+        public void UpdateAngle()
+        {
+            if (GaugeNode == null) return;
+
+            Pointer.transform.rotation = Quaternion.Euler(0, 0, PointerAngle);
+        }
 
         #endregion
 
@@ -33,16 +57,12 @@ namespace Gauge
         #endregion
 
         #region Unity Methods
-        private void Start()
-        {
-            
-        }
 
         private void Update()
         {
-            
+            UpdateAngle();
         }
+
         #endregion
-        
     } 
 }

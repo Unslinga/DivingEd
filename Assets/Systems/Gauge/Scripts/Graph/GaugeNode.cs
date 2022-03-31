@@ -18,6 +18,10 @@ namespace Gauge
     {
         #region Fields & Properties
 
+        [field: SerializeField]
+        [field: ReadOnlyField]
+        public double Value { get; set; }
+
         [Input(ShowBackingValue.Never, ConnectionType.Override)]
         public ControlFlow control;
 
@@ -30,7 +34,8 @@ namespace Gauge
         public void UpdateValue()
         {
             var controlNode = (IControl)GetPort("control").Connection?.node;
-            control.Value = controlNode != null ? controlNode.Control.Value : 0;
+            Value = controlNode != null ? controlNode.Control.Value : 0;
+            control.Value = Value;
         }
 
         #endregion
