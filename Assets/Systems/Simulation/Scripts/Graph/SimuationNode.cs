@@ -6,6 +6,7 @@
 // ----------------------------------------------------------------------------
 
 using Core;
+using Simulation;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -32,6 +33,8 @@ namespace Core
         {
             UpdateValue();
 
+            if (this is DiverNode) return;
+
             foreach (var node in GetConnectedSimulationNodes(traversed).Where(n => n.Value <= Value))
             {
                 traversed.Add(ID);
@@ -42,6 +45,8 @@ namespace Core
         public void ClearCascade(List<int> traversed)
         {
             ClearValue();
+
+            if (this is DiverNode) return;
 
             foreach (var node in GetConnectedSimulationNodes(traversed))
             {

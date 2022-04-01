@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 4042278692782101354}
   - component: {fileID: 4042278692782101355}
   m_Layer: 0
-  m_Name: SwitchValue
+  m_Name: SwitchValve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

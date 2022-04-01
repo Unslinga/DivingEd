@@ -25,6 +25,11 @@ namespace Simulation
         [Space(16)]
 
         [Input(ShowBackingValue.Never, ConnectionType.Override)]
+        public Flow DepthPressureIn;
+
+        [Space(16)]
+
+        [Input(ShowBackingValue.Never, ConnectionType.Override)]
         public Flow DepthPressureOut;
 
         #endregion
@@ -38,7 +43,7 @@ namespace Simulation
 
         public override void UpdateValue()
         {
-            Value = GetConnectedSimulationNodes(ID).Select(x => x.Value).Max();
+            Value = GetInputValue("AirIn", 0.0);
         }
 
         #endregion

@@ -46,6 +46,9 @@ namespace Valve
         [field: SerializeField]
         public bool ReverseAngle { get; set; }
 
+        [field: SerializeField]
+        public float DistanceAngleDelta { get; set; } = 0f;
+
         [field: Header("Angle Info")]
 
         [field: SerializeField]
@@ -112,6 +115,11 @@ namespace Valve
         private void AngleValveBody()
         {
             ValveBody.transform.parent.rotation = Quaternion.Euler(0, 0, Angle);
+
+            if (DistanceAngleDelta > 0)
+            {
+                ValveBody.transform.parent.localPosition = new Vector3(0, 0, DistanceAngleDelta * (float)Value);
+            }
         }
 
         private void CalculateAngle()
@@ -197,8 +205,11 @@ namespace Valve
         {
             this.CheckNull(ValveNode, false);
 
-            OffsetAngle = OffsetAngle > 0 ? 0 : OffsetAngle;
-            MaximumAngle = MaximumAngle < 0 ? 0 : MaximumAngle;
+            OffsetAngle = Mathf.Clamp(OffsetAngle, OffsetAngle, 0);
+
+            MaximumAngle = Mathf.Clamp(MaximumAngle, 0, MaximumAngle);
+
+            DistanceAngleDelta = Mathf.Clamp(DistanceAngleDelta, 0, DistanceAngleDelta);
 
             MouseClick?.CreateListener(gameObject, MouseHitActivation);
         }
