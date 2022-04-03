@@ -1,0 +1,185 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1324245624409930882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4733811698401024453}
+  m_Layer: 0
+  m_Name: Body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4733811698401024453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324245624409930882}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1435764970561851674}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6617260120371976849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8213790624857379530}
+  m_Layer: 0
+  m_Name: Valve
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8213790624857379530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6617260120371976849}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7147044743681605343}
+  m_Father: {fileID: 1435764970561851674}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9041214032427998072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7147044743681605343}
+  - component: {fileID: 6762409750726676717}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7147044743681605343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9041214032427998072}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8213790624857379530}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &6762409750726676717
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9041214032427998072}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.025
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &6321674494538660301
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2437545067478708115, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
+      propertyPath: <Label>k__BackingField
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3837914094698475349, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
+      propertyPath: m_Name
+      value: ValveTemplate
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924622247778740439, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924622247778740439, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924622247778740439, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924622247778740439, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052757761678372462, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
+--- !u!1 &7131480785469052568 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3837914094698475349, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
+  m_PrefabInstance: {fileID: 6321674494538660301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1435764970561851674 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4924622247778740439, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
+  m_PrefabInstance: {fileID: 6321674494538660301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3080357730192299326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7131480785469052568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07338ae1973e5884a8032b94c6bf7ec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Node>k__BackingField: {fileID: 0}
+  <ValveBody>k__BackingField: {fileID: 6762409750726676717}
+  <MouseClick>k__BackingField: {fileID: 250412578330969638, guid: 76719cee3b751af4b9da7fbfabff8a78, type: 2}
+  <MousePosition>k__BackingField:
+    UseConstant: 0
+    ConstantValue: {x: 0, y: 0}
+    Variable: {fileID: 3185855804248201712, guid: 76719cee3b751af4b9da7fbfabff8a78, type: 2}
+  <MouseActive>k__BackingField:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: -5012092828393845509, guid: 76719cee3b751af4b9da7fbfabff8a78, type: 2}
+  <OffsetAngle>k__BackingField: 0
+  <MaximumAngle>k__BackingField: 0
+  <ReverseAngle>k__BackingField: 0
+  <BallValve>k__BackingField: 0
+  <CutoffValue>k__BackingField: 0
+  <RelativeAngle>k__BackingField: 0
+  <Angle>k__BackingField: 0
+  <Value>k__BackingField: 0
