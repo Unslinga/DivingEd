@@ -16,16 +16,17 @@ namespace Core
     [NodeWidth(336)]
     public class InputEventSet : NamedSet<InputEvent>
     {
-        #region Fields
-
-        #endregion
-
-        #region Properties
+        #region Fields & Properties
 
         #endregion
 
         #region Public Methods
 
+        public void Populate()
+        {
+            Items = GameManager.GetNodesByType<InputEvent>();
+        }
+
         #endregion
-    }    
+    }
 }

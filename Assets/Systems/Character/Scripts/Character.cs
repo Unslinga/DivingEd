@@ -24,6 +24,9 @@ namespace Character
         [field: SerializeField]
         public Vector2Reference MousePosition { get; set; }
 
+        [field: SerializeField]
+        public BoolReference MouseActive { get; set; }
+
         [field: Header("Camera Zoom Settings")]
         [field: SerializeField]
         public FloatReference CameraFOV { get; set; }
@@ -70,7 +73,7 @@ namespace Character
 
         public void TestMouseLeftClick(object data)
         {
-            Debug.Log("Test");
+            //Debug.Log("Test");
         }
 
         public void ToggleZoomed(object data)
@@ -278,6 +281,8 @@ namespace Character
 
         void Update()
         {
+            if (!MouseActive) return;
+
             Zoom();
             ZoomedMovement();
         }

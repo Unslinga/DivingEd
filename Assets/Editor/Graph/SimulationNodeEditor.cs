@@ -60,8 +60,14 @@ public class SimulationNodeEditor : BaseNodeEditor
         {
             if (GUILayout.Button("Cascade"))
             {
-                simuationNode.ClearCascade(simuationNode.ID);
-                simuationNode.CascadeValue(simuationNode.ID);
+                simuationNode.CascadeValue(new List<int> { simuationNode.ID });
+            }
+
+            EditorGUILayout.Space(8);
+
+            if (GUILayout.Button("Clear All"))
+            {
+                simuationNode.ClearCascade(new List<int> { simuationNode.ID });
             }
         }
     }
