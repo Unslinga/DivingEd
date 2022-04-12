@@ -22,11 +22,11 @@ namespace InputController
         public InputEventSet InputEvents { get; private set; }
 
         [field: SerializeField]
-        public Vector2Reference MousePosition { get; set; }
+        public Vector2Variable MousePosition { get; set; }
 
         private Vector2 lastPosition;
         [field: SerializeField]
-        public Vector2Reference MouseDelta { get; set; }
+        public Vector2Variable MouseDelta { get; set; }
 
         private bool[] pressedInputs;
 

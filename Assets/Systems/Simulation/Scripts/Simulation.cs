@@ -9,6 +9,7 @@ using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Simulation
@@ -40,9 +41,9 @@ namespace Simulation
 
         public void UpdateNodes()
         {
-            InputNodes.ForEach(n => n.ClearCascade(n.ID));
+            InputNodes.ForEach(n => n.ClearCascade(new List<int> { n.ID }));
 
-            InputNodes.ForEach(n => n.CascadeValue(n.ID));
+            InputNodes.ForEach(n => n.CascadeValue(new List<int> { n.ID }));
         }
 
         #endregion
@@ -53,9 +54,9 @@ namespace Simulation
 
         #region Unity Methods
 
-        void Awake()
+        void Start()
         {
-
+            InputNodes = GameManager.GetNodesByType<InputNode>();
         }
 
         void FixedUpdate()

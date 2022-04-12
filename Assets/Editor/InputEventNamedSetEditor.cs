@@ -30,7 +30,7 @@ public class InputEventNamedSetEditor : BaseNodeEditor
 
         if (GUILayout.Button("Update InputEvents"))
         {
-            set.Items = GameManager.GetNodesByType<InputEvent>();
+            set.Populate();
         }
     }
 

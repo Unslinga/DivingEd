@@ -6,6 +6,7 @@
 // ----------------------------------------------------------------------------
 
 using Core;
+using Simulation;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,9 +19,7 @@ namespace Core
     [NodeWidth(272)]
     public abstract class SimulationNode : BaseNode
     {
-        #region Fields & Properties
-
-        public GameObject GameObject { get; set; }
+        #region Fields & Properties 
 
         public int ID => GetHashCode();
 
@@ -30,23 +29,29 @@ namespace Core
 
         #region Public Methods
 
-        public void CascadeValue(int lastID)
+        public void CascadeValue(List<int> traversed)
         {
             UpdateValue();
 
-            foreach (var node in GetConnectedSimulationNodes(lastID).Where(n => n.Value <= Value))
+            if (this is DiverNode) return;
+
+            foreach (var node in GetConnectedSimulationNodes(traversed).Where(n => n.Value <= Value))
             {
-                node.CascadeValue(ID);
+                traversed.Add(ID);
+                node.CascadeValue(traversed);
             }
         }
 
-        public void ClearCascade(int lastID)
+        public void ClearCascade(List<int> traversed)
         {
             ClearValue();
 
-            foreach (var node in GetConnectedSimulationNodes(lastID))
+            if (this is DiverNode) return;
+
+            foreach (var node in GetConnectedSimulationNodes(traversed))
             {
-                node.ClearCascade(ID);
+                traversed.Add(ID);
+                node.ClearCascade(traversed);
             }
         }
         public abstract void ClearValue();
@@ -62,13 +67,18 @@ namespace Core
 
         #region Private Methods
 
-        protected IEnumerable<SimulationNode> GetConnectedSimulationNodes(int lastID)
+        protected IEnumerable<SimulationNode> GetConnectedSimulationNodes(int ID)
+        {
+            return GetConnectedSimulationNodes(new List<int> { ID });
+        }
+
+        protected IEnumerable<SimulationNode> GetConnectedSimulationNodes(List<int> traversed)
         {
             foreach (SimulationNode node in Ports
                 .SelectMany(p => p.GetConnections()
                     .Where(n => n.IsConnected && n.node is SimulationNode))
                 .Select(p => (SimulationNode)p.node)
-                .Where(n => n.ID != lastID))
+                .Where(n => !traversed.Contains(n.ID)))
             {
                 yield return node;
             }
