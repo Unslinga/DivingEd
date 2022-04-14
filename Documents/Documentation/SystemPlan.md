@@ -3,7 +3,7 @@ gantt
     dateFormat  YYYY-MM-DD
     axisFormat  %b
     #todayMarker off
-    title       System-Plan 1.0
+    title       System-Plan 2.0
     excludes    weekends
 
     section Administratve
