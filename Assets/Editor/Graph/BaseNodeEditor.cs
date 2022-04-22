@@ -29,7 +29,7 @@ public class BaseNodeEditor : NodeEditor
         GUILayout.Label(target.GetType().Name);
         GUI.enabled = enabled;
 
-        GUILayout.Space(8);
+        GUILayout.Space(2);
 
         base.OnBodyGUI();
     }

@@ -44,6 +44,10 @@ namespace Core
             return fallback;
         }
 
+        public virtual string GetValues() { return default; }
+
+        public virtual void SetValues(string data) { }
+
         #endregion
     }
 }

@@ -34,7 +34,7 @@ namespace Console
 
         private void Application_logMessageReceived(string logString, string stackTrace, LogType type)
         {
-            ConsoleCommands["LogToConsole"]?.Raise(new LogMessageData { Type = type, Message = logString, StackTrace = stackTrace });
+            ConsoleCommands["LogToConsole"]?.Raise(new LogMessageData { Type = type, Message = logString, StackTrace = stackTrace }.Compose());
         }
 
         #endregion

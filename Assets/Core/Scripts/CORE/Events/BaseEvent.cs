@@ -63,7 +63,7 @@ namespace Core
         }
 
         public IEnumerable<EventListener> CreateListener(
-            GameObject gameObject, params UnityAction<object>[] unityActions)
+            GameObject gameObject, params UnityAction<string>[] unityActions)
         {
             string info = Environment.StackTrace.Split('\\').Reverse().First().Trim();
 
@@ -75,17 +75,42 @@ namespace Core
             List<EventListener> listeners = new List<EventListener>();
             foreach (var action in unityActions)
             {
-                var unityEvent = new UnityEvent<object>();
+                var unityEvent = new UnityEvent<string>();
                 unityEvent.AddListener(action);
 
                 EventListener listner = CreateGameObjectListener(gameObject);
-                listner.ParameterResponse = unityEvent;
+                listner.SpecializedResponse = unityEvent;
 
                 listeners.Add(listner);
             }
 
             return listeners;
         }
+
+        //public IEnumerable<EventListener> CreateListener(
+        //    GameObject gameObject, params UnityAction<object>[] unityActions)
+        //{
+        //    string info = Environment.StackTrace.Split('\\').Reverse().First().Trim();
+
+        //    if (gameObject == null)
+        //    {
+        //        Debug.LogError($"GameObject [{info}][{name}] cannot be null!");
+        //    }
+
+        //    List<EventListener> listeners = new List<EventListener>();
+        //    foreach (var action in unityActions)
+        //    {
+        //        var unityEvent = new UnityEvent<object>();
+        //        unityEvent.AddListener(action);
+
+        //        EventListener listner = CreateGameObjectListener(gameObject);
+        //        listner.ParameterResponse = unityEvent;
+
+        //        listeners.Add(listner);
+        //    }
+
+        //    return listeners;
+        //}
 
         public void Raise()
         {
@@ -95,13 +120,21 @@ namespace Core
             }
         }
 
-        public void Raise<T>(T value)
+        public void Raise(string data)
         {
-            for (int i = Listeners.Count -1; i >= 0; i--)
+            for (int i = Listeners.Count - 1; i >= 0; i--)
             {
-                Listeners[i].OnEventRaised(value);
+                Listeners[i].OnEventRaised(data);
             }
         }
+
+        //public void Raise<T>(T value)
+        //{
+        //    for (int i = Listeners.Count -1; i >= 0; i--)
+        //    {
+        //        Listeners[i].OnEventRaised(value);
+        //    }
+        //}
 
         public void RegisterListener(EventListener listener)
         {

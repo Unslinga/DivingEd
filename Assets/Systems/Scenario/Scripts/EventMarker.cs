@@ -10,30 +10,33 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
-namespace Control
+namespace Scenario
 {
-    public class Control : MonoBehaviour
+    public class EventMarker : Marker, INotification
     {
         #region Fields & Properties
 
-        public virtual BaseNode Node { get; set; }
-        private ControlLabel label;
+        [field: SerializeField]
+        public string EventName { get; set; }
 
-        #endregion
+        [field: SerializeField]
+        public BaseEvent Event { get; set; }
 
-        #region Public Methods
+        public PropertyName id => new PropertyName();
 
         #endregion
 
         #region Private Methods
 
-        protected void SetLabel()
+        void Setup()
         {
-            label = GetComponentInChildren<ControlLabel>();
-
-            if (label == null) return;
-            label.Label = Node != null ? Node.name : "xx";
+            if (Event == null && EventName != null)
+            {
+                Event = GameManager.GetNodeByName<BaseEvent>(EventName);
+            }
         }
 
         #endregion
@@ -42,12 +45,12 @@ namespace Control
 
         void Awake()
         {
-            SetLabel();
+            Setup();
         }
 
         void OnValidate()
         {
-            SetLabel();
+            Setup();
         }
 
         #endregion

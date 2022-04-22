@@ -13,13 +13,19 @@ using UnityEngine;
 
 namespace Scenario
 {
-    public class TimerNode : BaseNode
+    [NodeWidth(272)]
+    public abstract class TimelineNode : BaseNode
     {
         #region Fields & Properties
+
+        [field: SerializeField]
+        public Frame StartTime { get; set; }
 
         #endregion
 
         #region Public Methods
+
+        public abstract void UpdateSettings();
 
         #endregion
 
@@ -28,6 +34,16 @@ namespace Scenario
         #endregion
 
         #region Unity Methods
+
+        void Awake()
+        {
+            UpdateSettings();
+        }
+
+        void OnValidate()
+        {
+            UpdateSettings();
+        }
 
         #endregion
     }

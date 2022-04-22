@@ -65,7 +65,7 @@ namespace Core
                 parameters.Add((type, value));
             }
 
-            Raise(new CommandData { Parameters = parameters });
+            Raise(new CommandData { Parameters = parameters }.Compose());
         }
 
         #endregion
