@@ -1,0 +1,57 @@
+Core:
+    UnityObjectExtensions
+    ScriptableObjects
+        Elements
+        Events
+            Editor
+        Sets
+        Variables
+            Editor
+            References
+
+
+Systemer:
+
+    Console
+    Network
+    Character Controller
+    Input Controller
+    Instructor Interface (networked)
+    Scenarios
+        Timed
+        Staged
+
+    Timeline
+        Divers
+        DivingLeader
+    Menu
+        Main
+        Modal
+        Options
+        Networking
+    Simulator
+        Divers
+        Panel
+        Gauge
+            Airflow
+            Depth
+        Video/Audio
+        Voice Recognition
+
+
+    Resources:
+
+        3D model of panel
+        3D model of dock or ship
+
+        3D model of divers
+        3D model of character
+        
+
+
+Optional:
+
+    VR
+    Simulerte dykkere
+    Voip
+    Simulering av fysisk panel

@@ -1,6 +1,0 @@
-
-Console User Story:
-
-- Log everything that Unity does.
-- Write commands in console to execute them
-- display all log and history and stack trace if available
