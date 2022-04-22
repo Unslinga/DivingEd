@@ -43,3 +43,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a6faa6f0467774cbb3fe44d52d7d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Directory>k__BackingField:
+    UseConstant: 1
+    ConstantValue: C:\Users\olav_\Desktop
+    Variable: {fileID: 0}
+  <FileName>k__BackingField:
+    UseConstant: 1
+    ConstantValue: Test.des
+    Variable: {fileID: 0}
+  <LoadFile>k__BackingField: 0
+  <SaveFile>k__BackingField: 1
+  <GraphPosition>k__BackingField:
+    UseConstant: 1
+    ConstantValue: {x: -1416, y: 1144, z: 0}
+    Variable: {fileID: 0}
+  <XDistance>k__BackingField: 0
+  <YDistance>k__BackingField: 320
+  <Timer>k__BackingField: 0
+  <TimelineNodes>k__BackingField: []

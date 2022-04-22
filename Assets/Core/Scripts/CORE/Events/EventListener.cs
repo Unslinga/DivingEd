@@ -20,6 +20,8 @@ namespace Core
         public UnityEvent Response { get; set; }
         [field: SerializeField]
         public UnityEvent<object> ParameterResponse { get; set; }
+        [field: SerializeField]
+        public UnityEvent<string> SpecializedResponse { get; set; }
 
         private void OnEnable()
         {
@@ -36,9 +38,9 @@ namespace Core
             Response?.Invoke();
         }
 
-        public void OnEventRaised<T>(T value)
+        public void OnEventRaised(string value)
         {
-            ParameterResponse?.Invoke(value);
+            SpecializedResponse?.Invoke(value);
         }
     } 
 }

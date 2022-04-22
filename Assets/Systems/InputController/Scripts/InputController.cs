@@ -75,7 +75,7 @@ namespace InputController
 
                 void Raise(byte state)
                 {
-                    inputEvent.Raise(new KeyboardInputData { KeyCode = inputEvent.KeyCode, State = state, Modifier = modifier });
+                    inputEvent.Raise(new KeyboardInputData { KeyCode = inputEvent.KeyCode, State = state, Modifier = modifier }.Compose());
                 }
             }
         }
@@ -103,7 +103,7 @@ namespace InputController
 
                 void Raise(byte state)
                 {
-                    inputEvent.Raise(new MouseInputData { Button = inputEvent.Button, State = state });
+                    inputEvent.Raise(new MouseInputData { Button = inputEvent.Button, State = state }.Compose());
                 }
             }
         }

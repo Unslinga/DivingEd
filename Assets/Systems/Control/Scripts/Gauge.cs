@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------------
 // Simulering av Dykkerpost
-// Bachelor Oppgave vÃ¥ren 2022
+// Bachelor Oppgave våren 2022
 // 
 // Aahed Diyab, Olav Pete
 // ----------------------------------------------------------------------------
@@ -100,5 +100,5 @@ namespace Control.Gauge
         }
 
         #endregion
-    } 
+    }
 }

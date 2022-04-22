@@ -143,9 +143,9 @@ namespace Console
             StartCoroutine(Scroll());
         }
 
-        private void OnMessageToConsole(object data)
+        private void OnMessageToConsole(string data)
         {
-            Debug.Log(data.ParseCommand<string>());
+            Debug.Log(data.Parse<string>());
         }
 
         private void OnSubmit_CommandLine(string input)
@@ -167,7 +167,7 @@ namespace Console
                     Message = input, 
                     StackTrace = inputs.Aggregate("", (c, n) => c + n + "\n"),
                     Command = true
-                });
+                }.Compose());
 
             command.Raise(inputs.Skip(1).ToArray());
         }

@@ -83,7 +83,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2437545067478708115, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
       propertyPath: <Label>k__BackingField
-      value: 
+      value: xx
       objectReference: {fileID: 0}
     - target: {fileID: 3837914094698475349, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
       propertyPath: m_Name
@@ -107,7 +107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8052757761678372462, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
       propertyPath: m_text
-      value: 
+      value: xx
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
@@ -121,7 +121,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4924622247778740439, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
   m_PrefabInstance: {fileID: 979938343612252256}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2444823675498053113
+--- !u!114 &2832912785256656609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

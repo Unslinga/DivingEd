@@ -41,9 +41,21 @@ namespace Core
 
         #region Public Methods
 
+        public static T GetNodeByName<T>(string name) where T : Node
+        {
+            return Instance.Graph.nodes
+                .Where(n => n is T && n.name == name)
+                .Select(n => (T)n)
+                .SingleOrDefault();
+        }
+            
+
         public static List<T> GetNodesByType<T>() where T : Node
         {
-            return Instance.Graph.nodes.Where(n => n is T).Select(n => (T)n).ToList();
+            return Instance.Graph.nodes
+                .Where(n => n is T)
+                .Select(n => (T)n)
+                .ToList();
         }
 
         #endregion

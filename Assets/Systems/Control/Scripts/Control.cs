@@ -33,7 +33,7 @@ namespace Control
             label = GetComponentInChildren<ControlLabel>();
 
             if (label == null) return;
-            label.Label = Node?.name;
+            label.Label = Node != null ? Node.name : "xx";
         }
 
         #endregion

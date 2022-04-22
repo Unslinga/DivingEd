@@ -102,7 +102,7 @@ namespace Console
         {
             stackTraceActive = !stackTraceActive;
 
-            DisplayStackTrace?.Raise((name, stackTraceActive, data.StackTrace));
+            DisplayStackTrace?.Raise((name, stackTraceActive, data.StackTrace).Compose());
         }
 
         #endregion
