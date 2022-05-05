@@ -7,5 +7,7 @@
 
 ### Diskusjon
 - Gjennomgang av Prosjektet
-    - Test
+    - 
 - Gjennomgang av kode
+- Tips om hvordan å lage tidslinje
+- Tips om hvordan å spare tid

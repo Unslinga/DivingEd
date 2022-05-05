@@ -17,13 +17,11 @@ namespace Core
     {
         #region Fields & Properties
 
-        ControlFlow Control { get; }
-
         #endregion
 
         #region Public Methods
 
-        public void UpdateValue();
+        public double UpdateFlow(double nodePressure, double flowRate);
 
         #endregion
 

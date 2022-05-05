@@ -22,6 +22,11 @@ namespace Core
 
         #region Public Methods
 
+        public T GetNode<T>(string portName) where T : BaseNode
+        {
+            return (T)GetPort(portName).Connection.node;
+        }
+
         public T GetOutputValue<T>(string fieldName, T fallback = default(T))
         {
             NodePort port = GetPort(fieldName);

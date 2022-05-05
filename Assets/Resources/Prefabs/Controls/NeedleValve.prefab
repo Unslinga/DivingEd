@@ -310,7 +310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3080357730192299326, guid: 372f93bfe62c16f47a648c29d88a1176, type: 3}
       propertyPath: <MaximumAngle>k__BackingField
-      value: 360
+      value: 2160
       objectReference: {fileID: 0}
     - target: {fileID: 7131480785469052568, guid: 372f93bfe62c16f47a648c29d88a1176, type: 3}
       propertyPath: m_Name

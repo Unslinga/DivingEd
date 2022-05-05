@@ -13,14 +13,10 @@ using UnityEngine;
 
 namespace Control.Gauge
 {
+    [Serializable]
     public class Gauge : Control
     {
         #region Fields & Properties
-
-        [field: SerializeField]
-        public override BaseNode Node { get; set; }
-
-        public GaugeNode GaugeNode => (GaugeNode)Node;
 
         [field: SerializeField]
         public GameObject Pointer { get; set; }
@@ -40,9 +36,10 @@ namespace Control.Gauge
         {
             get
             {
-                return (float)(OffsetAngle + (GaugeNode.Value * ScaleAngle));
+                return (float)(OffsetAngle + (Value * ScaleAngle));
             }
         }
+
 
         private float elapsed;
         private Quaternion startValue;
@@ -52,15 +49,6 @@ namespace Control.Gauge
         #endregion
 
         #region Public Methods
-
-        public void UpdateAngle()
-        {
-            if (GaugeNode == null) return;
-
-            LerpValues();
-            Pointer.transform.rotation = needleAngle;
-        }
-
 
         private void LerpNeedle()
         {
@@ -82,6 +70,14 @@ namespace Control.Gauge
             endValue = Quaternion.Euler(0, 0, PointerAngle);
         }
 
+        public void UpdateAngle()
+        {
+            if (Node == null) return;
+
+            LerpValues();
+            Pointer.transform.rotation = needleAngle;
+        }
+
         #endregion
 
         #region Private Methods
@@ -92,7 +88,7 @@ namespace Control.Gauge
 
         void FixedUpdate()
         {
-            if (GaugeNode == null) return;
+            if (Node == null) return;
 
             UpdateAngle();
 

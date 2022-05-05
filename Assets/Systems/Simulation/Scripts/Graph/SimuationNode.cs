@@ -23,37 +23,44 @@ namespace Core
 
         public int ID => GetHashCode();
 
-        public double Value { get; protected set; }
+        public double Value { get; internal set; }
+        public double PressureLoss { get; set; } = 0.01;
+
+        public ControlFlow Control => throw new NotImplementedException();
 
         #endregion
 
         #region Public Methods
 
-        public void CascadeValue(List<int> traversed)
+        public SimulationNode GetNode(string portName)
         {
-            UpdateValue();
+            return GetPort(portName).Connection?.node as SimulationNode;
+        }
 
-            if (this is DiverNode) return;
+        public void Cascade(List<int> traversed, double maxFlow)
+        {
+            UpdateValue(maxFlow);
 
-            foreach (var node in GetConnectedSimulationNodes(traversed).Where(n => n.Value <= Value))
+            foreach (var node in GetConnectedNodes(traversed))
             {
                 traversed.Add(ID);
-                node.CascadeValue(traversed);
+                node.Cascade(traversed, maxFlow);
             }
         }
 
-        public void ClearCascade(List<int> traversed)
+        public void Clear(List<int> traversed)
         {
             ClearValue();
 
             if (this is DiverNode) return;
 
-            foreach (var node in GetConnectedSimulationNodes(traversed))
+            foreach (var node in GetConnectedNodes(traversed))
             {
                 traversed.Add(ID);
-                node.ClearCascade(traversed);
+                node.Clear(traversed);
             }
         }
+
         public abstract void ClearValue();
 
         public override object GetValue(NodePort port)
@@ -61,18 +68,25 @@ namespace Core
             return Value;
         }
 
-        public abstract void UpdateValue();
+        public abstract double UpdateSource(double flow);
+
+        public abstract void UpdateValue(double maxFlow);
+
+        public void UpdateValue()
+        {
+            throw new NotImplementedException();
+        }
 
         #endregion
 
         #region Private Methods
 
-        protected IEnumerable<SimulationNode> GetConnectedSimulationNodes(int ID)
+        protected IEnumerable<SimulationNode> GetConnectedNodes(int ID)
         {
-            return GetConnectedSimulationNodes(new List<int> { ID });
+            return GetConnectedNodes(new List<int> { ID });
         }
 
-        protected IEnumerable<SimulationNode> GetConnectedSimulationNodes(List<int> traversed)
+        protected IEnumerable<SimulationNode> GetConnectedNodes(List<int> traversed)
         {
             foreach (SimulationNode node in Ports
                 .SelectMany(p => p.GetConnections()

@@ -33,6 +33,9 @@ namespace Simulation
         }
 
         [field: SerializeField]
+        public DoubleReference MaxFlowRate { get; set; }
+
+        [field: SerializeField]
         public List<InputNode> InputNodes { get; set; }
 
         #endregion
@@ -41,9 +44,7 @@ namespace Simulation
 
         public void UpdateNodes()
         {
-            InputNodes.ForEach(n => n.ClearCascade(new List<int> { n.ID }));
-
-            InputNodes.ForEach(n => n.CascadeValue(new List<int> { n.ID }));
+            InputNodes.ForEach(n => n.Cascade(new List<int> { n.ID }, MaxFlowRate.Value));
         }
 
         #endregion

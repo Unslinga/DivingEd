@@ -10,14 +10,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using XNode;
 
 namespace Control
 {
     [Serializable]
-    public class ValveNode : ControlNode
+    public class RegulatorNode : ControlNode
     {
         #region Fields & Properties
+
+        [field: SerializeField]
+        public double MaxRegulatorPressure { get; set; }
 
         #endregion
 
@@ -25,10 +27,10 @@ namespace Control
 
         public override double UpdateFlow(double nodePressure, double flowRate)
         {
-            if (Control == null) return 0;
-            return Control.Value * flowRate;
-        }
+            var diff = (MaxRegulatorPressure * Control.Value) - nodePressure;
 
+            return Math.Max(Math.Min(flowRate, diff), 0);
+        }
         #endregion
     }
 }

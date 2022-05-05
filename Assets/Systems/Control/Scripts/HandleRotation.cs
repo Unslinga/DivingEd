@@ -11,16 +11,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Control.Valve
+namespace Control
 {
-    public class Valve : Control
+    [RequireComponent(typeof(Control))]
+    public class HandleRotation : MonoBehaviour
     {
         #region Fields & Properties
-        
-        [field: SerializeField]
-        public override BaseNode Node { get; set; }
 
-        public ValveNode ValveNode => (ValveNode)Node;
+        private Control control;
+        private BaseNode node;
 
         [field: SerializeField]
         public Collider ValveBody { get; set; }
@@ -46,14 +45,7 @@ namespace Control.Valve
         public int MaximumAngle { get; set; }
 
         [field: SerializeField]
-        public bool ReverseAngle { get; set; }
-
-        [field: SerializeField]
-        public bool BallValve { get; set; }
-
-        [field: SerializeField]
-        [field: Range(0,1)]
-        public float CutoffValue { get; set; } = 0f;
+        public bool Reverse { get; set; }
 
         [field: Header("Angle Info")]
 
@@ -64,11 +56,6 @@ namespace Control.Valve
         [field: SerializeField]
         [field: ReadOnlyField]
         public float Angle { get; private set; }
-
-        [field: Space(8)]
-        [field: SerializeField]
-        [field: ReadOnlyField]
-        public double Value { get; set; }
 
         private float deltaAngle;
         private float lastAngle;
@@ -82,10 +69,10 @@ namespace Control.Valve
 
         #region Public Methods
 
-        public void MouseHitActivation(object data)
+        public void MouseHitActivation(string data)
         {
-            var key = (MouseInputData)data;
-            if (key.State == 0)
+            (int button, byte state) = data.Parse<int, byte>();
+            if (state == 0)
             {
                 RaycastHit hit;
 
@@ -107,8 +94,8 @@ namespace Control.Valve
                 }
 
             }
-            
-            if (key.State == 2)
+
+            if (state == 2)
             {
                 activeThis = false;
             }
@@ -124,6 +111,11 @@ namespace Control.Valve
         }
 
         private void CalculateAngle()
+        {
+            Angle = (float)(control.ControlValue * MaximumAngle + OffsetAngle);
+        }
+
+        private void CalculateControlAngle()
         {
             if (!activeThis) return;
 
@@ -143,7 +135,7 @@ namespace Control.Valve
 
             var xRelative = Mathf.Sign(MousePosition.Value.x - ValvePosition.x);
 
-            RelativeAngle = Vector2.Angle((ValvePosition + Vector3.up) - ValvePosition, 
+            RelativeAngle = Vector2.Angle((ValvePosition + Vector3.up) - ValvePosition,
                 (Vector3)MousePosition.Value - ValvePosition)
                 * xRelative + 180;
         }
@@ -152,30 +144,7 @@ namespace Control.Valve
         {
             var value = (Angle - OffsetAngle) / MaximumAngle;
 
-            Value = ReverseAngle ? 1 - value : value;
-
-            var nodeValue = Value;
-
-            if (BallValve)
-            {
-                nodeValue = Value > CutoffValue ? 1 : 0;
-            }
-
-            ValveNode.Value = nodeValue;
-        }
-
-        private void FetchAngleFromValue()
-        {
-            if (BallValve)
-            {
-                return;
-            }
-
-            Value = ValveNode.Value;
-
-            var value = ReverseAngle ? 1 - Value : Value;
-
-            Angle = (float)(value * MaximumAngle + OffsetAngle);
+            control.ControlValue = Reverse ? 1 - value : value;
         }
 
         #endregion
@@ -184,39 +153,24 @@ namespace Control.Valve
 
         void FixedUpdate()
         {
-            if (ValveNode == null) return;
+            if (node == null) return;
 
             MouseActive.Value = !activeThis;
 
-            FetchAngleFromValue();
-            CalculateRelativeAngle();
             CalculateAngle();
+            CalculateRelativeAngle();
+            CalculateControlAngle();
             AngleValveBody();
             CalculateValue();
         }
 
-        void OnDrawGizmos()
-        {
-            if (!activeThis) return;
-
-            Gizmos.color = Color.red;
-            Gizmos.DrawSphere(Camera.main.ScreenToWorldPoint(ValvePosition), 0.005f);
-
-            Gizmos.color = Color.green;
-            Gizmos.DrawSphere(Camera.main.ScreenToWorldPoint(ValveHitRelative), 0.005f);
-
-            var pos = new Vector3(MousePosition.Value.x, MousePosition.Value.y, ValvePositionZ);
-            Gizmos.color = Color.blue;
-            Gizmos.DrawSphere(Camera.main.ScreenToWorldPoint(pos), 0.005f);
-        }
-
         void Awake()
         {
-            this.CheckNull(ValveNode, false);
+            control = GetComponent<Control>();
+            node = GetComponent<Control>().Node;
 
             OffsetAngle = Mathf.Clamp(OffsetAngle, OffsetAngle, 0);
             MaximumAngle = Mathf.Clamp(MaximumAngle, 0, MaximumAngle);
-            CutoffValue = Mathf.Clamp(CutoffValue, 0, MaximumAngle);
 
             MouseClick?.CreateListener(gameObject, MouseHitActivation);
         }

@@ -41,9 +41,15 @@ namespace Simulation
             Value = 0;
         }
 
-        public override void UpdateValue()
+        public override double UpdateSource(double flow)
         {
-            Value = GetInputValue("AirIn", 0.0);
+            return 0;
+        }
+
+        public override void UpdateValue(double maxFlow)
+        {
+            Debug.Log("Diver");
+            //Value = GetInputValue("AirIn", 0.0);
         }
 
         #endregion

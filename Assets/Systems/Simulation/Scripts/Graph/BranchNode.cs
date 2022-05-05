@@ -57,9 +57,14 @@ namespace Simulation
             Value = 0;
         }
 
-        public override void UpdateValue()
+        public override double UpdateSource(double flow)
         {
-            Value = GetConnectedSimulationNodes(ID).Select(x => x.Value).Max();
+            return 0;
+        }
+
+        public override void UpdateValue(double maxFlow)
+        {
+            //Value = GetConnectedSimulationNodes(ID).Select(x => x.Value).Max();
         }
 
         #endregion

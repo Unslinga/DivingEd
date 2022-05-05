@@ -12,33 +12,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace Control.Gauge
+namespace Control
 {
-    public class GaugeNode : BaseNode, IControl
+    [Serializable]
+    public class GaugeNode : ControlNode
     {
         #region Fields & Properties
-
-        [field: SerializeField]
-        [field: ReadOnlyField]
-        public double Value { get; set; }
-
-        [field: SerializeField]
-        public double PressureLoss { get; set; } = 0.01;
-
-        [Input(ShowBackingValue.Never, ConnectionType.Override)]
-        public ControlFlow control;
-
-        public ControlFlow Control { get { return control; } }
 
         #endregion
 
         #region Public Methods
 
-        public void UpdateValue()
+        public override double UpdateFlow(double nodePressure, double flowRate)
         {
-            var controlNode = (IControl)GetPort("control").Connection?.node;
-            Value = controlNode != null ? controlNode.Control.Value * (1 - PressureLoss) : 0;
-            control.Value = Value;
+            Control.Value = nodePressure;
+            return flowRate;
         }
 
         #endregion

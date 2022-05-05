@@ -51,7 +51,7 @@ public class SimulationNodeEditor : BaseNodeEditor
 
         if (GUILayout.Button("Update"))
         {
-            simuationNode.UpdateValue();
+            simuationNode.UpdateValue(Simulation.Simulation.Instance.MaxFlowRate);
         }
 
         EditorGUILayout.Space(8);
@@ -60,14 +60,14 @@ public class SimulationNodeEditor : BaseNodeEditor
         {
             if (GUILayout.Button("Cascade"))
             {
-                simuationNode.CascadeValue(new List<int> { simuationNode.ID });
+                simuationNode.Cascade(new List<int> { simuationNode.ID }, Simulation.Simulation.Instance.MaxFlowRate);
             }
 
             EditorGUILayout.Space(8);
 
             if (GUILayout.Button("Clear All"))
             {
-                simuationNode.ClearCascade(new List<int> { simuationNode.ID });
+                simuationNode.Clear(new List<int> { simuationNode.ID });
             }
         }
     }

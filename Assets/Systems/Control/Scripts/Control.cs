@@ -13,11 +13,23 @@ using UnityEngine;
 
 namespace Control
 {
-    public class Control : MonoBehaviour
+    [Serializable]
+    public abstract class Control : MonoBehaviour
     {
         #region Fields & Properties
 
-        public virtual BaseNode Node { get; set; }
+        [field: SerializeField]
+        public virtual ControlNode Node { get; set; }
+
+        [field: SerializeField]
+        [field: ReadOnlyField]
+        public virtual double Value { get; set; }
+
+
+        [field: SerializeField]
+        [field: ReadOnlyField]
+        public virtual double ControlValue { get; set; }
+
         private ControlLabel label;
 
         #endregion
@@ -42,6 +54,10 @@ namespace Control
 
         void Awake()
         {
+            this.CheckNull(Node, true);
+
+            Node.Control = this;
+
             SetLabel();
         }
 

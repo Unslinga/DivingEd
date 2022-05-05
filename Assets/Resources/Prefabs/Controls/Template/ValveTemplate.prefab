@@ -114,7 +114,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2437545067478708115, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
       propertyPath: <Label>k__BackingField
-      value: 
+      value: xx
       objectReference: {fileID: 0}
     - target: {fileID: 3837914094698475349, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
       propertyPath: m_Name
@@ -138,7 +138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8052757761678372462, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
       propertyPath: m_text
-      value: 
+      value: xx
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18293311b4c172b4cb50812364d12faa, type: 3}
@@ -159,13 +159,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7131480785469052568}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07338ae1973e5884a8032b94c6bf7ec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <Node>k__BackingField: {fileID: 0}
-  <ValveBody>k__BackingField: {fileID: 6762409750726676717}
+  <Value>k__BackingField: 0
+  <ControlValue>k__BackingField: 0
+--- !u!114 &4733541137097071767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7131480785469052568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d2ab3a0f4753f44bdc241cb1a35ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ValveBody>k__BackingField: {fileID: 0}
   <MouseClick>k__BackingField: {fileID: 250412578330969638, guid: 76719cee3b751af4b9da7fbfabff8a78, type: 2}
   <MousePosition>k__BackingField:
     UseConstant: 0
@@ -177,9 +191,6 @@ MonoBehaviour:
     Variable: {fileID: -5012092828393845509, guid: 76719cee3b751af4b9da7fbfabff8a78, type: 2}
   <OffsetAngle>k__BackingField: 0
   <MaximumAngle>k__BackingField: 0
-  <ReverseAngle>k__BackingField: 0
-  <BallValve>k__BackingField: 0
-  <CutoffValue>k__BackingField: 0
+  <Reverse>k__BackingField: 0
   <RelativeAngle>k__BackingField: 0
   <Angle>k__BackingField: 0
-  <Value>k__BackingField: 0

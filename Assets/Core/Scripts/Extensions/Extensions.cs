@@ -29,6 +29,11 @@ namespace Core
             return Encoding.UTF8.GetString(Convert.FromBase64String(encoded));
         }
 
+        public static double Clamp(this double value, double min, double max)
+        {
+            return value < min ? min : value > max ? max : value; 
+        }
+
         public static string Compose(this object data)
         {
             return JsonConvert.SerializeObject(data);

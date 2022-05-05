@@ -103,7 +103,7 @@ namespace InputController
 
                 void Raise(byte state)
                 {
-                    inputEvent.Raise(new MouseInputData { Button = inputEvent.Button, State = state }.Compose());
+                    inputEvent.Raise((inputEvent.Button, state).Compose());
                 }
             }
         }

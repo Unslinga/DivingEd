@@ -10,24 +10,24 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using XNode;
 
 namespace Control
 {
     [Serializable]
-    public class ValveNode : ControlNode
+    public abstract class ControlNode : BaseNode, IControl
     {
         #region Fields & Properties
+
+        [Input(ShowBackingValue.Never, ConnectionType.Override)]
+        public ControlFlow controlflow;
+
+        public Control Control { get; set; }
 
         #endregion
 
         #region Public Methods
 
-        public override double UpdateFlow(double nodePressure, double flowRate)
-        {
-            if (Control == null) return 0;
-            return Control.Value * flowRate;
-        }
+        public abstract double UpdateFlow(double nodePressure, double flowRate);
 
         #endregion
     }
