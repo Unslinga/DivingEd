@@ -25,6 +25,7 @@ namespace Control
 
         public override double UpdateFlow(double nodePressure, double flowRate)
         {
+            if (Control == null) return flowRate;
             Control.Value = nodePressure;
             return flowRate;
         }

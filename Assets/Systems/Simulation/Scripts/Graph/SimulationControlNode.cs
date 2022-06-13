@@ -40,21 +40,6 @@ namespace Simulation
             Value = 0;
         }
 
-        public override void UpdateValue(double maxFlow)
-        {
-            FetchControl();
-
-            var inputNode = GetNode("In");
-
-            var diff = (inputNode.Value - Value);
-
-            var flowAmount = Math.Min(Math.Max(maxFlow * Math.Sign(diff), -diff), diff)/2;
-
-            Value += inputNode.UpdateSource(Node.UpdateFlow(Value, flowAmount));
-
-            Value = Math.Max(Value, 0);
-        }
-
         public override double UpdateSource(double flow)
         {
             FetchControl();
@@ -66,6 +51,22 @@ namespace Simulation
             Value = Math.Max(Value, 0);
 
             return leftover;
+        }
+
+        public override void UpdateValue(double maxFlow, int parent)
+        {
+            FetchControl();
+
+            var connection = GetConnectedNodes(ID)
+                .SingleOrDefault(c => c.ID == parent);
+            var diff = (connection.Value - Value);
+
+            var flowAmount = Math.Min(Math.Max(maxFlow * Math.Sign(diff), -diff), diff) / 2;
+
+
+            Value += connection.UpdateSource(Node.UpdateFlow(Value, flowAmount));
+
+            Value = Math.Max(Value, 0);
         }
 
         #endregion

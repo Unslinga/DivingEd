@@ -37,22 +37,22 @@ namespace Core
             return GetPort(portName).Connection?.node as SimulationNode;
         }
 
-        public void Cascade(List<int> traversed, double maxFlow)
+        public void Cascade(int parent, List<int> traversed, double maxFlow)
         {
-            UpdateValue(maxFlow);
+            UpdateValue(maxFlow, parent);
+
+            bool diver = this is DiverNode;
 
             foreach (var node in GetConnectedNodes(traversed))
             {
-                traversed.Add(ID);
-                node.Cascade(traversed, maxFlow);
+                if (!diver) traversed.Add(ID);
+                node.Cascade(ID ,traversed, maxFlow);
             }
         }
 
         public void Clear(List<int> traversed)
         {
             ClearValue();
-
-            if (this is DiverNode) return;
 
             foreach (var node in GetConnectedNodes(traversed))
             {
@@ -70,7 +70,7 @@ namespace Core
 
         public abstract double UpdateSource(double flow);
 
-        public abstract void UpdateValue(double maxFlow);
+        public abstract void UpdateValue(double maxFlow, int parent);
 
         public void UpdateValue()
         {

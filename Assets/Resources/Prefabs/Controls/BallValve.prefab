@@ -318,6 +318,10 @@ PrefabInstance:
       propertyPath: <ReverseAngle>k__BackingField
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4733541137097071767, guid: 372f93bfe62c16f47a648c29d88a1176, type: 3}
+      propertyPath: <MaximumAngle>k__BackingField
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 7131480785469052568, guid: 372f93bfe62c16f47a648c29d88a1176, type: 3}
       propertyPath: m_Name
       value: BallValve
@@ -340,6 +344,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 372f93bfe62c16f47a648c29d88a1176, type: 3}
+--- !u!1 &2208897252815356658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7131480785469052568, guid: 372f93bfe62c16f47a648c29d88a1176, type: 3}
+  m_PrefabInstance: {fileID: 8962039719622693994}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4462626382190824879 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4733811698401024453, guid: 372f93bfe62c16f47a648c29d88a1176, type: 3}
@@ -350,3 +359,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8213790624857379530, guid: 372f93bfe62c16f47a648c29d88a1176, type: 3}
   m_PrefabInstance: {fileID: 8962039719622693994}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6403944350989009128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2208897252815356658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 021f92541bc48504f8017a1d92c20de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Node>k__BackingField: {fileID: 0}
+  <Value>k__BackingField: 0
+  <ControlValue>k__BackingField: 0

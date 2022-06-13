@@ -34,15 +34,15 @@ namespace InputController
 
         #region Public Methods
 
-        public void TestKeys(object data)
+        public void TestKeys(string data)
         {
-            var keyData = (KeyboardInputData)data;
+            var keyData = data.Parse<KeyboardInputData>();
             Debug.Log($"Key: [{keyData.KeyCode}], s: [{keyData.State}], m: [{keyData.Modifier}]");
         }
 
-        public void TestButtons(object data)
+        public void TestButtons(string data)
         {
-            var ButtonData = (MouseInputData)data;
+            var ButtonData = data.Parse<MouseInputData>();
             Debug.Log($"Button: [{ButtonData.Button}], s: [{ButtonData.State}]");
         }
 
@@ -75,7 +75,7 @@ namespace InputController
 
                 void Raise(byte state)
                 {
-                    inputEvent.Raise(new KeyboardInputData { KeyCode = inputEvent.KeyCode, State = state, Modifier = modifier }.Compose());
+                    inputEvent.Raise((inputEvent.KeyCode, state, modifier).Compose());
                 }
             }
         }
@@ -125,8 +125,8 @@ namespace InputController
 
             MousePosition.Value = Input.mousePosition;
 
-            InputEvents["Back"].CreateListener(gameObject, TestKeys);
-            InputEvents["RightClick"].CreateListener(gameObject, TestButtons);
+            //InputEvents["Back"].CreateListener(gameObject, TestKeys);
+            //InputEvents["RightClick"].CreateListener(gameObject, TestButtons);
         }
 
         void Update()

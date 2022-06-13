@@ -59,12 +59,24 @@ namespace Simulation
 
         public override double UpdateSource(double flow)
         {
-            return 0;
+            Value -= flow;
+            var leftover = Value < 0 ? flow - Value : flow;
+
+            Value = Math.Max(Value, 0);
+
+            return leftover;
         }
 
-        public override void UpdateValue(double maxFlow)
+        public override void UpdateValue(double maxFlow, int parent)
         {
-            //Value = GetConnectedSimulationNodes(ID).Select(x => x.Value).Max();
+            var connection = GetConnectedNodes(ID)
+                .SingleOrDefault(c => c.ID == parent);
+            var diff = connection.Value - Value;
+
+            Value += connection.UpdateSource(
+                Math.Min(Math.Max(maxFlow * Math.Sign(diff), -diff), diff));
+
+            Value = Math.Max(Value, 0);
         }
 
         #endregion

@@ -39,7 +39,7 @@ public class SimulationNodeEditor : BaseNodeEditor
 
         EditorGUILayout.Space(8);
 
-        EditorGUILayout.LabelField("Pressure");
+        EditorGUILayout.LabelField(simuationNode is DiverNode ? "Breathing" : "Pressure");
 
         style.fontSize = 24;
         style.alignment = TextAnchor.MiddleCenter;
@@ -48,19 +48,13 @@ public class SimulationNodeEditor : BaseNodeEditor
         EditorGUILayout.LabelField(simuationNode.Value.ToString(), style);
 
         EditorGUILayout.Space(8);
-
-        if (GUILayout.Button("Update"))
-        {
-            simuationNode.UpdateValue(Simulation.Simulation.Instance.MaxFlowRate);
-        }
-
-        EditorGUILayout.Space(8);
+        if (Simulation.Simulation.Instance.MaxFlowRate == null) return;
 
         if (simuationNode is InputNode)
         {
             if (GUILayout.Button("Cascade"))
             {
-                simuationNode.Cascade(new List<int> { simuationNode.ID }, Simulation.Simulation.Instance.MaxFlowRate);
+                simuationNode.Cascade(-1, new List<int> { simuationNode.ID }, Simulation.Simulation.Instance.MaxFlowRate);
             }
 
             EditorGUILayout.Space(8);

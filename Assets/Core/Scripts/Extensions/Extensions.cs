@@ -101,29 +101,65 @@ namespace Core
             return port.node.GetValue(port);
         }
 
+
         public static T Parse<T>(this string data)
         {
-            return JsonConvert.DeserializeObject<T>(data, new Converter<T>());
+            try
+            {
+                return JsonConvert.DeserializeObject<T>(data, new Converter<T>());
+            }
+            catch (Exception)
+            {
+                return default;
+            }
         }
 
         public static (T1,T2) Parse<T1, T2>(this string data)
         {
-            return JsonConvert.DeserializeObject<(T1, T2)>(data, new Converter<T1,T2>());
+            try
+            {
+                return JsonConvert.DeserializeObject<(T1, T2)>(data, new Converter<T1, T2>());
+            }
+            catch (ArgumentException)
+            {
+                return default;
+            }
         }
 
         public static (T1, T2, T3) Parse<T1, T2, T3>(this string data)
         {
-            return JsonConvert.DeserializeObject<(T1, T2, T3)>(data, new Converter<T1, T2, T3>());
+            try
+            {
+                return JsonConvert.DeserializeObject<(T1, T2, T3)>(data, new Converter<T1, T2, T3>());
+            }
+            catch (ArgumentException)
+            {
+                return default;
+            }
         }
 
         public static (T1, T2, T3, T4) Parse<T1, T2, T3, T4>(this string data)
         {
-            return JsonConvert.DeserializeObject<(T1, T2, T3, T4)>(data, new Converter<T1, T2, T3, T4>());
+            try
+            {
+                return JsonConvert.DeserializeObject<(T1, T2, T3, T4)>(data, new Converter<T1, T2, T3, T4>());
+            }
+            catch (ArgumentException)
+            {
+                return default;
+            }
         }
 
         public static (T1, T2, T3, T4, T5) Parse<T1, T2, T3, T4, T5>(this string data)
         {
-            return JsonConvert.DeserializeObject<(T1, T2, T3, T4, T5)>(data, new Converter<T1, T2, T3, T4, T5>());
+            try
+            {
+                return JsonConvert.DeserializeObject<(T1, T2, T3, T4, T5)>(data, new Converter<T1, T2, T3, T4, T5>());
+            }
+            catch (ArgumentException)
+            {
+                return default;
+            }
         }
 
         public class Converter<T> : JsonConverter
@@ -140,7 +176,14 @@ namespace Core
                 var jobj = Newtonsoft.Json.Linq.JObject.Load(reader);
                 var props = jobj.Properties().ToList();
 
-                return jobj[props[0].Name].ToObject<T>();
+                try
+                {
+                    return jobj[props[0].Name].ToObject<T>();
+                }
+                catch (ArgumentException)
+                {
+                    return default;
+                }
             }
 
             public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)

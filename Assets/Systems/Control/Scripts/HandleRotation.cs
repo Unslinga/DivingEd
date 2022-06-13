@@ -112,7 +112,7 @@ namespace Control
 
         private void CalculateAngle()
         {
-            Angle = (float)(control.ControlValue * MaximumAngle + OffsetAngle);
+            Angle = (float)((Reverse ? 1- control.ControlValue : control.ControlValue) * MaximumAngle + OffsetAngle);
         }
 
         private void CalculateControlAngle()

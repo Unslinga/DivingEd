@@ -46,10 +46,30 @@ namespace Simulation
             return 0;
         }
 
-        public override void UpdateValue(double maxFlow)
+        public override void UpdateValue(double maxFlow, int parent)
         {
-            Debug.Log("Diver");
-            //Value = GetInputValue("AirIn", 0.0);
+            switch (parent)
+            {
+                case var b when b == GetNode("AirIn").ID:
+                    Breathe();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void Breathe()
+        {
+            var breathing = 0.01 *
+                (Math.Sin(Time.timeSinceLevelLoadAsDouble * 2) + 1);
+
+            Value = breathing;
+
+            GetNode("AirIn").UpdateSource(breathing);
         }
 
         #endregion

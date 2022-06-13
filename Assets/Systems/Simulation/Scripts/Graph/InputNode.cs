@@ -33,7 +33,7 @@ namespace Simulation
             Value = 0;
         }
 
-        public override void UpdateValue(double maxFlow)
+        public override void UpdateValue(double maxFlow, int parent)
         {
             Value = InputPressure.Value;
         }

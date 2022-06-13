@@ -30,6 +30,7 @@ namespace Control
         [field: ReadOnlyField]
         public virtual double ControlValue { get; set; }
 
+
         private ControlLabel label;
 
         #endregion

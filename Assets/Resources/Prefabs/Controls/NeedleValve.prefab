@@ -312,6 +312,10 @@ PrefabInstance:
       propertyPath: <MaximumAngle>k__BackingField
       value: 2160
       objectReference: {fileID: 0}
+    - target: {fileID: 4733541137097071767, guid: 372f93bfe62c16f47a648c29d88a1176, type: 3}
+      propertyPath: <MaximumAngle>k__BackingField
+      value: 3600
+      objectReference: {fileID: 0}
     - target: {fileID: 7131480785469052568, guid: 372f93bfe62c16f47a648c29d88a1176, type: 3}
       propertyPath: m_Name
       value: NeedleValve

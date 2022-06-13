@@ -71,82 +71,71 @@ namespace Character
 
         #region Public Methods
 
-        public void TestMouseLeftClick(object data)
+        public void TestMouseLeftClick(string data)
         {
             //Debug.Log("Test");
         }
 
-        public void ToggleZoomed(object data)
+        public void ToggleZoomed(string data)
         {
-            if (data is MouseInputData)
-            {
-                var button = (MouseInputData)data;
+            (KeyCode key, byte state, bool modifier) keyData = data.Parse<KeyCode, byte, bool>();
+            (int button, byte state) mouseData = data.Parse<int, byte>();
 
-                if (button.State == 0)
-                {
-                    Zoomed = !Zoomed;
-                    StartCoroutine(Zoom());
-                }
-            }
-            if (data is KeyboardInputData)
-            {
-                var key = (KeyboardInputData)data;
 
-                if (key.State == 0)
-                {
-                    Zoomed = !Zoomed;
-                    StartCoroutine(Zoom());
-                }
+            if (keyData.state == 0 || mouseData.state == 0)
+            {
+                Zoomed = !Zoomed;
+                StartCoroutine(Zoom());
             }
         }
 
-        public void MoveUp(object data)
+        public void MoveUp(string data)
         {
-            var key = (KeyboardInputData)data;
-            if (key.State == 1)
+            (KeyCode key, byte state, bool modifier) = data.Parse<KeyCode, byte, bool>();
+            if (state == 1)
             {
                 direction += 1 << 0;
             }
-            else if (key.State == 2)
+            else if (state == 2)
             {
                 direction -= 1 << 0;
             }
         }
 
-        public void MoveDown(object data)
+        public void MoveDown(string data)
         {
-            var key = (KeyboardInputData)data;
-            if (key.State == 1)
+            (KeyCode key, byte state, bool modifier) = data.Parse<KeyCode, byte, bool>();
+            if (state == 1)
             {
                 direction += 1 << 1;
             }
-            else if (key.State == 2)
+            else if (state == 2)
             {
                 direction -= 1 << 1;
             }
         }
 
-        public void MoveLeft(object data)
+        public void MoveLeft(string data)
         {
-            var key = (KeyboardInputData)data;
-            if (key.State == 1)
+            (KeyCode key, byte state, bool modifier) = data.Parse<KeyCode, byte, bool>();
+            if (state == 1)
             {
                 direction += 1 << 2;
             }
-            else if (key.State == 2)
+            else if (state == 2)
             {
                 direction -= 1 << 2;
             }
         }
 
-        public void MoveRight(object data)
+        public void MoveRight(string data)
         {
-            var key = (KeyboardInputData)data;
-            if (key.State == 1)
+            (KeyCode key, byte state, bool modifier) = data.Parse<KeyCode, byte, bool>();
+            if (state == 1)
             {
                 direction += 1 << 3;
             }
-            else if (key.State == 2)
+            else if (state == 2)
             {
                 direction -= 1 << 3;
             }

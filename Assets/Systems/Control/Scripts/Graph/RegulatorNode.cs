@@ -27,8 +27,8 @@ namespace Control
 
         public override double UpdateFlow(double nodePressure, double flowRate)
         {
+            if (Control == null) return 0;
             var diff = (MaxRegulatorPressure * Control.Value) - nodePressure;
-
             return Math.Max(Math.Min(flowRate, diff), 0);
         }
         #endregion

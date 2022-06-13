@@ -44,7 +44,7 @@ namespace Simulation
 
         public void UpdateNodes()
         {
-            InputNodes.ForEach(n => n.Cascade(new List<int> { n.ID }, MaxFlowRate.Value));
+            InputNodes.ForEach(n => n.Cascade(-1, new List<int> { n.ID }, MaxFlowRate.Value));
         }
 
         #endregion

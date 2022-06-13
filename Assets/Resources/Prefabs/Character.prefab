@@ -1294,7 +1294,7 @@ MonoBehaviour:
     Variable: {fileID: -3991258822004152438, guid: 76719cee3b751af4b9da7fbfabff8a78, type: 2}
   <NormalZoom>k__BackingField: 75
   <DetailZoom>k__BackingField: 25
-  <ZoomDuration>k__BackingField: 1
+  <ZoomDuration>k__BackingField: 0.5
   <Zoomed>k__BackingField: 0
   <CameraPosition>k__BackingField:
     UseConstant: 0
@@ -1303,7 +1303,7 @@ MonoBehaviour:
   <LocalPosition>k__BackingField: {x: 0, y: 0}
   <EdgeMovePercent>k__BackingField: 7.5
   <EdgeMoveSpeed>k__BackingField: 0.005
-  <NormalPosition>k__BackingField: {x: 0, y: 1.2, z: 0}
+  <NormalPosition>k__BackingField: {x: 0, y: 0, z: 0.5}
   <MaxPosition>k__BackingField: {x: 0.475, y: 0.23, z: 0}
 --- !u!114 &8118408085461234450
 MonoBehaviour:
