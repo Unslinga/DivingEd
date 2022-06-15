@@ -319,6 +319,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4733541137097071767, guid: 372f93bfe62c16f47a648c29d88a1176, type: 3}
+      propertyPath: <Reverse>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733541137097071767, guid: 372f93bfe62c16f47a648c29d88a1176, type: 3}
       propertyPath: <MaximumAngle>k__BackingField
       value: 90
       objectReference: {fileID: 0}
@@ -342,7 +346,8 @@ PrefabInstance:
       propertyPath: <Position>k__BackingField.y
       value: -0.01
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3080357730192299326, guid: 372f93bfe62c16f47a648c29d88a1176, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 372f93bfe62c16f47a648c29d88a1176, type: 3}
 --- !u!1 &2208897252815356658 stripped
 GameObject:

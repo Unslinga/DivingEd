@@ -63,7 +63,6 @@ namespace Simulation
 
             var flowAmount = Math.Min(Math.Max(maxFlow * Math.Sign(diff), -diff), diff) / 2;
 
-
             Value += connection.UpdateSource(Node.UpdateFlow(Value, flowAmount));
 
             Value = Math.Max(Value, 0);

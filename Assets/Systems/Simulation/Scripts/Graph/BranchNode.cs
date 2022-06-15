@@ -71,6 +71,7 @@ namespace Simulation
         {
             var connection = GetConnectedNodes(ID)
                 .SingleOrDefault(c => c.ID == parent);
+            Debug.Log($"{name} - {connection.name}");
             var diff = connection.Value - Value;
 
             Value += connection.UpdateSource(
